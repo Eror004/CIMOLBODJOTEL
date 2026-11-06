@@ -195,6 +195,76 @@ footer{font-size:11px}
  .item-price{grid-column:2!important;font-size:14px!important}
 }
 
+
+/* ===== FINAL PROFESSIONAL CHECKOUT REFINEMENT ===== */
+:root{--ink:#30212b;--muted:#75636d;--paper:#fff9fb;--pink:#f28caf;--pink2:#ffd9e6;--hot:#cf3f78;--line:#f0cbd9;--shadow:0 18px 48px #713d5312}
+body{font-family:'DM Sans',sans-serif;background:#fff9fb;color:#30212b}
+header{padding-inline:max(5%,calc((100% - 1160px)/2));height:76px;background:#fff9f9f2;border-bottom:1px solid #f0cbd9}
+.brand{gap:11px;font-size:11px;letter-spacing:1.3px}.brand img{width:47px;height:47px}.brand strong{font-size:16px}
+.back{font-size:11px;padding:12px 16px;border-radius:10px;background:#fff0f5;border-color:#efc3d4;color:#a33161}
+main{max-width:1160px;padding:62px 24px 84px}
+.intro{align-items:end;gap:32px;margin-bottom:32px}
+h1{font-size:clamp(50px,6vw,76px);line-height:.98;letter-spacing:-.075em}
+.intro p{font-size:14px;line-height:1.8;max-width:390px}
+.steps{gap:9px;margin-bottom:24px}.step{font-size:10px;padding:12px 15px;border-radius:9px}
+.layout{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:20px}
+.card{border:1px solid #efdce4;border-radius:18px;padding:25px;box-shadow:0 10px 32px #6d3a4c0b}
+.card h2{font-size:20px;margin-bottom:20px}
+.item{padding:16px 0;gap:12px}.item strong{font-size:14px}.item small{font-size:12px;line-height:1.6}
+.thumb{border-radius:12px}.qty button{min-width:31px;height:31px;border-radius:8px;font-size:13px}
+.item-price{font-size:14px}
+.summary{gap:12px;padding-top:17px;margin-top:18px}.line{font-size:13px}.line.total{font-size:17px}.line.total b{font-size:23px}
+.hint{padding:14px;border-radius:12px;font-size:12px;line-height:1.75}
+.form{gap:15px}label{font-size:13px;line-height:1.5}
+input,select,textarea{font-size:15px;padding:14px;border-radius:10px}
+.submit{font-size:12px;letter-spacing:.6px;padding:16px;border-radius:10px}
+.fine{font-size:12px;line-height:1.75}
+.receipt-wrap{margin-top:30px}.receipt{border-radius:18px}
+.receipt-head{background:linear-gradient(120deg,#f7b4cb,#ffe7ef)}
+.receipt-head h3{font-size:20px}.receipt-head p{font-size:9px}
+.receipt-body{padding:25px}.receipt-meta,.receipt-customer,.receipt-row{font-size:12px;line-height:1.7}
+.receipt-row small{font-size:11px}.receipt-total .grand{font-size:17px;color:#cf3f78}
+.receipt-total .grand b{font-size:23px}.receipt-foot{font-size:10px;background:#fff0f5}
+.receipt-actions button{font-size:11px;padding:14px;border-radius:10px}
+.receipt-actions .wa{background:#cf3f78;border-color:#cf3f78}
+.note-bottom,footer{font-size:11px}
+:where(a,button,input,select,textarea):focus-visible{outline:3px solid #d95788;outline-offset:3px}
+@media(max-width:780px){
+ header{height:70px;padding-inline:5%}
+ main{padding:40px 16px 60px}
+ .intro{display:block;margin-bottom:25px}
+ h1{font-size:clamp(48px,11vw,64px)}
+ .intro p{font-size:15px;line-height:1.75;margin-top:12px}
+ .steps{display:flex;flex-wrap:wrap;gap:7px}.step{font-size:10px;padding:10px 12px}
+ .layout{grid-template-columns:1fr;gap:14px}
+ .card{padding:21px;border-radius:17px}
+ .card h2{font-size:20px}
+ .item{grid-template-columns:52px minmax(0,1fr) auto;gap:10px}
+ .thumb{width:52px;height:52px}
+ .item strong{font-size:15px}.item small{font-size:12px}
+ .item-price{font-size:14px}
+ .summary .line{font-size:14px}.summary .line.total{font-size:17px}
+ .hint{font-size:13px}
+ label{font-size:14px}
+ input,select,textarea{font-size:16px;padding:15px;border-radius:11px}
+ .submit{font-size:13px;line-height:1.5}
+ .receipt-body{padding:20px}
+ .receipt-meta,.receipt-customer,.receipt-row{font-size:13px}
+ .receipt-actions{flex-direction:column}
+ .receipt-actions button{font-size:13px;padding:15px}
+}
+@media(max-width:420px){
+ header{padding-inline:4%}.brand img{width:42px;height:42px}.brand strong{font-size:14px}
+ .back{font-size:9px;padding:10px 11px}
+ main{padding-inline:14px}
+ .step{font-size:9px;padding:9px 10px}
+ .card{padding:18px}
+ .item{grid-template-columns:46px minmax(0,1fr);gap:9px}
+ .thumb{width:46px;height:46px}
+ .item-price{grid-column:2;font-size:14px}
+ .two{grid-template-columns:1fr;gap:13px}
+}
+
 </style></head>
 <body><div class="top">♡ CHECKOUT TIME <b>·</b> ONE STEP CLOSER TO YOUR HAPPY SNACK ♡</div>
 <header><a class="brand" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a><a class="back" href="index.html#menu">← LANJUT PILIH MENU</a></header>
