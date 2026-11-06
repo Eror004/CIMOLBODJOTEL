@@ -116,6 +116,50 @@ body:before{background:url('https://i.imgur.com/jVIjhfF.png') center 48vh/ min(4
 .header-actions{position:relative;z-index:35}
 .cart-link{position:relative;z-index:36;pointer-events:auto;cursor:pointer;white-space:nowrap}
 .cart-link:focus-visible{outline:3px solid #d95788;outline-offset:3px}
+
+/* ===== FLOATING PRODUCT HERO ANIMATION ===== */
+.hero-floating-stage{isolation:isolate;perspective:1000px;min-height:470px;overflow:visible}
+.hero-soft-glow{position:absolute;width:370px;height:370px;left:50%;top:48%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#f5b2cb99 0%,#f8dce966 42%,#fff0f500 72%);filter:blur(9px);z-index:-2;animation:heroGlowPulse 5s ease-in-out infinite}
+.hero-orbit{position:absolute;left:50%;top:49%;border:1px solid #e9a9c455;border-radius:50%;pointer-events:none}
+.hero-orbit-one{width:390px;height:245px;transform:translate(-50%,-50%) rotate(-19deg);animation:heroOrbit 24s linear infinite}
+.hero-orbit-two{width:330px;height:330px;transform:translate(-50%,-50%);border-style:dashed;opacity:.65;animation:heroOrbit 38s linear infinite reverse}
+.hero-product-shadow{position:absolute;left:50%;top:75%;width:245px;height:35px;transform:translateX(-50%);border-radius:50%;background:#9b52742b;filter:blur(17px);animation:heroShadowFloat 4.8s ease-in-out infinite}
+.hero-main-product{z-index:2;width:min(76%,350px);height:315px;transform:rotate(-7deg);animation:heroProductFloat 5s ease-in-out infinite;box-shadow:17px 22px 0 #e8c2d1,0 34px 70px #a65d7c30}
+.hero-float-chip{position:absolute;z-index:4;display:flex;align-items:center;gap:9px;padding:12px 15px;border:1px solid #f0d5e0;border-radius:17px;background:#fffdfefa;box-shadow:0 13px 35px #9c587426;color:#765363;font-size:8px;letter-spacing:1px;line-height:1.35;animation:heroChipFloat 4.2s ease-in-out infinite}
+.hero-float-chip span{display:grid;place-items:center;width:31px;height:31px;border-radius:11px;background:#fff0f5;color:#df5c8c;font-size:19px}
+.hero-float-chip b{font-weight:900}
+.chip-top{top:8%;left:9%;transform:rotate(-7deg);animation-delay:-1.3s}
+.chip-left{left:-1%;bottom:20%;transform:rotate(-8deg);animation-delay:-2.4s}
+.chip-right{right:-1%;top:38%;transform:rotate(7deg);animation-delay:-.6s}
+.hero-float-price{position:absolute;z-index:4;right:5%;bottom:8%;padding:13px 17px;border-radius:16px;background:#30212b;color:#fff;font-size:8px;font-weight:800;letter-spacing:1.3px;line-height:1.5;box-shadow:0 8px 0 #e9b2c7;transform:rotate(5deg);animation:heroChipFloat 4.8s ease-in-out infinite}
+.hero-float-price strong{color:#f6a9c4;font:900 20px 'Plus Jakarta Sans';letter-spacing:-.5px}
+.hero-spark{position:absolute;z-index:3;color:#df5c8c;line-height:1;animation:heroSparkle 3s ease-in-out infinite}
+.hero-spark.spark-one{top:18%;right:17%;font-size:30px}
+.hero-spark.spark-two{bottom:17%;left:17%;font-size:21px;animation-delay:-1.2s}
+.hero-spark.spark-three{top:57%;left:8%;font-size:24px;animation-delay:-2s}
+@keyframes heroProductFloat{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-17px) rotate(-3deg)}}
+@keyframes heroChipFloat{0%,100%{translate:0 0}50%{translate:0 -11px}}
+@keyframes heroGlowPulse{0%,100%{opacity:.72;scale:.94}50%{opacity:1;scale:1.08}}
+@keyframes heroOrbit{to{rotate:360deg}}
+@keyframes heroShadowFloat{0%,100%{transform:translateX(-50%) scale(1);opacity:.65}50%{transform:translateX(-50%) scale(.82);opacity:.35}}
+@keyframes heroSparkle{0%,100%{transform:scale(.8) rotate(-12deg);opacity:.55}50%{transform:scale(1.25) rotate(15deg);opacity:1}}
+@media(max-width:680px){
+ .hero-floating-stage{min-height:355px;height:355px;margin-top:8px}
+ .hero-soft-glow{width:285px;height:285px}
+ .hero-orbit-one{width:300px;height:190px}.hero-orbit-two{width:275px;height:275px}
+ .hero-main-product{width:255px;height:235px}
+ .hero-main-product .food-inside{inset:25px 23px 65px}
+ .hero-main-product .food-label{bottom:19px}
+ .hero-float-chip{padding:9px 10px;gap:6px;font-size:7px;border-radius:13px}
+ .hero-float-chip span{width:25px;height:25px;font-size:15px}
+ .chip-top{top:1%;left:1%}.chip-left{left:-1%;bottom:12%}.chip-right{right:-1%;top:35%}
+ .hero-float-price{right:0;bottom:1%;padding:10px 12px;font-size:7px}
+ .hero-float-price strong{font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-main-product,.hero-soft-glow,.hero-orbit,.hero-product-shadow,.hero-float-chip,.hero-float-price,.hero-spark{animation:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -128,7 +172,17 @@ body:before{background:url('https://i.imgur.com/jVIjhfF.png') center 48vh/ min(4
 <main>
 <section class="hero" id="home">
 <div class="hero-copy reveal"><span class="pill"><i></i> YOUR NEW COMFORT SNACK</span><h1>GOOD FOOD.<br>GOOD <span>MOOD.</span></h1><p>Cimol bodjot yang bikin hari biasa jadi lebih seru. Pilih favoritmu, atur level pedasnya, lalu nikmati snack time versi kamu.</p><div class="hero-buttons"><a class="primary" href="#menu">EXPLORE THE MENU <span>↗</span></a><a class="secondary" href="#about">Kenalan yuk ♡</a></div><div class="hero-meta"><span><b>✳</b> Pilihan original & mozzarella</span><span><b>♡</b> Ready to eat & frozen</span></div></div>
-<div class="hero-visual reveal"><div class="halo"></div><div class="food-card"><div class="food-inside"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="food-label">CIMOL BODJOTEL</div></div><div class="sticker">SNACK<br>HAPPY<b>♡</b>EVERYDAY</div><div class="float-note">LAGI NGIDAM?<strong>WE GOT YOU!</strong></div><span class="spark a">✳</span><span class="spark b">✦</span></div>
+<div class="hero-visual hero-floating-stage reveal">
+  <div class="hero-soft-glow"></div>
+  <div class="hero-orbit hero-orbit-one"></div><div class="hero-orbit hero-orbit-two"></div>
+  <div class="hero-product-shadow"></div>
+  <div class="food-card hero-main-product"><div class="food-inside"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="food-label">CIMOL BODJOTEL</div></div>
+  <div class="hero-float-chip chip-top"><span>♡</span><b>CHEESY<br>HAPPINESS</b></div>
+  <div class="hero-float-chip chip-left"><span>✳</span><b>MADE WITH<br>LOVE</b></div>
+  <div class="hero-float-chip chip-right"><span>˚</span><b>SNACK<br>O'CLOCK</b></div>
+  <div class="hero-float-price">YOUR HAPPY<br><strong>BITE!</strong></div>
+  <span class="hero-spark spark-one">✦</span><span class="hero-spark spark-two">✳</span><span class="hero-spark spark-three">♡</span>
+</div>
 </section>
 <div class="marquee"><div class="marquee-track"><span>GOOD FOOD <b>✳</b> GOOD MOOD <b>♡</b> CIMOL TIME <b>✳</b> SNACK HAPPY</span><span>GOOD FOOD <b>✳</b> GOOD MOOD <b>♡</b> CIMOL TIME <b>✳</b> SNACK HAPPY</span><span>GOOD FOOD <b>✳</b> GOOD MOOD <b>♡</b> CIMOL TIME <b>✳</b> SNACK HAPPY</span><span>GOOD FOOD <b>✳</b> GOOD MOOD <b>♡</b> CIMOL TIME <b>✳</b> SNACK HAPPY</span></div></div>
 <section class="section menu-section" id="menu">
