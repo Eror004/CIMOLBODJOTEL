@@ -284,6 +284,44 @@ body:before{opacity:.018;filter:grayscale(1)}
 
 
 
+/* ===== HERO PHOTO: REAL PRODUCT + COHESIVE BLUSH PALETTE ===== */
+.hero{
+  background:
+    radial-gradient(ellipse at 78% 42%,#f5c9d9 0,rgba(245,201,217,.48) 23%,transparent 48%),
+    linear-gradient(125deg,#fffafc 0%,#fff1f6 54%,#fbe4ed 100%);
+}
+.hero:before{border-color:#eab4c9;box-shadow:0 0 0 35px #f5d4e133,0 0 0 70px #f5d4e122}
+.hero-floating-stage{isolation:isolate}
+.hero-soft-glow{background:radial-gradient(ellipse,#efb5cb88 0%,#f9dce766 42%,transparent 72%)!important}
+.hero-orbit{border-color:#d98aa9!important}
+.hero-product-shadow{background:radial-gradient(ellipse,#c66f9340 0%,transparent 70%)!important}
+.hero-real-product-wrap{
+  position:relative;z-index:2;width:min(88%,420px);height:390px;
+  display:grid;place-items:center;animation:heroPhotoFloat 5.5s ease-in-out infinite;
+}
+.hero-real-product{
+  display:block;width:100%;height:100%;max-height:390px;object-fit:contain;
+  object-position:center;filter:drop-shadow(0 22px 26px rgba(120,52,79,.2));
+  border-radius:26px;
+}
+.hero-float-chip{
+  background:rgba(255,250,252,.94)!important;border-color:#f0c9d8!important;
+  color:#8d4a68!important;box-shadow:0 12px 30px rgba(161,80,113,.12)!important;
+  backdrop-filter:blur(12px)
+}
+.hero-float-chip span,.hero-float-price strong{color:#cf4e81!important}
+.hero-float-price{color:#8d4a68!important;background:#fff8fbdd!important;border-color:#f0c9d8!important}
+.hero-spark{color:#d95788!important}
+@keyframes heroPhotoFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
+@media(max-width:680px){
+ .hero-real-product-wrap{width:min(92%,360px);height:300px}
+ .hero-real-product{max-height:300px}
+ .hero-floating-stage{margin-top:4px}
+ .hero-float-chip{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){.hero-real-product-wrap{animation:none!important}}
+
+
 /* ===== PREMIUM MODERN + LARGER TYPOGRAPHY ===== */
 html{font-size:16px}
 body{font-family:'DM Sans','Plus Jakarta Sans',Arial,sans-serif;color:#352730}
@@ -363,7 +401,7 @@ body{font-family:'DM Sans','Plus Jakarta Sans',Arial,sans-serif;color:#352730}
   <div class="hero-soft-glow"></div>
   <div class="hero-orbit hero-orbit-one"></div><div class="hero-orbit hero-orbit-two"></div>
   <div class="hero-product-shadow"></div>
-  <div class="food-card hero-main-product"><div class="food-inside"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="food-label">CIMOL BODJOTEL</div></div>
+  <div class="hero-real-product-wrap"><img class="hero-real-product" src="https://i.imgur.com/qb5cwdN.png" alt="Foto asli produk CIMOL BODJOTEL" fetchpriority="high"></div>
   <div class="hero-float-chip chip-top"><span>♡</span><b>CHEESY<br>HAPPINESS</b></div>
   <div class="hero-float-chip chip-left"><span>✳</span><b>MADE WITH<br>LOVE</b></div>
   <div class="hero-float-chip chip-right"><span>˚</span><b>SNACK<br>O'CLOCK</b></div>
