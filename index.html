@@ -505,6 +505,43 @@ body{font-family:'DM Sans',sans-serif;background:#fff9fb;color:#30212b}
  .hero-floating-stage *,.product,.reveal{animation:none!important;transition:none!important}
 }
 
+
+/* PRODUCT DETAIL POPUP */
+.product{cursor:pointer}
+.product .add-btn{cursor:pointer}
+#product-detail-bg{position:fixed;inset:0;z-index:95;display:none;place-items:center;padding:18px;background:rgba(45,25,36,.58);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+#product-detail-bg.show{display:grid}
+.product-detail{position:relative;width:min(100%,820px);max-height:min(88dvh,850px);overflow:auto;display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid #f1d5e0;border-radius:28px;box-shadow:0 30px 100px #24121e55;animation:productDetailIn .25s ease-out both}
+.product-detail-visual{min-height:420px;position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(145deg,#fff0f5,#f7cddd)}
+.product-detail-visual .product-art{width:100%;height:100%;min-height:420px}
+.product-detail-visual .real-product-photo{width:100%;height:100%;min-height:420px;object-fit:cover}
+.product-detail-copy{padding:clamp(25px,4vw,42px);display:flex;flex-direction:column;justify-content:center}
+.product-detail-copy .eyebrow{margin-bottom:12px}
+.product-detail-copy h3{font:900 clamp(25px,3vw,36px)/1.15 'Plus Jakarta Sans';letter-spacing:-1.2px;margin:0 0 14px;color:var(--ink)}
+.product-detail-copy p{font-size:15px;line-height:1.8;color:#806b77;margin:0 0 20px}
+.detail-price{padding:16px 18px;background:#fff1f6;border:1px solid #f4d5e1;border-radius:16px;margin:0 0 20px}
+.detail-price span{display:block;font-size:11px;color:#98798a;margin-bottom:5px}
+.detail-price strong{font:900 25px 'Plus Jakarta Sans';color:var(--hot)}
+.detail-highlights{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px}
+.detail-highlights span{padding:8px 11px;border-radius:99px;background:#fff7fa;border:1px solid #f2dce5;color:#8d5c72;font-size:11px;font-weight:800}
+#product-detail-close{position:absolute;right:15px;top:15px;z-index:3;width:42px;height:42px;border:0;border-radius:50%;background:#fff;color:#80566a;font-size:25px;box-shadow:0 5px 18px #40202d20}
+#detail-add{width:100%;min-height:54px}
+@keyframes productDetailIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+@media(max-width:650px){
+ #product-detail-bg{padding:12px;align-items:center}
+ .product-detail{width:min(100%,480px);max-height:92dvh;grid-template-columns:1fr;border-radius:22px}
+ .product-detail-visual{min-height:0;height:245px}
+ .product-detail-visual .product-art,.product-detail-visual .real-product-photo{height:245px;min-height:245px}
+ .product-detail-copy{padding:22px 20px 24px}
+ .product-detail-copy h3{font-size:25px;margin-bottom:10px}
+ .product-detail-copy p{font-size:14px;line-height:1.65;margin-bottom:14px}
+ .detail-price{padding:12px 15px;margin-bottom:14px}
+ .detail-price strong{font-size:23px}
+ .detail-highlights{margin-bottom:16px}
+ #product-detail-close{right:10px;top:10px;width:38px;height:38px}
+}
+@media(prefers-reduced-motion:reduce){.product-detail{animation:none}}
+
 </style>
 </head>
 <body>
@@ -553,6 +590,7 @@ body{font-family:'DM Sans',sans-serif;background:#fff9fb;color:#30212b}
 </main>
 <footer class="footer"><div><a class="brand" href="#home"><img src="https://i.imgur.com/jVIjhfF.png" alt=""><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a><p>Good food, good mood. Made for your snack time ♡</p></div><div class="footer-links"><a href="#menu">MENU</a><a href="#about">OUR STORY</a><a href="#faq">FAQ</a><a href="checkout.html">CHECKOUT ↗</a></div><small>© 2026 CIMOL BODJOTEL</small></footer>
 <div class="modal-bg" id="modal-bg" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal"><button class="modal-close" id="modal-close" aria-label="Tutup">×</button><span class="eyebrow">MAKE IT YOURS</span><h3 id="modal-title">Pilih varian favoritmu</h3><div id="size-options"></div><div id="spice-options"></div><div class="modal-price"><span>Harga pilihanmu</span><strong id="modal-price">Rp0</strong></div><button class="primary" id="confirm-add">TAMBAHKAN KE KERANJANG ♡</button></div></div>
+<div id="product-detail-bg" aria-hidden="true"><section class="product-detail" role="dialog" aria-modal="true" aria-labelledby="detail-title"><button id="product-detail-close" type="button" aria-label="Tutup detail">×</button><div class="product-detail-visual" id="detail-visual"></div><div class="product-detail-copy"><span class="eyebrow" id="detail-category">DETAIL PRODUK</span><h3 id="detail-title">Nama Produk</h3><p id="detail-description"></p><div class="detail-highlights" id="detail-highlights"></div><div class="detail-price"><span>Harga mulai dari</span><strong id="detail-price"></strong></div><button class="primary" id="detail-add" type="button">PILIH PRODUK INI ♡</button></div></section></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
 (()=>{'use strict';
@@ -563,12 +601,27 @@ let active=null,size='small',spice=1,toastTimer;
 function save(){localStorage.setItem(KEY,JSON.stringify(cart));updateCount()}
 function updateCount(){$('cart-count').textContent=cart.reduce((s,x)=>s+x.qty,0)}
 function toast(t){const el=$('toast');el.textContent=t;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2300)}
+const detailInfo={
+ original:{category:'CLASSIC SERIES · READY TO EAT',description:'Cimol Bodjot Aslian dengan rasa original yang gurih dan nikmat. Pilihan simpel untuk menemani waktu santai dan ngemil kapan saja.',highlights:['Rasa original','Gurih dan nikmat','Siap dinikmati']},
+ mozza:{category:'CHEESE SERIES · READY TO EAT',description:'Cimol Bodjot Mozarellia untuk kamu yang suka sensasi keju mozzarella. Camilan cheesy yang cocok jadi teman happy time.',highlights:['Varian mozzarella','Cheesy mood','Siap dinikmati']},
+ frozen:{category:'FROZEN SERIES',description:'Cimol Bodjot Frozen Aslian untuk stok camilan di rumah. Simpan dalam freezer dan siapkan saat ingin menikmati cimol.',highlights:['Produk frozen','Praktis untuk stok','1 pack']},
+ 'frozen-mozza':{category:'FROZEN SERIES · CHEESE',description:'Cimol Bodjot Frozen Mozarellia, pilihan frozen dengan varian mozzarella untuk stok camilan yang lebih spesial di rumah.',highlights:['Frozen mozzarella','Praktis untuk stok','1 pack']}
+};
+function openProductDetail(id){
+ const card=document.querySelector('.product[data-id="'+id+'"]');const info=detailInfo[id];if(!card||!info)return;
+ const art=card.querySelector('.product-art');$('detail-visual').innerHTML='';const visual=art.cloneNode(true);visual.classList.add('detail-art-clone');$('detail-visual').append(visual);
+ $('detail-category').textContent=info.category;$('detail-title').textContent=products[id].name;
+ $('detail-description').textContent=info.description;$('detail-highlights').innerHTML=info.highlights.map(x=>'<span>'+x+'</span>').join('');
+ $('detail-price').textContent=card.querySelector('.price').childNodes[0].textContent.trim();
+ $('product-detail-bg').classList.add('show');$('product-detail-bg').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';$('product-detail-close').focus();
+}
+function closeProductDetail(){$('product-detail-bg').classList.remove('show');$('product-detail-bg').setAttribute('aria-hidden','true');document.body.style.overflow=''}
 function openModal(id){active=id;const p=products[id];size=p.kind==='frozen'?'pack':'small';spice=1;$('modal-title').textContent=p.name;$('size-options').innerHTML='<span class="field-label">'+(p.kind==='frozen'?'Pilihan produk':'Pilih ukuran')+'</span><div class="choice-row">'+(p.kind==='frozen'?'<button class="choice selected" data-size="pack">1 Pack</button>':'<button class="choice selected" data-size="small">Kecil</button><button class="choice" data-size="large">Besar</button>')+'</div>';$('spice-options').innerHTML=p.kind==='ready'?'<span class="field-label">Level pedas</span><div class="choice-row">'+[1,2,3,4].map(n=>'<button class="choice '+(n===1?'selected':'')+'" data-spice="'+n+'">Level '+n+'</button>').join('')+'</div>':'';refreshPrice();$('modal-bg').classList.add('show');document.body.style.overflow='hidden'}
 function closeModal(){$('modal-bg').classList.remove('show');document.body.style.overflow=''}
 function refreshPrice(){$('modal-price').textContent=money(products[active].prices[size]);document.querySelectorAll('[data-size]').forEach(b=>b.classList.toggle('selected',b.dataset.size===size));document.querySelectorAll('[data-spice]').forEach(b=>b.classList.toggle('selected',Number(b.dataset.spice)===spice))}
-document.addEventListener('click',e=>{const add=e.target.closest('[data-add]');if(add)openModal(add.dataset.add);const s=e.target.closest('[data-size]');if(s){size=s.dataset.size;refreshPrice()}const sp=e.target.closest('[data-spice]');if(sp){spice=Number(sp.dataset.spice);refreshPrice()}});
+document.addEventListener('click',e=>{const add=e.target.closest('[data-add]');if(add){e.stopPropagation();openModal(add.dataset.add);return}const productCard=e.target.closest('.product[data-id]');if(productCard)openProductDetail(productCard.dataset.id);const s=e.target.closest('[data-size]');if(s){size=s.dataset.size;refreshPrice()}const sp=e.target.closest('[data-spice]');if(sp){spice=Number(sp.dataset.spice);refreshPrice()}});
 $('confirm-add').addEventListener('click',()=>{const key=active+'-'+size+'-'+spice;const found=cart.find(x=>x.key===key);if(found)found.qty++;else cart.push({key,id:active,size,spice,qty:1});save();closeModal();toast('Yay! '+products[active].name+' masuk keranjang ♡')});
-$('modal-close').addEventListener('click',closeModal);$('modal-bg').addEventListener('click',e=>{if(e.target===$('modal-bg'))closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+$('detail-add').addEventListener('click',()=>{const id=document.querySelector('.product[data-name="'+$('detail-title').textContent+'"]').dataset.id;closeProductDetail();openModal(id)});$('product-detail-close').addEventListener('click',closeProductDetail);$('product-detail-bg').addEventListener('click',e=>{if(e.target===$('product-detail-bg'))closeProductDetail()});$('modal-close').addEventListener('click',closeModal);$('modal-bg').addEventListener('click',e=>{if(e.target===$('modal-bg'))closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'){if($('product-detail-bg').classList.contains('show'))closeProductDetail();else closeModal()}});
 $('search').addEventListener('input',renderProducts);$('sort').addEventListener('change',renderProducts);
 let filter='all';$('filters').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;filter=b.dataset.filter;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));renderProducts()});
 function renderProducts(){const q=$('search').value.toLowerCase().trim();const cards=[...document.querySelectorAll('.product')];let visible=cards.filter(card=>{const matchText=card.dataset.name.toLowerCase().includes(q);const cats=card.dataset.category.split(' ');const matchFilter=filter==='all'||cats.includes(filter);return matchText&&matchFilter});const sort=$('sort').value;if(sort!=='default')visible.sort((a,b)=>{const pa=Math.min(...Object.values(products[a.dataset.id].prices)),pb=Math.min(...Object.values(products[b.dataset.id].prices));return sort==='low'?pa-pb:pb-pa});cards.forEach(c=>c.hidden=!visible.includes(c));const grid=$('product-grid');let empty=grid.querySelector('.empty-state');if(!visible.length){if(!empty){empty=document.createElement('div');empty.className='empty-state';empty.innerHTML='<b>Belum ketemu, bestie!</b>Coba kata kunci atau filter yang lain ya ♡';grid.append(empty)}}else if(empty)empty.remove();visible.forEach(c=>grid.append(c))}
