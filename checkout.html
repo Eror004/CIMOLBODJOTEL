@@ -443,6 +443,97 @@ body.receipt-open{overflow:hidden}
  .receipt-wrap .receipt-actions button{min-height:48px!important;font-size:13px!important;padding:13px!important}
 }
 
+
+/* ===== CART & CHECKOUT GEN-Z PREMIUM REWORK ===== */
+:root{--hot:#d93678;--ink:#34212b;--pink-line:#f2c5d7}
+body{background:radial-gradient(ellipse at 7% 18%,#ffdce9 0,transparent 32%),radial-gradient(ellipse at 92% 58%,#ffe9f1 0,transparent 30%),#fff8fb}
+.top{background:linear-gradient(90deg,#bd2d67,#e64d89 55%,#bd2d67);font-size:10px;letter-spacing:1.7px;padding:12px}
+header{height:82px;border-bottom:1px solid #f4d5e1;background:#fffaf1f2;box-shadow:0 8px 28px #9e3c6510}
+.brand img{width:54px;height:54px}.brand strong{font-size:17px}
+.back{border:1px solid #f0c6d7;background:#fff1f6;color:#b32e68;border-radius:999px;padding:13px 18px;transition:.2s}
+.back:hover{background:#d93678;color:white;transform:translateY(-2px)}
+main{max-width:1180px;padding-top:58px}
+.intro{position:relative;overflow:hidden;padding:34px 38px;border-radius:26px;background:linear-gradient(115deg,#ffe0eb 0%,#fff1f6 55%,#fff 100%);border:1px solid #f3c7d8;box-shadow:0 18px 44px #c34e7a12;margin-bottom:26px}
+.intro:after{content:"♡";position:absolute;right:5%;top:-40px;font:900 190px/1 'Plus Jakarta Sans';color:#e879a022;transform:rotate(14deg);pointer-events:none}
+.intro>div,.intro>p{position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff8fb;border:1px solid #f2c6d7;border-radius:999px;padding:8px 12px;letter-spacing:1.6px}
+h1{font-size:clamp(46px,6vw,72px);line-height:.98;margin:15px 0 0}
+.intro p{max-width:390px;font-size:13px;line-height:1.9}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 20px}
+.step{display:flex;justify-content:center;align-items:center;gap:8px;padding:13px 10px;border-radius:13px;background:#fff;border:1px solid #f1d5e0;font-size:10px}
+.step.active{background:#d93678;border-color:#d93678;box-shadow:0 8px 18px #d9367830}
+.layout{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:20px}
+.card{border:1px solid #f0c9d9;border-radius:23px;padding:27px;background:#fff;box-shadow:0 16px 45px #a83d6812}
+.card:first-child{top:102px}
+.card h2{display:flex;align-items:center;gap:9px;font-size:22px;margin-bottom:7px}
+.card h2 span{color:#d93678}
+.cart-caption{font-size:12px!important;line-height:1.7!important;color:#907985!important;margin:0 0 15px!important}
+.items{gap:9px}
+.item{grid-template-columns:76px minmax(0,1fr) auto;gap:13px;padding:13px;border:1px solid #f4e0e8;border-radius:17px;background:linear-gradient(110deg,#fff9fb,#fff);transition:transform .2s,border-color .2s,box-shadow .2s}
+.item:hover{transform:translateY(-2px);border-color:#e9a9c1;box-shadow:0 9px 22px #b94d7410}
+.thumb{width:76px;height:76px;border-radius:14px;overflow:hidden;background:#ffe8f0;display:block;position:relative}
+.thumb img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.item strong{font:800 13px/1.35 'Plus Jakarta Sans';color:#482c3b}
+.item small{font-size:10px;color:#967d89}
+.item-price{font:900 12px 'Plus Jakarta Sans';color:#c42f6c;padding-top:3px}
+.qty{gap:7px;align-items:center}
+.qty b{min-width:18px;text-align:center;font-size:12px;color:#5a3b4a}
+.qty button{height:29px;min-width:29px;border-radius:9px;border:1px solid #f0cada;background:#fff1f6;color:#b52e68;font-weight:900}
+.qty button.remove{border:0;background:transparent;color:#b17b91;text-decoration:underline}
+.summary{padding:18px;background:#fff6f9;border:1px solid #f4d9e4;border-radius:17px;margin-top:16px}
+.summary .line{font-size:12px}
+.summary .line.total{border-top:1px dashed #eab8cc;padding-top:14px;font-size:16px}
+.summary .line.total b{font-size:25px}
+.hint{font-size:11px;margin-top:12px}
+.form{gap:16px}
+.form label{font-size:12px;color:#70465a}
+.form input,.form select,.form textarea{font-size:14px;padding:15px 16px;border-radius:13px;background:#fffafd;border:1px solid #edcbd9}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:#d93678;box-shadow:0 0 0 4px #fbdce8}
+.form textarea{min-height:92px}
+.form .two{gap:12px}
+.submit{border-radius:14px;background:linear-gradient(105deg,#c92e6d,#e34e89);box-shadow:0 6px 0 #f2b4cc,0 12px 24px #d9367826;font-size:12px;padding:18px}
+.submit:hover{box-shadow:0 8px 0 #f2b4cc,0 16px 28px #d9367830}
+.fine{font-size:11px}
+.empty{padding:32px 14px;background:#fff7fa;border:1px dashed #edbfd0;border-radius:16px}
+.receipt-wrap .receipt{border-radius:22px}
+@media(max-width:780px){
+ main{padding:34px 14px 58px}
+ .intro{padding:26px 22px;border-radius:21px}
+ .intro:after{font-size:135px;right:0;top:-20px}
+ .intro h1{font-size:clamp(46px,11vw,62px)!important}
+ .intro p{font-size:14px!important;max-width:100%;margin-top:13px}
+ .steps{gap:6px}.step{font-size:9px;padding:11px 5px;border-radius:10px}
+ .layout{grid-template-columns:1fr;gap:14px}
+ .card{padding:20px;border-radius:20px}
+ .card:first-child{position:static;top:auto}
+ .card h2{font-size:21px}
+ .cart-caption{font-size:13px!important}
+ .item{grid-template-columns:68px minmax(0,1fr) auto;padding:11px;gap:11px}
+ .thumb{width:68px;height:68px}
+ .item strong{font-size:13px}
+ .item small{font-size:11px}
+ .item-price{font-size:12px}
+ .summary{padding:15px}
+ .form label{font-size:13px}
+ .form input,.form select,.form textarea{font-size:16px}
+ .form .two{grid-template-columns:1fr;gap:14px}
+ .submit{font-size:13px}
+}
+@media(max-width:420px){
+ .top{font-size:9px}
+ header{height:70px}
+ .brand img{width:45px;height:45px}.brand strong{font-size:14px}
+ .back{font-size:9px;padding:11px 12px}
+ main{padding-inline:12px}
+ .intro{padding:23px 18px}
+ .steps{grid-template-columns:1fr;gap:7px}
+ .step{justify-content:flex-start;padding:11px 14px}
+ .item{grid-template-columns:58px minmax(0,1fr);gap:10px}
+ .thumb{width:58px;height:58px}
+ .item-price{grid-column:2;justify-self:start;padding:0}
+ .qty{flex-wrap:wrap}
+}
+
 </style></head>
 <body><div class="top">♡ CHECKOUT TIME <b>·</b> ONE STEP CLOSER TO YOUR HAPPY SNACK ♡</div>
 <header><a class="brand" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a><a class="back" href="index.html#menu">← LANJUT PILIH MENU</a></header>
@@ -461,9 +552,9 @@ body.receipt-open{overflow:hidden}
 <section class="receipt-wrap" id="receipt-wrap" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Struk pesanan"><div class="receipt" id="receipt"><div class="receipt-head"><img src="https://i.imgur.com/jVIjhfF.png" alt=""><h3>CIMOL BODJOTEL</h3><p>SMALL BITES · BIG HAPPINESS</p></div><div class="receipt-body"><div class="receipt-meta"><span id="receipt-id">ORDER #—</span><span id="receipt-date">—</span></div><div class="receipt-customer" id="receipt-customer"></div><div class="receipt-lines" id="receipt-lines"></div><div class="receipt-total" id="receipt-total"></div></div><div class="receipt-foot">THANK YOU FOR SNACKING WITH US ♡<br>Pesanan menunggu konfirmasi admin.</div></div><div class="receipt-actions"><button type="button" id="close-receipt">TUTUP STRUK ✕</button><button type="button" id="print">PRINT / SIMPAN PDF</button><button type="button" class="wa" id="send-wa">KIRIM DETAIL KE WHATSAPP ↗</button></div></section>
 <p class="note-bottom">Made with love & a little chili oil. ♡</p></main><footer>© 2026 CIMOL BODJOTEL · GOOD FOOD, GOOD MOOD.</footer><div class="toast" id="toast" hidden></div>
 <script>
-(()=>{'use strict';const KEY='bodjotel_cart_v2',WA='6283853021353',products={original:{name:'Cimol Bodjot Aslian',kind:'ready',prices:{small:8000,large:10000}},mozza:{name:'Cimol Bodjot Mozarellia',kind:'ready',prices:{small:10000,large:15000}},frozen:{name:'Cimol Bodjot Frozen Aslian',kind:'frozen',prices:{pack:10000}},'frozen-mozza':{name:'Cimol Bodjot Frozen Mozarellia',kind:'frozen',prices:{pack:15000}}};const $=id=>document.getElementById(id),money=n=>'Rp'+Number(n).toLocaleString('id-ID');document.body.appendChild($('receipt-wrap'));let cart=[],lastMessage='';try{cart=JSON.parse(localStorage.getItem(KEY)||'[]');if(!Array.isArray(cart))cart=[]}catch{cart=[]}
+(()=>{'use strict';const KEY='bodjotel_cart_v2',WA='6283853021353',products={original:{name:'Cimol Bodjot Aslian',kind:'ready',image:'https://i.imgur.com/s9suIRw.jpeg',prices:{small:8000,large:10000}},mozza:{name:'Cimol Bodjot Mozarellia',kind:'ready',image:'https://i.imgur.com/Tqbu63W.png',prices:{small:10000,large:15000}},frozen:{name:'Cimol Bodjot Frozen Aslian',kind:'frozen',image:'https://i.imgur.com/aMmnDSY.png',prices:{pack:10000}},'frozen-mozza':{name:'Cimol Bodjot Frozen Mozarellia',kind:'frozen',image:'https://i.imgur.com/aMmnDSY.png',prices:{pack:15000}}};const $=id=>document.getElementById(id),money=n=>'Rp'+Number(n).toLocaleString('id-ID');document.body.appendChild($('receipt-wrap'));let cart=[],lastMessage='';try{cart=JSON.parse(localStorage.getItem(KEY)||'[]');if(!Array.isArray(cart))cart=[]}catch{cart=[]}
 const safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const total=()=>cart.reduce((s,x)=>s+(products[x.id]?.prices[x.size]||0)*x.qty,0);function toast(t){const el=$('toast');el.textContent=t;el.hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.hidden=true,2500)}
-function render(){cart=cart.filter(x=>products[x.id]&&products[x.id].prices[x.size]&&Number.isInteger(x.qty)&&x.qty>0);const n=cart.reduce((s,x)=>s+x.qty,0);$('count-label').textContent='('+n+' item)';if(!cart.length)$('items').innerHTML='<div class="empty"><b>Keranjangmu masih kosong ♡</b>Yuk cari camilan favoritmu dulu.<br><a href="index.html#menu">BROWSE MENU ↗</a></div>';else $('items').innerHTML=cart.map(x=>{const p=products[x.id],variant=x.size==='small'?'Ukuran kecil':x.size==='large'?'Ukuran besar':'1 pack';return '<article class="item"><div class="thumb">🥡</div><div><strong>'+safe(p.name)+'</strong><small>'+variant+(p.kind==='ready'?' · Level pedas '+x.spice:'')+'</small><div class="qty"><button type="button" data-step="-1" data-key="'+safe(x.key)+'" aria-label="Kurangi">−</button><b>'+x.qty+'</b><button type="button" data-step="1" data-key="'+safe(x.key)+'" aria-label="Tambah">+</button><button class="remove" type="button" data-remove="'+safe(x.key)+'">Hapus</button></div></div><div class="item-price">'+money(p.prices[x.size]*x.qty)+'</div></article>'}).join('');$('subtotal').textContent=money(total());$('grand').textContent=money(total());localStorage.setItem(KEY,JSON.stringify(cart))}
+function render(){cart=cart.filter(x=>products[x.id]&&products[x.id].prices[x.size]&&Number.isInteger(x.qty)&&x.qty>0);const n=cart.reduce((s,x)=>s+x.qty,0);$('count-label').textContent='('+n+' item)';if(!cart.length)$('items').innerHTML='<div class="empty"><b>Keranjangmu masih kosong ♡</b>Yuk cari camilan favoritmu dulu.<br><a href="index.html#menu">BROWSE MENU ↗</a></div>';else $('items').innerHTML=cart.map(x=>{const p=products[x.id],variant=x.size==='small'?'Ukuran kecil':x.size==='large'?'Ukuran besar':'1 pack';return '<article class="item"><div class="thumb"><img src="'+p.image+'" alt="'+safe(p.name)+'" loading="lazy"></div><div><strong>'+safe(p.name)+'</strong><small>'+variant+(p.kind==='ready'?' · Level pedas '+x.spice:'')+'</small><div class="qty"><button type="button" data-step="-1" data-key="'+safe(x.key)+'" aria-label="Kurangi">−</button><b>'+x.qty+'</b><button type="button" data-step="1" data-key="'+safe(x.key)+'" aria-label="Tambah">+</button><button class="remove" type="button" data-remove="'+safe(x.key)+'">Hapus</button></div></div><div class="item-price">'+money(p.prices[x.size]*x.qty)+'</div></article>'}).join('');$('subtotal').textContent=money(total());$('grand').textContent=money(total());localStorage.setItem(KEY,JSON.stringify(cart))}
 $('items').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.step){const it=cart.find(x=>x.key===b.dataset.key);if(it)it.qty+=Number(b.dataset.step);cart=cart.filter(x=>x.qty>0)}if(b.dataset.remove)cart=cart.filter(x=>x.key!==b.dataset.remove);render()});
 $('fulfillment').addEventListener('change',()=>{const pickup=$('fulfillment').value==='pickup';$('address-group').classList.toggle('hidden',pickup);$('address').required=!pickup;if(pickup)$('address').value=''});
 $('checkout-form').addEventListener('submit',e=>{e.preventDefault();if(!cart.length){toast('Keranjang masih kosong. Pilih menu dulu ya!');return}const name=$('name').value.trim(),pickup=$('fulfillment').value==='pickup',address=$('address').value.trim(),payment=$('payment').value,timing=$('timing').value,notes=$('notes').value.trim();if(name.length<2){toast('Isi nama lengkapmu dulu ya.');$('name').focus();return}if(!pickup&&address.length<8){toast('Alamatnya dilengkapi dulu ya.');$('address').focus();return}
