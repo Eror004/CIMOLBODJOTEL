@@ -335,6 +335,79 @@ body.receipt-open{overflow:hidden}
 @media(max-width:780px){.cart-caption{font-size:12px;margin-top:-9px}.item{grid-template-columns:50px minmax(0,1fr) auto;padding:12px;gap:10px}.thumb{width:50px;height:50px}.item strong{font-size:14px}.item-price{font-size:12px}.receipt-wrap{margin-top:30px}}
 @media(max-width:420px){.item{grid-template-columns:44px minmax(0,1fr);gap:9px}.thumb{width:44px;height:44px;font-size:21px}.item-price{grid-column:2;justify-self:start;padding-top:0}.qty{margin-top:8px}.receipt-body{padding:17px}.receipt-meta{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.item,.submit{transition:none}}
+
+/* ===== FINAL RECEIPT MODAL LAYOUT — CLEAN & RESPONSIVE ===== */
+.receipt-wrap,
+.receipt-wrap.show{
+  position:fixed!important;inset:0!important;z-index:9999!important;
+  width:100%!important;max-width:none!important;height:100vh;height:100dvh;
+  margin:0!important;padding:clamp(16px,4vh,38px) 16px!important;
+  display:none;flex-direction:column!important;align-items:center!important;
+  justify-content:center!important;gap:0!important;
+  overflow-x:hidden!important;overflow-y:auto!important;
+  background:rgba(39,25,33,.48)!important;
+  -webkit-backdrop-filter:blur(12px)!important;backdrop-filter:blur(12px)!important;
+  overscroll-behavior:contain;
+}
+.receipt-wrap.show{display:flex!important}
+.receipt-wrap .receipt{
+  display:block;width:min(100%,600px)!important;max-width:600px!important;
+  max-height:min(68vh,680px)!important;max-height:min(68dvh,680px)!important;
+  margin:0!important;overflow-x:hidden!important;overflow-y:auto!important;
+  flex:0 1 auto!important;position:relative;
+  border:1px solid #efd5df!important;border-radius:20px!important;
+  background:#fff!important;box-shadow:0 28px 90px rgba(40,19,30,.24)!important;
+  animation:receiptPolishedIn .28s ease-out both;
+}
+.receipt-wrap .receipt-head{padding:23px 22px!important}
+.receipt-wrap .receipt-head img{display:block}
+.receipt-wrap .receipt-body{padding:22px 25px!important}
+.receipt-wrap .receipt-actions{
+  display:grid!important;grid-template-columns:.8fr 1fr 1.35fr!important;
+  gap:10px!important;width:min(100%,600px)!important;max-width:600px!important;
+  margin:13px 0 0!important;padding:0!important;flex:0 0 auto!important;
+}
+.receipt-wrap .receipt-actions button{
+  min-width:0!important;min-height:48px!important;margin:0!important;padding:12px 10px!important;
+  border:1px solid #ead6df!important;border-radius:11px!important;
+  background:#fff!important;color:#68495a!important;
+  font:800 10px/1.35 'DM Sans',sans-serif!important;letter-spacing:.2px!important;
+  box-shadow:0 5px 16px rgba(40,19,30,.08)!important;
+  white-space:normal!important;transition:transform .18s ease,box-shadow .18s ease!important;
+}
+.receipt-wrap .receipt-actions button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(40,19,30,.12)!important}
+.receipt-wrap .receipt-actions #close-receipt{background:#fff!important;color:#68495a!important}
+.receipt-wrap .receipt-actions #print{background:#fff3f7!important;border-color:#f0d0dd!important;color:#a13f68!important}
+.receipt-wrap .receipt-actions .wa{background:#cf3f78!important;border-color:#cf3f78!important;color:#fff!important}
+@keyframes receiptPolishedIn{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:600px){
+ .receipt-wrap,.receipt-wrap.show{justify-content:flex-start!important;padding:18px 12px!important}
+ .receipt-wrap .receipt{width:min(100%,440px)!important;max-height:calc(100dvh - 205px)!important;border-radius:17px!important}
+ .receipt-wrap .receipt-head{padding:18px 16px!important}
+ .receipt-wrap .receipt-head img{width:46px!important;height:46px!important}
+ .receipt-wrap .receipt-head h3{font-size:17px!important}
+ .receipt-wrap .receipt-body{padding:17px!important}
+ .receipt-wrap .receipt-meta,.receipt-wrap .receipt-customer,.receipt-wrap .receipt-row{font-size:12px!important}
+ .receipt-wrap .receipt-actions{width:min(100%,440px)!important;grid-template-columns:1fr!important;gap:8px!important;margin-top:10px!important}
+ .receipt-wrap .receipt-actions button{min-height:44px!important;font-size:12px!important;padding:11px!important}
+}
+@media(min-width:601px) and (max-height:700px){
+ .receipt-wrap,.receipt-wrap.show{justify-content:flex-start!important;padding-top:14px!important;padding-bottom:14px!important}
+ .receipt-wrap .receipt{max-height:calc(100vh - 120px)!important}
+}
+@media(prefers-reduced-motion:reduce){.receipt-wrap .receipt{animation:none!important}.receipt-wrap .receipt-actions button{transition:none!important}}
+@media print{
+ body.receipt-open{overflow:visible!important}
+ .receipt-wrap,.receipt-wrap.show{
+   position:static!important;inset:auto!important;display:block!important;
+   width:100%!important;height:auto!important;max-width:none!important;
+   padding:0!important;margin:0!important;overflow:visible!important;
+   background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important
+ }
+ .receipt-wrap .receipt{width:100%!important;max-height:none!important;overflow:visible!important;box-shadow:none!important;animation:none!important}
+ .receipt-wrap .receipt-actions{display:none!important}
+}
+
 </style></head>
 <body><div class="top">♡ CHECKOUT TIME <b>·</b> ONE STEP CLOSER TO YOUR HAPPY SNACK ♡</div>
 <header><a class="brand" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a><a class="back" href="index.html#menu">← LANJUT PILIH MENU</a></header>
@@ -350,7 +423,7 @@ body.receipt-open{overflow:hidden}
 <label>Catatan tambahan <small style="font-weight:400;color:#9b8490">(opsional)</small><textarea id="notes" placeholder="Request khusus atau patokan tambahan..."></textarea></label>
 <button class="submit" type="submit"><span>BUAT RINGKASAN PESANAN</span><span aria-hidden="true">↗</span></button><p class="fine">Setelah ringkasan dibuat, tekan tombol WhatsApp untuk mengirim pesanan. Pesanan diproses setelah admin mengonfirmasi detail dan total akhirnya.</p>
 </form></section></div>
-<section class="receipt-wrap" id="receipt-wrap"><div class="receipt" id="receipt"><div class="receipt-head"><img src="https://i.imgur.com/jVIjhfF.png" alt=""><h3>CIMOL BODJOTEL</h3><p>SMALL BITES · BIG HAPPINESS</p></div><div class="receipt-body"><div class="receipt-meta"><span id="receipt-id">ORDER #—</span><span id="receipt-date">—</span></div><div class="receipt-customer" id="receipt-customer"></div><div class="receipt-lines" id="receipt-lines"></div><div class="receipt-total" id="receipt-total"></div></div><div class="receipt-foot">THANK YOU FOR SNACKING WITH US ♡<br>Pesanan menunggu konfirmasi admin.</div></div><div class="receipt-actions"><button type="button" id="close-receipt">TUTUP STRUK ✕</button><button type="button" id="print">PRINT / SIMPAN PDF</button><button type="button" class="wa" id="send-wa">KIRIM DETAIL KE WHATSAPP ↗</button></div></section>
+<section class="receipt-wrap" id="receipt-wrap" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Struk pesanan"><div class="receipt" id="receipt"><div class="receipt-head"><img src="https://i.imgur.com/jVIjhfF.png" alt=""><h3>CIMOL BODJOTEL</h3><p>SMALL BITES · BIG HAPPINESS</p></div><div class="receipt-body"><div class="receipt-meta"><span id="receipt-id">ORDER #—</span><span id="receipt-date">—</span></div><div class="receipt-customer" id="receipt-customer"></div><div class="receipt-lines" id="receipt-lines"></div><div class="receipt-total" id="receipt-total"></div></div><div class="receipt-foot">THANK YOU FOR SNACKING WITH US ♡<br>Pesanan menunggu konfirmasi admin.</div></div><div class="receipt-actions"><button type="button" id="close-receipt">TUTUP STRUK ✕</button><button type="button" id="print">PRINT / SIMPAN PDF</button><button type="button" class="wa" id="send-wa">KIRIM DETAIL KE WHATSAPP ↗</button></div></section>
 <p class="note-bottom">Made with love & a little chili oil. ♡</p></main><footer>© 2026 CIMOL BODJOTEL · GOOD FOOD, GOOD MOOD.</footer><div class="toast" id="toast" hidden></div>
 <script>
 (()=>{'use strict';const KEY='bodjotel_cart_v2',WA='6283853021353',products={original:{name:'Cimol Bodjot Aslian',kind:'ready',prices:{small:8000,large:10000}},mozza:{name:'Cimol Bodjot Mozarellia',kind:'ready',prices:{small:10000,large:15000}},frozen:{name:'Cimol Bodjot Frozen Aslian',kind:'frozen',prices:{pack:10000}},'frozen-mozza':{name:'Cimol Bodjot Frozen Mozarellia',kind:'frozen',prices:{pack:15000}}};const $=id=>document.getElementById(id),money=n=>'Rp'+Number(n).toLocaleString('id-ID');let cart=[],lastMessage='';try{cart=JSON.parse(localStorage.getItem(KEY)||'[]');if(!Array.isArray(cart))cart=[]}catch{cart=[]}
