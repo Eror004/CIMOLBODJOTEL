@@ -401,6 +401,110 @@ body{background:#fff8fb;color:#34212b}
  .product p{font-size:14px!important}
 }
 
+
+/* ===== FINAL PROFESSIONAL REFINEMENT / RESPONSIVE SYSTEM ===== */
+:root{--pink:#f28caf;--pink2:#ffd9e6;--pink3:#fff0f5;--hot:#cf3f78;--ink:#30212b;--muted:#75636d;--paper:#fff9fb;--line:#f0cbd9;--shadow:0 18px 48px #713d5312;--r:22px}
+body{font-family:'DM Sans',sans-serif;background:#fff9fb;color:#30212b}
+.header{padding-inline:max(5%,calc((100% - 1240px)/2));height:76px;background:#fff9f9f2;border-bottom:1px solid #f2d9e2}
+.brand{gap:11px;font-size:11px;letter-spacing:1.3px}.brand img{width:48px;height:48px}.brand strong{font-size:16px}
+.nav{gap:28px}.nav a{font-size:12px;letter-spacing:.2px;color:#6f5965}
+.cart-link{font-size:12px;background:#fff0f5;border-color:#f0cbd9;color:#583b49}
+.menu-toggle{width:44px;height:44px}
+.hero{min-height:610px;padding:76px max(7%,calc((100% - 1240px)/2));background:radial-gradient(ellipse at 78% 42%,#f8d5e1 0,transparent 42%),linear-gradient(125deg,#fffafd,#fff1f6)}
+.hero-copy{max-width:590px}.pill{font-size:10px;letter-spacing:1.2px;background:#fff;border-color:#efc6d6}
+.hero h1{font-size:clamp(64px,7.3vw,104px);line-height:.96;letter-spacing:-.075em;margin:25px 0 20px}
+.hero-copy>p{font-size:16px;line-height:1.8;color:#725e69}
+.hero-buttons{gap:13px}.hero-buttons .primary,.hero-buttons .secondary{font-size:12px;padding:16px 21px}
+.hero-meta{font-size:11px;color:#806b76}.hero-visual{min-width:0}
+.section{padding:100px max(7%,calc((100% - 1240px)/2))}
+.section-top{margin-bottom:36px}.section-top p{font-size:14px;line-height:1.8}
+.section h2{font-size:clamp(42px,5vw,66px);line-height:1.02}
+.toolbar{gap:14px;margin:26px 0}
+.search-wrap input,.sort{font-size:13px}
+.filter{font-size:11px;padding:11px 15px}
+.product-grid{gap:20px}
+.product{border-radius:20px;border-color:#efdce4;box-shadow:0 7px 24px #6d3a4c08}
+.product:hover{box-shadow:0 18px 42px #6d3a4c16}
+.product-art{min-height:205px}
+.product-body{padding:19px}
+.product-category{font-size:9px;letter-spacing:1.5px}
+.product h3{font-size:17px;line-height:1.35;color:#34232d}
+.product p{font-size:13px;line-height:1.7;min-height:44px;color:#77636e}
+.price{font-size:17px}.price small{font-size:10px}
+.add-btn{width:42px;height:42px;border-radius:13px;background:#30212b;color:#fff}
+.add-btn:hover{background:#cf3f78}
+.about{padding:82px max(9%,calc((100% - 1160px)/2));gap:8%}
+.about p{font-size:14px;line-height:1.9}
+.about-points span{font-size:11px}
+.benefits{gap:18px}.benefit{padding:25px;border-radius:18px}
+.benefit h3{font-size:17px}.benefit p{font-size:13px;line-height:1.75}
+.faq{background:#fff3f7}.faq-q{font-size:15px;padding:22px 0}.faq-a{font-size:14px;line-height:1.8}
+.cta{padding:68px 28px;border-radius:28px}
+.cta p{font-size:14px}.cta .primary{font-size:12px}
+.footer{padding:32px max(7%,calc((100% - 1240px)/2))}
+.footer p,.footer-links a{font-size:12px}
+.modal{border-radius:22px}.modal h3{font-size:26px}.field-label{font-size:12px}.choice{font-size:13px}
+:where(a,button,input,select,textarea):focus-visible{outline:3px solid #d95788;outline-offset:3px}
+@media(max-width:1000px){
+ .hero{padding-inline:6%}.section{padding-inline:6%}
+}
+@media(max-width:680px){
+ .announcement{height:auto;min-height:34px;padding:8px 12px;font-size:9px;letter-spacing:.8px}
+ .header{height:68px;padding-inline:5%}.brand img{width:42px;height:42px}.brand strong{font-size:14px}
+ .nav{top:74px;left:4%;right:4%;gap:14px;padding:18px}
+ .nav a{font-size:15px;padding:7px 3px}
+ .cart-link{padding:10px 12px;font-size:11px}.menu-toggle{width:42px;height:42px}
+ .hero{padding:48px 6% 28px;min-height:0;grid-template-columns:1fr;gap:4px}
+ .hero h1{font-size:clamp(58px,14vw,78px);line-height:1.02;margin:20px 0 16px}
+ .hero-copy>p{font-size:15px;line-height:1.75;max-width:38ch}
+ .hero-buttons{gap:10px;margin-top:22px}.hero-buttons .primary,.hero-buttons .secondary{font-size:12px;padding:14px 16px}
+ .hero-meta{font-size:10px;gap:12px;margin-top:24px}
+ .hero-visual{height:350px;margin-top:10px}.hero-floating-stage{height:350px;min-height:350px}
+ .hero-main-product{width:min(68vw,250px);height:230px}
+ .hero-orbit-one{width:285px;height:195px}.hero-orbit-two{width:260px;height:260px}.hero-soft-glow{width:280px;height:280px}
+ .hero-float-chip{font-size:8px;padding:9px 10px}.hero-float-price{font-size:9px}
+ .section{padding:68px 6%}.section-top{display:block;margin-bottom:25px}
+ .section h2{font-size:clamp(38px,9.5vw,49px);line-height:1.08}
+ .section-top p{font-size:14px;line-height:1.75;margin-top:12px}
+ .toolbar{padding:0;margin:22px 0;gap:10px}
+ .search-wrap{flex-basis:100%;max-width:none}.search-wrap input{height:49px;font-size:16px}
+ .filters{flex:1;flex-wrap:nowrap;overflow-x:auto;gap:7px;padding:2px 1px 7px;scrollbar-width:thin}
+ .filter{white-space:nowrap;flex:0 0 auto;padding:10px 13px;font-size:10px}
+ .sort{height:42px;font-size:12px;max-width:130px}
+ .product-grid{grid-template-columns:1fr;gap:13px}
+ .product{display:grid;grid-template-columns:minmax(112px,.78fr) minmax(0,1fr);min-height:168px}
+ .product-art{height:100%;min-height:168px}
+ .product-body{padding:14px 13px;display:flex;flex-direction:column;justify-content:center;min-width:0}
+ .product-category{font-size:8px;letter-spacing:1px}
+ .product h3{font-size:16px;line-height:1.3;margin:7px 0}
+ .product p{font-size:12px;line-height:1.55;min-height:0;margin:0}
+ .product-bottom{padding-top:10px;margin-top:10px;gap:6px}
+ .price{font-size:16px}.price small{font-size:9px}
+ .add-btn{width:36px;height:36px;border-radius:11px;flex:0 0 auto}
+ .product-badge{font-size:7px;left:8px;top:8px;padding:6px 7px}
+ .art-caption{font-size:7px;right:8px;bottom:8px}
+ .real-product-photo{border-radius:0}
+ .about{grid-template-columns:1fr;padding:58px 7%;gap:24px}
+ .about-stamp{width:138px;height:138px}.about h2{font-size:42px}
+ .about p{font-size:14px;line-height:1.8}.about-points span{font-size:10px}
+ .benefits{grid-template-columns:1fr;gap:10px}.benefit{padding:20px}
+ .benefit h3{font-size:17px}.benefit p{font-size:13px}
+ .faq-q{font-size:14px;padding:19px 0}.faq-a{font-size:13px;line-height:1.75}
+ .cta{margin:42px 5%;padding:46px 18px;border-radius:22px}
+ .cta h2{font-size:clamp(34px,8.5vw,45px)}.cta p{font-size:13px}
+ .footer{padding:27px 6%;gap:15px}.footer-links{gap:12px}.footer-links a{font-size:10px}
+ .modal{padding:22px}.modal h3{font-size:23px}
+}
+@media(max-width:380px){
+ .product{grid-template-columns:106px minmax(0,1fr)}
+ .product-body{padding:12px 10px}.product h3{font-size:15px}.product p{font-size:11px}
+ .price{font-size:15px}.add-btn{width:33px;height:33px}
+ .hero-buttons .primary,.hero-buttons .secondary{padding:13px 12px;font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-floating-stage *,.product,.reveal{animation:none!important;transition:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -408,7 +512,7 @@ body{background:#fff8fb;color:#34212b}
 <header class="header">
 <a class="brand" href="#home"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a>
 <nav class="nav" id="nav"><a href="#home">HOME</a><a href="#menu">OUR MENU</a><a href="#about">OUR STORY</a><a href="#faq">FAQ</a></nav>
-<div class="header-actions"><a class="cart-link" href="https://eror004.github.io/CIMOLBODJOTEL/checkout.html" aria-label="Buka keranjang dan checkout">🛍️ <span>Keranjang</span> <b class="cart-count" id="cart-count">0</b></a><button class="menu-toggle" id="menu-toggle" aria-label="Buka menu">☰</button></div>
+<div class="header-actions"><a class="cart-link" href="https://eror004.github.io/CIMOLBODJOTEL/checkout.html" aria-label="Buka keranjang dan checkout">🛍️ <span>Keranjang</span> <b class="cart-count" id="cart-count">0</b></a><button class="menu-toggle" id="menu-toggle" aria-label="Buka menu" aria-controls="nav" aria-expanded="false">☰</button></div>
 </header>
 <main>
 <section class="hero" id="home">
@@ -469,7 +573,7 @@ $('search').addEventListener('input',renderProducts);$('sort').addEventListener(
 let filter='all';$('filters').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;filter=b.dataset.filter;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));renderProducts()});
 function renderProducts(){const q=$('search').value.toLowerCase().trim();const cards=[...document.querySelectorAll('.product')];let visible=cards.filter(card=>{const matchText=card.dataset.name.toLowerCase().includes(q);const cats=card.dataset.category.split(' ');const matchFilter=filter==='all'||cats.includes(filter);return matchText&&matchFilter});const sort=$('sort').value;if(sort!=='default')visible.sort((a,b)=>{const pa=Math.min(...Object.values(products[a.dataset.id].prices)),pb=Math.min(...Object.values(products[b.dataset.id].prices));return sort==='low'?pa-pb:pb-pa});cards.forEach(c=>c.hidden=!visible.includes(c));const grid=$('product-grid');let empty=grid.querySelector('.empty-state');if(!visible.length){if(!empty){empty=document.createElement('div');empty.className='empty-state';empty.innerHTML='<b>Belum ketemu, bestie!</b>Coba kata kunci atau filter yang lain ya ♡';grid.append(empty)}}else if(empty)empty.remove();visible.forEach(c=>grid.append(c))}
 $('faq').addEventListener('click',e=>{const b=e.target.closest('.faq-q');if(b)b.parentElement.classList.toggle('open')});
-$('menu-toggle').addEventListener('click',()=>{$('nav').classList.toggle('open')});$('nav').addEventListener('click',e=>{if(e.target.closest('a'))$('nav').classList.remove('open')});
+$('menu-toggle').addEventListener('click',()=>{const open=$('nav').classList.toggle('open');$('menu-toggle').setAttribute('aria-expanded',String(open));$('menu-toggle').setAttribute('aria-label',open?'Tutup menu':'Buka menu')});$('nav').addEventListener('click',e=>{if(e.target.closest('a')){$('nav').classList.remove('open');$('menu-toggle').setAttribute('aria-expanded','false');$('menu-toggle').setAttribute('aria-label','Buka menu')}});
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 updateCount();renderProducts();
 })();
