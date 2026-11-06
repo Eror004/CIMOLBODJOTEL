@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fff7fa"><title>Checkout — CIMOL BODJOTEL</title><link rel="icon" href="https://i.imgur.com/jVIjhfF.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
+<style>\n
 :root{--pink:#f5a9c4;--pink2:#fbe0e9;--hot:#df5c8c;--ink:#392632;--muted:#927d88;--paper:#fffafd;--line:#f0dce5;--shadow:0 16px 45px #9c587418}*{box-sizing:border-box}body{margin:0;background:radial-gradient(#efc9d733 1px,transparent 1px),#fffafd;background-size:19px 19px;color:var(--ink);font-family:'DM Sans',sans-serif}body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:url('https://i.imgur.com/jVIjhfF.png') center center/min(46vw,480px) auto no-repeat;opacity:.045;filter:saturate(1.05)}body>*{position:relative;z-index:1}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}
 .top{background:var(--ink);color:white;text-align:center;padding:11px;font-size:9px;font-weight:900;letter-spacing:1.4px}.top b{color:#ffc4d8}
 header{height:76px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:#fffafdE8;backdrop-filter:blur(15px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.brand{display:flex;align-items:center;gap:10px;font:900 11px/1 'Plus Jakarta Sans';letter-spacing:.5px}.brand img{width:44px;height:44px;object-fit:contain}.brand strong{display:block;font-size:15px;margin-top:3px}.brand em{font-style:normal;color:var(--hot)}.back{font-size:10px;font-weight:900;color:#9a627b}
@@ -444,262 +444,75 @@ body.receipt-open{overflow:hidden}
 }
 
 
-/* ===== CART & CHECKOUT GEN-Z PREMIUM REWORK ===== */
-:root{--hot:#d93678;--ink:#34212b;--pink-line:#f2c5d7}
-body{background:radial-gradient(ellipse at 7% 18%,#ffdce9 0,transparent 32%),radial-gradient(ellipse at 92% 58%,#ffe9f1 0,transparent 30%),#fff8fb}
-.top{background:linear-gradient(90deg,#bd2d67,#e64d89 55%,#bd2d67);font-size:10px;letter-spacing:1.7px;padding:12px}
-header{height:82px;border-bottom:1px solid #f4d5e1;background:#fffaf1f2;box-shadow:0 8px 28px #9e3c6510}
-.brand img{width:54px;height:54px}.brand strong{font-size:17px}
-.back{border:1px solid #f0c6d7;background:#fff1f6;color:#b32e68;border-radius:999px;padding:13px 18px;transition:.2s}
-.back:hover{background:#d93678;color:white;transform:translateY(-2px)}
-main{max-width:1180px;padding-top:58px}
-.intro{position:relative;overflow:hidden;padding:34px 38px;border-radius:26px;background:linear-gradient(115deg,#ffe0eb 0%,#fff1f6 55%,#fff 100%);border:1px solid #f3c7d8;box-shadow:0 18px 44px #c34e7a12;margin-bottom:26px}
-.intro:after{content:"♡";position:absolute;right:5%;top:-40px;font:900 190px/1 'Plus Jakarta Sans';color:#e879a022;transform:rotate(14deg);pointer-events:none}
-.intro>div,.intro>p{position:relative;z-index:1}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff8fb;border:1px solid #f2c6d7;border-radius:999px;padding:8px 12px;letter-spacing:1.6px}
-h1{font-size:clamp(46px,6vw,72px);line-height:.98;margin:15px 0 0}
-.intro p{max-width:390px;font-size:13px;line-height:1.9}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 20px}
-.step{display:flex;justify-content:center;align-items:center;gap:8px;padding:13px 10px;border-radius:13px;background:#fff;border:1px solid #f1d5e0;font-size:10px}
-.step.active{background:#d93678;border-color:#d93678;box-shadow:0 8px 18px #d9367830}
-.layout{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:20px}
-.card{border:1px solid #f0c9d9;border-radius:23px;padding:27px;background:#fff;box-shadow:0 16px 45px #a83d6812}
-.card:first-child{top:102px}
-.card h2{display:flex;align-items:center;gap:9px;font-size:22px;margin-bottom:7px}
-.card h2 span{color:#d93678}
-.cart-caption{font-size:12px!important;line-height:1.7!important;color:#907985!important;margin:0 0 15px!important}
-.items{gap:9px}
-.item{grid-template-columns:76px minmax(0,1fr) auto;gap:13px;padding:13px;border:1px solid #f4e0e8;border-radius:17px;background:linear-gradient(110deg,#fff9fb,#fff);transition:transform .2s,border-color .2s,box-shadow .2s}
-.item:hover{transform:translateY(-2px);border-color:#e9a9c1;box-shadow:0 9px 22px #b94d7410}
-.thumb{width:76px;height:76px;border-radius:14px;overflow:hidden;background:#ffe8f0;display:block;position:relative}
-.thumb img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
-.item strong{font:800 13px/1.35 'Plus Jakarta Sans';color:#482c3b}
-.item small{font-size:10px;color:#967d89}
-.item-price{font:900 12px 'Plus Jakarta Sans';color:#c42f6c;padding-top:3px}
-.qty{gap:7px;align-items:center}
-.qty b{min-width:18px;text-align:center;font-size:12px;color:#5a3b4a}
-.qty button{height:29px;min-width:29px;border-radius:9px;border:1px solid #f0cada;background:#fff1f6;color:#b52e68;font-weight:900}
-.qty button.remove{border:0;background:transparent;color:#b17b91;text-decoration:underline}
-.summary{padding:18px;background:#fff6f9;border:1px solid #f4d9e4;border-radius:17px;margin-top:16px}
-.summary .line{font-size:12px}
-.summary .line.total{border-top:1px dashed #eab8cc;padding-top:14px;font-size:16px}
-.summary .line.total b{font-size:25px}
-.hint{font-size:11px;margin-top:12px}
+\n
+/* ===== PREMIUM MODERN CHECKOUT + LARGER TYPE ===== */
+:root{--pink:#f4a8c3;--pink2:#f9dce7;--hot:#d95788;--ink:#30212b;--muted:#806d78;--line:#f0d9e3}
+body{font-family:'DM Sans','Plus Jakarta Sans',Arial,sans-serif;color:#30212b}
+.top{font-size:10px}
+.back{font-size:12px}
+.intro p{font-size:14px;line-height:1.9}
+.step{font-size:11px}
+.card h2{font-size:22px}
+.cart-caption{font-size:13px;line-height:1.7;color:#806d78}
+.item{grid-template-columns:76px minmax(0,1fr) auto;gap:13px}
+.thumb{width:76px;height:76px;display:block;overflow:hidden;padding:0;border-radius:15px}
+.thumb img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:15px}
+.item strong{font-size:14px;line-height:1.45;color:#30212b}
+.item small{font-size:12px;line-height:1.5;color:#806d78}
+.item-price{font-size:14px;color:#d95788}
+.qty b{font-size:13px}
+.qty button{min-height:29px;min-width:29px;font-size:12px}
+.line{font-size:13px}
+.line.total{font-size:18px}
+.line.total b{font-size:24px}
+.hint{font-size:12px;line-height:1.8}
 .form{gap:16px}
-.form label{font-size:12px;color:#70465a}
-.form input,.form select,.form textarea{font-size:14px;padding:15px 16px;border-radius:13px;background:#fffafd;border:1px solid #edcbd9}
-.form input:focus,.form select:focus,.form textarea:focus{border-color:#d93678;box-shadow:0 0 0 4px #fbdce8}
-.form textarea{min-height:92px}
-.form .two{gap:12px}
-.submit{border-radius:14px;background:linear-gradient(105deg,#c92e6d,#e34e89);box-shadow:0 6px 0 #f2b4cc,0 12px 24px #d9367826;font-size:12px;padding:18px}
-.submit:hover{box-shadow:0 8px 0 #f2b4cc,0 16px 28px #d9367830}
-.fine{font-size:11px}
-.empty{padding:32px 14px;background:#fff7fa;border:1px dashed #edbfd0;border-radius:16px}
-.receipt-wrap .receipt{border-radius:22px}
-@media(max-width:780px){
- main{padding:34px 14px 58px}
- .intro{padding:26px 22px;border-radius:21px}
- .intro:after{font-size:135px;right:0;top:-20px}
- .intro h1{font-size:clamp(46px,11vw,62px)!important}
- .intro p{font-size:14px!important;max-width:100%;margin-top:13px}
- .steps{gap:6px}.step{font-size:9px;padding:11px 5px;border-radius:10px}
- .layout{grid-template-columns:1fr;gap:14px}
- .card{padding:20px;border-radius:20px}
- .card:first-child{position:static;top:auto}
- .card h2{font-size:21px}
- .cart-caption{font-size:13px!important}
- .item{grid-template-columns:68px minmax(0,1fr) auto;padding:11px;gap:11px}
- .thumb{width:68px;height:68px}
- .item strong{font-size:13px}
- .item small{font-size:11px}
- .item-price{font-size:12px}
- .summary{padding:15px}
- .form label{font-size:13px}
- .form input,.form select,.form textarea{font-size:16px}
- .form .two{grid-template-columns:1fr;gap:14px}
- .submit{font-size:13px}
-}
-@media(max-width:420px){
- .top{font-size:9px}
- header{height:70px}
- .brand img{width:45px;height:45px}.brand strong{font-size:14px}
- .back{font-size:9px;padding:11px 12px}
- main{padding-inline:12px}
- .intro{padding:23px 18px}
- .steps{grid-template-columns:1fr;gap:7px}
- .step{justify-content:flex-start;padding:11px 14px}
- .item{grid-template-columns:58px minmax(0,1fr);gap:10px}
- .thumb{width:58px;height:58px}
- .item-price{grid-column:2;justify-self:start;padding:0}
- .qty{flex-wrap:wrap}
-}
-
-
-/* ===== BOLD GEN Z BRAND SYSTEM — CHECKOUT ===== */
-:root{--hot:#ed287d;--ink:#24151f;--pink-line:#f2bfd4}
-body{background:radial-gradient(ellipse at 5% 10%,#ffd1e4 0,transparent 33%),radial-gradient(ellipse at 95% 55%,#ffe5ef 0,transparent 32%),#fff9fc;color:#24151f}
-.top{background:#24151f;color:#fff;border-bottom:3px solid #ff4f98;font-size:10px;letter-spacing:2px;padding:13px}
-.top b{color:#ff70aa}
-header{height:84px;border-bottom:2px solid #24151f;background:#fffafdf5;box-shadow:0 8px 28px #24151f0c}
-.brand img{width:55px;height:55px}.brand strong{font-size:17px}.brand em{color:#ed287d}
-.back{border:2px solid #24151f;background:#ff4f98;color:#24151f;border-radius:999px;padding:13px 18px;box-shadow:3px 4px 0 #24151f;font-size:11px;font-weight:900}
-.back:hover{background:#24151f;color:#fff;transform:translate(-2px,-2px);box-shadow:5px 6px 0 #ff4f98}
-main{max-width:1200px;padding-top:55px}
-.intro{padding:38px 42px;border:2px solid #24151f;border-radius:28px;background:linear-gradient(115deg,#ffb7d2,#ffe5ef 58%,#fff);box-shadow:7px 8px 0 #24151f}
-.intro:after{color:#ed287d20}
-.eyebrow{background:#fff;border:2px solid #24151f;color:#24151f;font-size:10px;font-weight:900;box-shadow:3px 3px 0 #24151f}
-h1{font-size:clamp(50px,6.5vw,78px);color:#24151f;letter-spacing:-.08em}
-.intro h1 em{color:#ed287d}
-.intro p{font-size:14px;color:#67495a;line-height:1.85}
-.steps{gap:12px;margin:22px 0}
-.step{border:1.5px solid #24151f;border-radius:14px;background:#fff;font-size:11px;font-weight:900;box-shadow:3px 3px 0 #24151f}
-.step.active{background:#ff4f98;border-color:#24151f;color:#24151f;box-shadow:4px 5px 0 #24151f}
-.layout{gap:22px}
-.card{border:2px solid #24151f;border-radius:25px;padding:28px;box-shadow:5px 6px 0 #24151f}
-.card h2{font-size:24px;color:#24151f}.card h2 span{color:#ed287d}
-.cart-caption{font-size:13px!important;color:#806b78!important}
-.item{border:1.5px solid #f0bfd3;border-radius:18px;background:#fffafd;padding:14px}
-.item:hover{border-color:#ed287d;box-shadow:0 8px 20px #ed287d14}
-.thumb{border:1.5px solid #24151f;border-radius:14px;background:#ffdce9}
-.item strong{font-size:14px;color:#24151f}.item small{font-size:11px;color:#806b78}
-.item-price{font-size:13px;color:#ed287d}
-.qty button{border:1.5px solid #24151f;background:#ffdce9;color:#24151f}
-.qty button.remove{border:0;background:transparent;color:#ed287d}
-.summary{background:#24151f;border:2px solid #24151f;border-radius:18px;color:#fff;padding:20px}
-.summary .line{font-size:13px;color:#f8dce8}.summary .line b{color:#fff}
-.summary .line.total{border-color:#ff8fba;color:#fff;font-size:17px}.summary .line.total b{font-size:27px;color:#ff8fba}
-.hint{font-size:12px;line-height:1.75;color:#806b78}
-.form{gap:17px}.form label{font-size:13px;font-weight:800;color:#513344}
-.form input,.form select,.form textarea{font-size:15px;padding:16px;border:1.5px solid #e9b6cc;border-radius:14px;background:#fffafd;color:#24151f}
-.form input:focus,.form select:focus,.form textarea:focus{border-color:#ed287d;box-shadow:0 0 0 4px #ffd1e4}
-.submit{border:2px solid #24151f;border-radius:15px;background:#ff4f98;color:#24151f;box-shadow:0 6px 0 #24151f,0 12px 24px #ed287d20;font-size:13px;font-weight:900;padding:19px}
-.submit:hover{background:#24151f;color:#fff;box-shadow:0 8px 0 #ff4f98}
-.fine{font-size:12px;line-height:1.8;color:#806b78}
-.empty{border:1.5px dashed #ed287d;background:#fff0f6;border-radius:18px;padding:35px 16px}
-.receipt-wrap{background:#24151fcf!important;backdrop-filter:blur(10px)!important}
-.receipt-wrap .receipt{border:2px solid #24151f!important;box-shadow:9px 10px 0 #ff4f98!important;border-radius:24px!important}
-.receipt-wrap .receipt-head{background:#ff4f98!important;color:#24151f!important}
-.receipt-wrap .receipt-head h3{color:#24151f!important}
-.receipt-wrap .receipt-actions button{border:2px solid #24151f!important;border-radius:13px!important;font-weight:900!important;box-shadow:3px 4px 0 #24151f!important}
-.receipt-wrap .receipt-actions button.wa{background:#ff4f98!important;color:#24151f!important}
-.note-bottom{font-size:12px;color:#806b78}
-footer{border-top:2px solid #24151f;background:#fff;color:#806b78}
-@media(max-width:780px){
- main{padding:36px 14px 58px}
- .intro{padding:28px 22px;border-radius:22px;box-shadow:5px 6px 0 #24151f}
- .intro h1{font-size:clamp(48px,12vw,66px)!important}
- .intro p{font-size:14px!important}
- .steps{gap:7px}.step{font-size:10px;padding:12px 7px}
- .layout{gap:17px}.card{padding:21px;border-radius:21px;box-shadow:4px 5px 0 #24151f}
- .card h2{font-size:22px}.item{padding:12px}
- .item strong{font-size:14px}.item small{font-size:11px}
- .form label{font-size:14px}.form input,.form select,.form textarea{font-size:16px}
- .submit{font-size:14px;min-height:56px}
-}
-@media(max-width:420px){
- .top{font-size:9px;letter-spacing:1px}header{height:72px}
- .brand img{width:46px;height:46px}.brand strong{font-size:14px}
- .back{font-size:9px;padding:11px 12px}
- .intro{padding:24px 18px}.steps{grid-template-columns:1fr}
- .step{justify-content:flex-start;padding:12px 14px}
- .item{grid-template-columns:58px minmax(0,1fr);gap:10px}
- .thumb{width:58px;height:58px}
- .item-price{grid-column:2;justify-self:start;padding:0}
-}
-@media(prefers-reduced-motion:reduce){.back,.submit,.item{transition:none!important}}
-
-
-/* ===== REFINED BOLD GEN Z — CHECKOUT CLEAN PASS ===== */
-:root{--hot:#ed287d;--ink:#30212b}
-body{background:linear-gradient(135deg,#fff8fb,#fff 55%,#fff2f7);color:#30212b}
-.top{background:#30212b;border:0;border-bottom:2px solid #ff4f98;padding:11px;font-size:9px;letter-spacing:1.6px}
-header{height:76px;border:0;border-bottom:1px solid #f0dfe6;background:#ffffffed;box-shadow:0 5px 22px #4625360a}
-.brand img{width:48px;height:48px}.brand strong{font-size:15px}
-.back{background:#ff4f98;color:#30212b;border:0;border-radius:999px;box-shadow:none;padding:12px 17px}
-.back:hover{background:#30212b;color:#fff;box-shadow:none;transform:translateY(-1px)}
-main{padding-top:42px}
-.intro{border:0;border-radius:25px;background:linear-gradient(115deg,#ffb5d0,#ffe5ef 62%,#fff);box-shadow:0 12px 32px #9e42651a;padding:34px 38px}
-.intro:after{color:#ed287d16}
-.eyebrow{border:0;box-shadow:none;background:#fff;color:#bd2d68;border-radius:999px;padding:8px 12px}
-h1{font-size:clamp(48px,6vw,72px);color:#30212b}
-.intro h1 em{color:#ed287d}
-.intro p{color:#6e5663;font-size:14px;line-height:1.8}
-.steps{gap:10px}
-.step{border:1px solid #efd9e3;border-radius:12px;box-shadow:none;background:#fff;color:#755d69}
-.step.active{background:#30212b;border-color:#30212b;color:#fff;box-shadow:none}
-.layout{gap:18px}
-.card{border:1px solid #f0dce5;border-radius:22px;padding:25px;box-shadow:0 10px 30px #6d30430c;background:#fff}
-.card h2{font-size:23px;color:#30212b}
-.card h2 span{color:#ed287d}
-.item{border:1px solid #f1e1e8;border-radius:15px;background:#fffafd}
-.item:hover{border-color:#e8a0bd;box-shadow:0 6px 18px #ed287d0c}
-.thumb{border:0;border-radius:13px;background:#ffe5ef}
-.item strong{color:#30212b}
-.item-price{color:#d52c70}
-.qty button{border:1px solid #f0cbd9;background:#ffe7f0;color:#30212b}
-.summary{background:#30212b;border:0;border-radius:16px;padding:19px}
-.summary .line{color:#f7e4ec}
-.summary .line.total{border-color:#e58bad}
-.summary .line.total b{color:#ff8fba}
-.hint,.fine,.note-bottom{color:#806d78;line-height:1.75}
-.form{gap:16px}
-.form label{color:#513746;font-weight:800}
-.form input,.form select,.form textarea{border:1px solid #ecd1dd;border-radius:12px;background:#fffafd;color:#30212b;padding:15px}
-.form input:focus,.form select:focus,.form textarea:focus{border-color:#ed287d;box-shadow:0 0 0 3px #ffd8e8}
-.submit{border:0;border-radius:13px;background:#ed287d;color:#fff;box-shadow:0 5px 0 #bd1e60,0 10px 22px #ed287d20}
-.submit:hover{background:#d91f6d;color:#fff;box-shadow:0 7px 0 #bd1e60}
-.empty{border:1px dashed #e7a0bd;background:#fff6fa;border-radius:15px}
-.receipt-wrap{background:#30212bcf!important}
-.receipt-wrap .receipt{border:1px solid #f0d9e3!important;box-shadow:0 18px 55px #24121e55!important;border-radius:20px!important}
-.receipt-wrap .receipt-head{background:#ff4f98!important;color:#30212b!important}
-.receipt-wrap .receipt-head h3{color:#30212b!important}
-.receipt-wrap .receipt-actions button{border:1px solid #ead2dd!important;border-radius:11px!important;box-shadow:none!important}
-.receipt-wrap .receipt-actions button.wa{background:#ed287d!important;color:#fff!important}
-footer{border-top:1px solid #f0dfe6;background:#fff;color:#806d78}
+.form label,label{font-size:13px;line-height:1.5}
+.form input,.form select,.form textarea,input,select,textarea{font-size:16px;padding:15px;color:#30212b}
+.submit{font-size:13px;min-height:56px}
+.fine,.note-bottom{font-size:12px;line-height:1.8}
+.empty{font-size:13px}
+.empty b{font-size:19px}
+.receipt-wrap .receipt{width:min(100%,760px)!important;max-width:760px!important;max-height:min(82dvh,900px)!important}
+.receipt-wrap .receipt-head h3{font-size:23px!important}
+.receipt-wrap .receipt-customer,.receipt-wrap .receipt-row{font-size:14px!important;line-height:1.7!important}
+.receipt-wrap .receipt-row small{font-size:12px!important}
+.receipt-wrap .receipt-actions button{font-size:13px!important;min-height:52px!important}
 @media(max-width:780px){
  main{padding:30px 14px 52px}
- .intro{padding:26px 21px;border-radius:21px;box-shadow:0 9px 24px #9e426514}
- .intro h1{font-size:clamp(44px,11vw,60px)!important}
- .layout{gap:14px}.card{padding:19px;border-radius:18px;box-shadow:0 7px 20px #6d30430a}
+ .intro{padding:26px 21px}
+ .intro h1{font-size:clamp(46px,11vw,62px)!important}
+ .intro p{font-size:14px}
+ .card{padding:20px}
  .card h2{font-size:21px}
+ .item{grid-template-columns:64px minmax(0,1fr);gap:10px}
+ .thumb{width:64px;height:64px}
+ .item strong{font-size:14px}
+ .item small{font-size:11px}
+ .item-price{grid-column:2;justify-self:start;font-size:14px}
+ .form label,label{font-size:13px}
  .form input,.form select,.form textarea{font-size:16px}
- .submit{min-height:54px}
+ .submit{font-size:14px;min-height:55px}
 }
 @media(max-width:420px){
- .top{font-size:8px;letter-spacing:.8px}
- header{height:68px}.brand img{width:42px;height:42px}.brand strong{font-size:14px}
+ .top{font-size:9px;letter-spacing:.8px}
+ header{height:68px}
+ .brand img{width:44px;height:44px}
+ .brand strong{font-size:15px}
+ .back{font-size:10px;padding:11px 13px}
  .intro{padding:23px 17px}
- .back{font-size:9px;padding:11px 12px}
+ .steps{gap:7px}
+ .step{font-size:10px;padding:11px 9px}
+ .card{padding:17px}
+ .item{grid-template-columns:58px minmax(0,1fr);gap:9px}
+ .thumb{width:58px;height:58px}
+ .item strong{font-size:13px}
+ .item small{font-size:10px}
+ .item-price{font-size:13px}
+ .two{grid-template-columns:1fr}
+ .receipt-wrap .receipt-customer,.receipt-wrap .receipt-row{font-size:13px!important}
 }
-
-
-/* CHECKOUT PRODUCT IMAGE + TYPE VISIBILITY FIX */
-body{font-family:'Plus Jakarta Sans','DM Sans',Arial,sans-serif!important;color:#30212b!important}
-.card,.card *{visibility:visible}
-.item{grid-template-columns:76px minmax(0,1fr) auto!important;align-items:center!important;gap:13px!important}
-.thumb{width:76px!important;height:76px!important;display:block!important;overflow:hidden!important;padding:0!important;border-radius:14px!important;background:#ffe5ef!important}
-.thumb img{display:block!important;visibility:visible!important;opacity:1!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;border-radius:14px!important}
-.item strong{display:block!important;color:#30212b!important;font-size:14px!important;font-weight:900!important;line-height:1.4!important}
-.item small{color:#705966!important;font-size:11px!important;line-height:1.5!important}
-.item-price{color:#c51f62!important;font-size:14px!important;font-weight:900!important}
-.qty{flex-wrap:wrap}
-.qty b{color:#30212b!important;font-size:13px!important}
-.card h2{font-size:23px!important;color:#30212b!important}
-label,.form label{font-size:13px!important;color:#48333f!important}
-.form input,.form select,.form textarea,input,select,textarea{font-size:16px!important;color:#30212b!important}
-.line{font-size:13px!important}
-.line.total{font-size:18px!important}
-.hint,.fine,.note-bottom{font-size:12px!important;color:#66515d!important}
-@media(max-width:520px){
- .item{grid-template-columns:64px minmax(0,1fr)!important;gap:10px!important}
- .thumb{width:64px!important;height:64px!important}
- .item strong{font-size:13px!important}
- .item-price{grid-column:2;justify-self:start;font-size:13px!important}
- .item small{font-size:10px!important}
- .card{padding:17px!important}
-}
-
-</style></head>
+\n</style></head>
 <body><div class="top">♡ CHECKOUT TIME <b>·</b> ONE STEP CLOSER TO YOUR HAPPY SNACK ♡</div>
 <header><a class="brand" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a><a class="back" href="index.html#menu">← LANJUT PILIH MENU</a></header>
 <main><div class="intro"><div><span class="eyebrow">YOUR SNACK IS WAITING</span><h1>LET'S MAKE<br>IT <em>YOURS.</em></h1></div><p>Atur pesananmu, lengkapi detail penerimaan, lalu kirim ringkasan pesanan langsung ke WhatsApp admin.</p></div>
