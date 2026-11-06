@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f8c6d8"><meta name="description" content="Checkout pesanan CIMOL BODJOTEL.">
+<title>Checkout — CIMOL BODJOTEL</title>
+<link rel="icon" href="https://i.imgur.com/jVIjhfF.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#f4b4ca;--pink2:#fbe5ed;--rose:#d7799c;--ink:#503744;--muted:#806b77;--line:#efd8e2;--white:#fffafd}
+*{box-sizing:border-box}body{margin:0;background:#fff8fb;color:var(--ink);font-family:'DM Sans',sans-serif;background-image:radial-gradient(#e7a9bf44 1px,transparent 1px);background-size:19px 19px}
+a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}
+.top{background:#f7c6d8;color:#704b5e;text-align:center;padding:10px;font:700 9px 'Space Grotesk';letter-spacing:1.5px}
+header{height:76px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:#fffafdeF;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.logo{display:flex;align-items:center;gap:10px;font:700 12px/1 'Space Grotesk';letter-spacing:.5px}.logo img{width:43px;height:43px;object-fit:contain}.logo b{font-size:15px}.logo b span{color:var(--rose)}
+.back{font-size:11px;font-weight:800;color:#9c6680}
+main{max-width:1120px;margin:auto;padding:54px 24px 90px}
+.intro{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:32px}
+.eyebrow{font:700 9px 'Space Grotesk';letter-spacing:2px;color:#b76d8a}
+h1{font:700 clamp(43px,6vw,70px)/.94 'Space Grotesk';letter-spacing:-.08em;margin:10px 0;color:#503744}
+h1 em{font-style:normal;color:var(--rose)}
+.intro p{max-width:330px;color:var(--muted);font-size:12px;line-height:1.8;margin:0 0 5px}
+.steps{display:flex;gap:8px;margin:0 0 28px;flex-wrap:wrap}
+.step{padding:9px 13px;border:1px solid var(--line);border-radius:99px;background:#fff;font:700 9px 'Space Grotesk';color:#99798a}
+.step.active{background:#f7d1df;border-color:#e7b4c8;color:#80536a;box-shadow:0 3px 0 #edc4d4}
+.layout{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+.card{background:#fff;border:1px solid var(--line);border-radius:23px;padding:25px;box-shadow:0 9px 28px #95617810;animation:rise .65s both}
+.card h2{font:700 18px 'Space Grotesk';margin:0 0 19px}
+.card h2 span{color:var(--rose)}
+.items{display:grid;gap:12px}
+.empty{padding:30px 12px;text-align:center;color:var(--muted);font-size:12px;line-height:1.8}
+.empty b{display:block;font:700 17px 'Space Grotesk';margin-bottom:5px;color:var(--ink)}
+.item{display:grid;grid-template-columns:55px 1fr auto;gap:13px;align-items:center;padding:12px 0;border-bottom:1px solid #f5e8ed}
+.thumb{height:55px;width:55px;border-radius:16px;background:linear-gradient(145deg,#fbe3ec,#f4b7cc);display:grid;place-items:center;font-size:25px}
+.item strong{font-size:12px}.item small{display:block;color:#957d89;font-size:10px;margin-top:4px}
+.item-price{font:700 12px 'Space Grotesk';white-space:nowrap}
+.qty{display:flex;align-items:center;gap:8px;margin-top:8px}
+.qty button{height:24px;width:24px;border:1px solid var(--line);background:#fff7fa;border-radius:8px;color:#8b5971}
+.qty button.remove{width:auto;padding:0 8px;color:#ba6e8b}
+.summary{margin-top:18px;padding-top:15px;border-top:1px dashed #e8c9d6;display:grid;gap:11px}
+.line{display:flex;justify-content:space-between;gap:15px;font-size:11px;color:#846d79}
+.line.total{padding-top:12px;border-top:1px solid var(--line);font:700 17px 'Space Grotesk';color:#573d4b}
+.line.total b{font-size:22px;color:#c46f91}
+.hint{font-size:9px;line-height:1.7;color:#927d88;background:#fff6f9;padding:11px 13px;border-radius:12px;margin-top:14px}
+.form{display:grid;gap:13px}
+label{display:grid;gap:7px;font-size:10px;font-weight:800;color:#755466}
+input,select,textarea{width:100%;border:1px solid #ecd4de;border-radius:12px;background:#fffafd;padding:13px;color:#503744;font-size:12px;outline:none;transition:.2s}
+input:focus,select:focus,textarea:focus{border-color:#d7799c;box-shadow:0 0 0 4px #f8dce766}
+textarea{min-height:76px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.hidden{display:none!important}
+.submit{border:0;border-radius:999px;background:#d7799c;color:white;padding:16px 20px;font:700 10px 'Space Grotesk';letter-spacing:.7px;box-shadow:0 5px 0 #b96587;transition:.2s}
+.submit:hover{transform:translateY(-2px);box-shadow:0 7px 0 #b96587}
+.receipt-wrap{margin-top:24px;display:none;animation:rise .5s both}
+.receipt-wrap.show{display:block}
+.receipt{background:#fff;border:1px solid #ebd5df;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px #95617812}
+.receipt-head{background:linear-gradient(120deg,#f7c9d9,#fce8ef);padding:22px;text-align:center;position:relative}
+.receipt-head:before,.receipt-head:after{content:"";position:absolute;bottom:-1px;width:14px;height:14px;border-radius:50%;background:#fff8fb}
+.receipt-head:before{left:-7px}.receipt-head:after{right:-7px}
+.receipt-head img{width:48px;height:48px;object-fit:contain}
+.receipt-head h3{font:700 17px 'Space Grotesk';margin:7px 0 3px}
+.receipt-head p{font-size:9px;color:#876478;margin:0;letter-spacing:1px}
+.receipt-body{padding:20px 22px}
+.receipt-meta{display:flex;justify-content:space-between;gap:10px;font-size:9px;color:#8d7581;padding-bottom:14px;border-bottom:1px dashed #ead5de}
+.receipt-lines{padding:13px 0;display:grid;gap:10px}
+.receipt-row{display:flex;justify-content:space-between;gap:12px;font-size:10px;color:#6e5362}
+.receipt-row small{display:block;color:#9b8490;font-size:9px;margin-top:3px}
+.receipt-total{border-top:1px dashed #ead5de;padding-top:13px;display:grid;gap:8px}
+.receipt-total .grand{font:700 17px 'Space Grotesk';color:#be6d8e}
+.receipt-total .grand b{font-size:21px}
+.receipt-foot{text-align:center;background:#fff7fa;padding:14px;font-size:9px;color:#9a7e8c;letter-spacing:.5px}
+.receipt-actions{display:flex;gap:10px;margin-top:12px}
+.receipt-actions button{flex:1;border:1px solid #e9cbd7;border-radius:99px;padding:12px;background:#fff;color:#80556b;font:700 9px 'Space Grotesk'}
+.receipt-actions .wa{background:#d7799c;color:white;border-color:#d7799c}
+.note-bottom{text-align:center;font-size:10px;color:#967f8b;margin-top:26px}
+footer{text-align:center;padding:22px;color:#9a8490;font-size:9px;border-top:1px solid var(--line)}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#80566b;color:#fff;padding:12px 18px;border-radius:99px;font-size:11px;z-index:20;box-shadow:0 6px 20px #603d4d33}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@media(max-width:780px){main{padding:38px 16px 65px}.layout{grid-template-columns:1fr}.intro{display:block}.intro p{margin-top:13px}header{padding:0 5%;height:68px}.card{padding:19px}}
+@media(max-width:420px){.two{grid-template-columns:1fr}.item{grid-template-columns:48px 1fr auto;gap:9px}.thumb{width:48px;height:48px}.receipt-actions{flex-direction:column}}
+@media print{body{background:white}.top,header,main>.intro,main>.steps,.layout,.note-bottom,footer,.receipt-actions{display:none!important}main{padding:0;max-width:none}.receipt-wrap{display:block!important;margin:0}.receipt{box-shadow:none;border:1px solid #ddd}.receipt-head{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="top">✳ CHECKOUT TIME · ONE STEP CLOSER TO YOUR HAPPY SNACK ✳</div>
+<header><a class="logo" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<br><b>BODJOTEL<span>.</span></b></span></a><a class="back" href="index.html">← LANJUT PILIH MENU</a></header>
+<main>
+<div class="intro"><div><span class="eyebrow">YOUR SNACK IS WAITING</span><h1>LET'S MAKE<br>IT <em>YOURS.</em></h1></div><p>Pastikan pesananmu sudah benar, isi detail pengiriman, lalu kirim ke admin. Struk digital akan disiapkan untukmu.</p></div>
+<div class="steps"><span class="step">01 · PILIH MENU</span><span class="step active">02 · CHECKOUT</span><span class="step">03 · KONFIRMASI ADMIN</span></div>
+<div class="layout">
+<section class="card"><h2>Keranjang <span id="count-label">(0 item)</span></h2><div class="items" id="items"><div class="empty"><b>Oops, keranjangmu kosong!</b>Yuk balik ke menu dan pilih camilan favoritmu.<br><a class="back" href="index.html#menu">BROWSE MENU ↗</a></div></div><div class="summary"><div class="line"><span>Subtotal produk</span><b id="subtotal">Rp0</b></div><div class="line"><span>Ongkir</span><b id="shipping">Dikonfirmasi admin</b></div><div class="line total"><span>Estimasi total</span><b id="grand">Rp0</b></div></div><div class="hint">* Ongkir belum dihitung karena bergantung pada lokasi. Admin akan mengonfirmasi ongkir dan total akhir melalui WhatsApp.</div></section>
+<section class="card"><h2>Detail <span>penerima</span></h2><form class="form" id="checkout-form">
+<label>Nama lengkap<input id="name" autocomplete="name" required placeholder="Nama yang menerima pesanan"></label>
+<div class="two"><label>Nomor WhatsApp<input id="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="08xxxxxxxxxx"></label><label>Metode menerima<select id="fulfillment"><option value="delivery">Diantar ke alamat</option><option value="pickup">Ambil sendiri</option></select></label></div>
+<label id="address-group">Alamat lengkap<textarea id="address" autocomplete="street-address" required placeholder="Nama jalan, nomor rumah, RT/RW, kecamatan, patokan..."></textarea></label>
+<div class="two"><label>Pembayaran<select id="payment"><option value="COD">COD (bayar saat diterima)</option><option value="Transfer bank">Transfer bank</option></select></label><label>Waktu pesanan<select id="timing"><option>Secepatnya</option><option>Atur dengan admin</option></select></label></div>
+<label>Catatan tambahan <small style="font-weight:400;color:#9b8490">(opsional)</small><textarea id="notes" placeholder="Contoh: level pedas, patokan rumah, request khusus..."></textarea></label>
+<button class="submit" id="make-receipt" type="submit">BUAT STRUK & LANJUT WHATSAPP ↗</button>
+<p style="font-size:9px;line-height:1.7;color:#927d88;margin:0">Dengan melanjutkan, detail pesanan akan dibuka di WhatsApp admin untuk dikonfirmasi. Pesanan belum dianggap diterima sebelum admin membalas.</p>
+</form></section>
+</div>
+<section class="receipt-wrap" id="receipt-wrap"><div class="receipt" id="receipt">
+<div class="receipt-head"><img src="https://i.imgur.com/jVIjhfF.png" alt=""><h3>CIMOL BODJOTEL</h3><p>SMALL BITES · BIG HAPPINESS</p></div>
+<div class="receipt-body"><div class="receipt-meta"><span id="receipt-id">ORDER #—</span><span id="receipt-date">—</span></div><div style="font-size:10px;color:#806b77;margin-top:13px" id="receipt-customer"></div><div class="receipt-lines" id="receipt-lines"></div><div class="receipt-total" id="receipt-total"></div></div>
+<div class="receipt-foot">THANK YOU FOR SNACKING WITH US ♡<br>Pesanan menunggu konfirmasi admin.</div></div>
+<div class="receipt-actions"><button type="button" id="print">PRINT / SIMPAN PDF</button><button type="button" class="wa" id="send-wa">KIRIM STRUK KE WHATSAPP ↗</button></div></section>
+<p class="note-bottom">Made with love & a little chili oil. ♡</p>
+</main>
+<footer>© 2026 CIMOL BODJOTEL · GOOD FOOD, GOOD MOOD.</footer>
+<div class="toast" id="toast" hidden></div>
+<script>
+(()=>{'use strict';
+const KEY='bodjotel_cart_v2',WA='6283853021353';
+const products={original:{name:'Cimol Bodjot Aslian',kind:'cooked',prices:{small:8000,large:10000}},mozza:{name:'Cimol Bodjot Mozarellia',kind:'cooked',prices:{small:10000,large:15000}},frozen:{name:'Cimol Bodjot Frozen Aslian',kind:'frozen',prices:{pack:10000}},'frozen-mozza':{name:'Cimol Bodjot Frozen Mozarellia',kind:'frozen',prices:{pack:15000}}};
+const $=id=>document.getElementById(id),money=n=>'Rp'+Number(n).toLocaleString('id-ID');
+let cart=[];try{cart=JSON.parse(localStorage.getItem(KEY)||'[]')}catch{cart=[]}
+let lastMessage='';
+const safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const total=()=>cart.reduce((s,x)=>s+(products[x.id]?.prices[x.size]||0)*x.qty,0);
+function toast(t){$('toast').textContent=t;$('toast').hidden=false;setTimeout(()=>$('toast').hidden=true,2600)}
+function render(){
+const n=cart.reduce((s,x)=>s+x.qty,0);$('count-label').textContent='('+n+' item)';
+if(!cart.length){$('items').innerHTML='<div class="empty"><b>Oops, keranjangmu kosong!</b>Yuk balik ke menu dan pilih camilan favoritmu.<br><a class="back" href="index.html#menu">BROWSE MENU ↗</a></div>'}
+else $('items').innerHTML=cart.map(x=>{const p=products[x.id];if(!p)return'';const size=x.size==='small'?'Ukuran kecil':x.size==='large'?'Ukuran besar':'1 pack';return '<article class="item"><div class="thumb">🥡</div><div><strong>'+safe(p.name)+'</strong><small>'+size+(p.kind==='cooked'?' · Level pedas '+x.spice:'')+'</small><div class="qty"><button type="button" data-step="-1" data-key="'+safe(x.key)+'">−</button><b>'+x.qty+'</b><button type="button" data-step="1" data-key="'+safe(x.key)+'">+</button><button class="remove" type="button" data-remove="'+safe(x.key)+'">Hapus</button></div></div><div class="item-price">'+money(p.prices[x.size]*x.qty)+'</div></article>'}).join('');
+$('subtotal').textContent=money(total());$('grand').textContent=money(total());
+}
+$('items').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.step){const it=cart.find(x=>x.key===b.dataset.key);if(it)it.qty+=Number(b.dataset.step);cart=cart.filter(x=>x.qty>0)}if(b.dataset.remove)cart=cart.filter(x=>x.key!==b.dataset.remove);localStorage.setItem(KEY,JSON.stringify(cart));render()});
+$('fulfillment').addEventListener('change',()=>{const pickup=$('fulfillment').value==='pickup';$('address-group').classList.toggle('hidden',pickup);$('address').required=!pickup});
+$('checkout-form').addEventListener('submit',e=>{
+e.preventDefault();if(!cart.length){toast('Keranjang masih kosong. Pilih menu dulu, ya!');return}
+const name=$('name').value.trim(),phone=$('phone').value.trim(),pickup=$('fulfillment').value==='pickup',address=$('address').value.trim(),payment=$('payment').value,timing=$('timing').value,notes=$('notes').value.trim();
+if(!/^[0-9+()\-\s]{8,18}$/.test(phone)){toast('Cek lagi nomor WhatsApp kamu, ya.');$('phone').focus();return}
+const orderId='CB-'+Date.now().toString().slice(-8),date=new Date().toLocaleString('id-ID',{dateStyle:'medium',timeStyle:'short'});
+const lineData=cart.map((x,i)=>{const p=products[x.id];return {index:i+1,name:p.name,variant:(x.size==='small'?'Kecil':x.size==='large'?'Besar':'1 pack')+(p.kind==='cooked'?' · Pedas '+x.spice:''),qty:x.qty,price:p.prices[x.size]*x.qty}});
+const sum=total();
+$('receipt-id').textContent='ORDER '+orderId;$('receipt-date').textContent=date;
+$('receipt-customer').innerHTML='<b>'+safe(name)+'</b><br>'+safe(phone)+'<br>'+(pickup?'Ambil sendiri':safe(address))+'<br>'+safe(payment);
+$('receipt-lines').innerHTML=lineData.map(x=>'<div class="receipt-row"><span>'+x.index+'. '+safe(x.name)+'<small>'+safe(x.variant)+' × '+x.qty+'</small></span><b>'+money(x.price)+'</b></div>').join('');
+$('receipt-total').innerHTML='<div class="receipt-row"><span>Subtotal</span><b>'+money(sum)+'</b></div><div class="receipt-row"><span>Ongkir</span><b>'+(pickup?'Ambil sendiri':'Dikonfirmasi admin')+'</b></div><div class="receipt-row grand"><span>ESTIMASI TOTAL</span><b>'+money(sum)+'</b></div>';
+lastMessage=['HALO CIMOL BODJOTEL! Aku mau konfirmasi pesanan:','', 'Nomor: '+orderId,'Tanggal: '+date,'',...lineData.map(x=>x.index+'. '+x.name+' / '+x.variant+' / '+x.qty+'x = '+money(x.price)),'','Subtotal: '+money(sum),'Ongkir: '+(pickup?'Ambil sendiri':'Mohon konfirmasi admin'),'Estimasi total: '+money(sum),'','Nama: '+name,'No. WhatsApp: '+phone,'Metode menerima: '+(pickup?'Ambil sendiri':'Diantar'),'Alamat: '+(pickup?'-':address),'Pembayaran: '+payment,'Waktu: '+timing,'Catatan: '+(notes||'-'),'','Mohon konfirmasi pesanan dan total akhirnya. Terima kasih!'].join('\n');
+$('receipt-wrap').classList.add('show');$('receipt-wrap').scrollIntoView({behavior:'smooth',block:'start'});toast('Struk digital berhasil dibuat!');});
+$('print').addEventListener('click',()=>window.print());
+$('send-wa').addEventListener('click',()=>{if(!lastMessage){toast('Buat struk terlebih dahulu.');return}window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(lastMessage),'_blank','noopener')});
+render();
+})();
+</script>
+</body></html>
