@@ -672,6 +672,33 @@ footer{border-top:1px solid #f0dfe6;background:#fff;color:#806d78}
  .back{font-size:9px;padding:11px 12px}
 }
 
+
+/* CHECKOUT PRODUCT IMAGE + TYPE VISIBILITY FIX */
+body{font-family:'Plus Jakarta Sans','DM Sans',Arial,sans-serif!important;color:#30212b!important}
+.card,.card *{visibility:visible}
+.item{grid-template-columns:76px minmax(0,1fr) auto!important;align-items:center!important;gap:13px!important}
+.thumb{width:76px!important;height:76px!important;display:block!important;overflow:hidden!important;padding:0!important;border-radius:14px!important;background:#ffe5ef!important}
+.thumb img{display:block!important;visibility:visible!important;opacity:1!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;border-radius:14px!important}
+.item strong{display:block!important;color:#30212b!important;font-size:14px!important;font-weight:900!important;line-height:1.4!important}
+.item small{color:#705966!important;font-size:11px!important;line-height:1.5!important}
+.item-price{color:#c51f62!important;font-size:14px!important;font-weight:900!important}
+.qty{flex-wrap:wrap}
+.qty b{color:#30212b!important;font-size:13px!important}
+.card h2{font-size:23px!important;color:#30212b!important}
+label,.form label{font-size:13px!important;color:#48333f!important}
+.form input,.form select,.form textarea,input,select,textarea{font-size:16px!important;color:#30212b!important}
+.line{font-size:13px!important}
+.line.total{font-size:18px!important}
+.hint,.fine,.note-bottom{font-size:12px!important;color:#66515d!important}
+@media(max-width:520px){
+ .item{grid-template-columns:64px minmax(0,1fr)!important;gap:10px!important}
+ .thumb{width:64px!important;height:64px!important}
+ .item strong{font-size:13px!important}
+ .item-price{grid-column:2;justify-self:start;font-size:13px!important}
+ .item small{font-size:10px!important}
+ .card{padding:17px!important}
+}
+
 </style></head>
 <body><div class="top">♡ CHECKOUT TIME <b>·</b> ONE STEP CLOSER TO YOUR HAPPY SNACK ♡</div>
 <header><a class="brand" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a><a class="back" href="index.html#menu">← LANJUT PILIH MENU</a></header>
