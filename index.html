@@ -111,6 +111,11 @@ body:before{background:url('https://i.imgur.com/jVIjhfF.png') center 48vh/ min(4
 .frozen-photo-art:after{content:"";position:absolute;inset:8px;border:1px solid #ffffff9c;border-radius:15px;pointer-events:none}
 .frozen-photo-art .product-badge{background:#fffafde8;box-shadow:0 3px 12px #6d30431a}
 .frozen-photo-art .art-caption{background:#fffafde8;padding:7px 9px;border-radius:99px;color:#8e4a68;z-index:2}
+
+/* Cart navigation reliability + tap target */
+.header-actions{position:relative;z-index:35}
+.cart-link{position:relative;z-index:36;pointer-events:auto;cursor:pointer;white-space:nowrap}
+.cart-link:focus-visible{outline:3px solid #d95788;outline-offset:3px}
 </style>
 </head>
 <body>
@@ -118,7 +123,7 @@ body:before{background:url('https://i.imgur.com/jVIjhfF.png') center 48vh/ min(4
 <header class="header">
 <a class="brand" href="#home"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a>
 <nav class="nav" id="nav"><a href="#home">HOME</a><a href="#menu">OUR MENU</a><a href="#about">OUR STORY</a><a href="#faq">FAQ</a></nav>
-<div class="header-actions"><a class="cart-link" href="checkout.html">🛍️ <span>Keranjang</span> <b class="cart-count" id="cart-count">0</b></a><button class="menu-toggle" id="menu-toggle" aria-label="Buka menu">☰</button></div>
+<div class="header-actions"><a class="cart-link" href="https://eror004.github.io/CIMOLBODJOTEL/checkout.html" aria-label="Buka keranjang dan checkout">🛍️ <span>Keranjang</span> <b class="cart-count" id="cart-count">0</b></a><button class="menu-toggle" id="menu-toggle" aria-label="Buka menu">☰</button></div>
 </header>
 <main>
 <section class="hero" id="home">
