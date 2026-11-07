@@ -385,6 +385,38 @@ body{font-family:'DM Sans','Plus Jakarta Sans',Arial,sans-serif;color:#352730}
  .product p{font-size:11px;min-height:72px}
 }
 
+
+/* ===== WHITE + READABLE + MOTION POLISH ===== */
+:root{--paper:#fff;--white:#fff}
+body{background:#fff!important}
+body:before{background:url('https://i.imgur.com/jVIjhfF.png') center center/min(42vw,430px) auto no-repeat!important;opacity:.075!important;filter:saturate(.9)!important}
+.header{background:rgba(255,255,255,.94)!important}
+.hero{background:radial-gradient(ellipse at 76% 38%,#fff0f5 0,transparent 42%),#fff!important}
+.section,.menu-section,.about,.faq{background:#fff}
+.hero-copy,.hero-visual{animation:cb-enter .85s cubic-bezier(.2,.8,.2,1) both}
+.hero-visual{animation-delay:.12s}
+.cb-scroll-in{opacity:0;transform:translateY(26px);transition:opacity .72s ease,transform .72s cubic-bezier(.2,.8,.2,1)}
+.cb-scroll-in.cb-in-view{opacity:1;transform:none}
+@keyframes cb-enter{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:680px){
+ body:before{background-size:min(78vw,330px) auto!important;opacity:.065!important}
+ .announcement{font-size:10px!important}
+ .nav a,.cart-link{font-size:13px!important}
+ .brand strong{font-size:15px!important}
+ .hero-copy>p,.section-top p{font-size:15px!important;line-height:1.8}
+ .pill{font-size:11px!important}
+ .hero-meta{font-size:12px!important}
+ .primary,.secondary{font-size:14px!important}
+ .eyebrow{font-size:11px!important}
+ .filter,.sort,.search-wrap input{font-size:14px!important}
+ .product-category{font-size:12px!important}
+ .product-body,.product-body p{font-size:14px!important;line-height:1.65}
+ .price{font-size:17px!important}
+ .add-btn{font-size:13px!important}
+ .faq-q,.faq-a,.about-points,.benefit{font-size:14px!important;line-height:1.7}
+}
+@media(prefers-reduced-motion:reduce){.hero-copy,.hero-visual{animation:none!important}.cb-scroll-in{opacity:1;transform:none;transition:none}}
+
 </style>
 </head>
 <body>
@@ -473,5 +505,8 @@ $('menu-toggle').addEventListener('click',()=>{const open=$('nav').classList.tog
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 updateCount();renderProducts();
 })();
+</script>
+<script>
+(()=>{const nodes=document.querySelectorAll('section.section,.product,.benefit,.faq-item,.cta');if(!nodes.length)return; if(!('IntersectionObserver'in window)){nodes.forEach(n=>n.classList.add('cb-in-view'));return;}const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('cb-in-view');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -35px 0px'});nodes.forEach((n,i)=>{n.classList.add('cb-scroll-in');n.style.transitionDelay=(Math.min(i%4,3)*70)+'ms';io.observe(n)});})();
 </script>
 </body></html>
