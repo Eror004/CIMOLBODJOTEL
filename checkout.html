@@ -515,6 +515,41 @@ body{font-family:'DM Sans','Plus Jakarta Sans',Arial,sans-serif;color:#30212b}
  .receipt-wrap .receipt-customer,.receipt-wrap .receipt-row{font-size:13px!important}
 }
 
+
+/* ===== WHITE + READABLE + MOTION POLISH ===== */
+:root{--paper:#fff;--white:#fff}
+body{background:#fff!important}
+body:before{background:url('https://i.imgur.com/jVIjhfF.png') center center/min(42vw,430px) auto no-repeat!important;opacity:.075!important;filter:saturate(.9)!important}
+header{background:rgba(255,255,255,.95)!important}
+main{background:transparent}
+.cb-scroll-in{opacity:0;transform:translateY(24px);transition:opacity .72s ease,transform .72s cubic-bezier(.2,.8,.2,1)}
+.cb-scroll-in.cb-in-view{opacity:1;transform:none}
+.intro{animation:cb-enter .8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes cb-enter{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:780px){
+ body:before{background-size:min(78vw,330px) auto!important;opacity:.065!important}
+ .top{font-size:11px!important}
+ .back{font-size:12px!important}
+ .intro p{font-size:16px!important;line-height:1.8}
+ .step{font-size:12px!important}
+ .cart-caption{font-size:14px!important;line-height:1.7}
+ .item strong{font-size:15px!important}
+ .item small{font-size:13px!important}
+ .item-price,.line{font-size:15px!important}
+ .line.total{font-size:19px!important}
+ .hint,.fine,.note-bottom{font-size:13px!important;line-height:1.75}
+ .form label,label{font-size:14px!important}
+ .submit{font-size:15px!important}
+ .empty{font-size:15px!important;line-height:1.7}
+ .card h2{font-size:23px!important}
+}
+@media(max-width:420px){
+ .item strong{font-size:14px!important}
+ .item small{font-size:12px!important}
+ .item-price{font-size:14px!important}
+}
+@media(prefers-reduced-motion:reduce){.intro{animation:none!important}.cb-scroll-in{opacity:1;transform:none;transition:none}}
+
 </style></head>
 <body><div class="top">♡ CHECKOUT TIME <b>·</b> ONE STEP CLOSER TO YOUR HAPPY SNACK ♡</div>
 <header><a class="brand" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a><a class="back" href="index.html#menu">← LANJUT PILIH MENU</a></header>
@@ -543,4 +578,7 @@ const orderId='CB-'+Date.now().toString().slice(-8),date=new Date().toLocaleStri
 lastMessage=['HALO CIMOL BODJOTEL! Aku mau konfirmasi pesanan:','', 'Nomor: '+orderId,'Tanggal: '+date,'',...rows.map(x=>x.i+'. '+x.name+' / '+x.variant+' / '+x.qty+'x = '+money(x.price)),'','Subtotal produk: '+money(sum),'Ongkir: '+(pickup?'Ambil sendiri':'Mohon konfirmasi admin'),'Subtotal sementara: '+money(sum),'','Nama: '+name,'Metode menerima: '+(pickup?'Ambil sendiri':'Diantar'),'Alamat: '+(pickup?'-':address),'Pembayaran: '+payment,'Waktu: '+timing,'Catatan: '+(notes||'-'),'','Mohon konfirmasi pesanan dan total akhirnya. Terima kasih!'].join('\n');$('receipt-wrap').classList.add('show');$('receipt-wrap').setAttribute('aria-hidden','false');document.body.classList.add('receipt-open');$('close-receipt').focus();toast('Struk digital berhasil dibuat ♡')});
 $('close-receipt').addEventListener('click',()=>{$('receipt-wrap').classList.remove('show');$('receipt-wrap').setAttribute('aria-hidden','true');document.body.classList.remove('receipt-open');$('name').focus()});$('receipt-wrap').addEventListener('click',e=>{if(e.target===$('receipt-wrap'))$('close-receipt').click()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('receipt-wrap').classList.contains('show'))$('close-receipt').click()});$('print').addEventListener('click',()=>window.print());$('send-wa').addEventListener('click',()=>{if(!lastMessage){toast('Buat struk terlebih dahulu.');return}window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(lastMessage),'_blank','noopener')});render();
 })();
-</script></body></html>
+</script><script>
+(()=>{const nodes=document.querySelectorAll('.intro,.steps,.card,.note-bottom');if(!nodes.length)return; if(!('IntersectionObserver'in window)){nodes.forEach(n=>n.classList.add('cb-in-view'));return;}const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('cb-in-view');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -35px 0px'});nodes.forEach((n,i)=>{n.classList.add('cb-scroll-in');n.style.transitionDelay=(Math.min(i%4,3)*70)+'ms';io.observe(n)});})();
+</script>
+</body></html>
