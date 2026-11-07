@@ -767,6 +767,42 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
     translate:none!important;rotate:none!important;scale:1!important;animation:none!important;
   }
 }
+
+/* ===== HERO HEADLINE — BIGGER + LIFTED 3D ENTRANCE ===== */
+.hero-copy{perspective:1000px}
+.hero-copy h1{
+  font-size:clamp(64px,8.3vw,116px)!important;
+  margin-top:10px!important;
+  margin-bottom:20px!important;
+  transform-origin:50% 100%;
+  transform-style:preserve-3d;
+  backface-visibility:hidden;
+  animation:heroHeadline3D 1.2s cubic-bezier(.2,.78,.18,1) both;
+  text-shadow:0 2px 0 rgba(217,79,131,.08),0 7px 18px rgba(33,23,28,.07);
+}
+.hero-copy h1 span{
+  text-shadow:0 2px 0 #f0b2ca,0 5px 0 rgba(217,79,131,.12),0 10px 18px rgba(217,79,131,.14);
+  animation:heroMoodDepth 1s .22s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes heroHeadline3D{
+  0%{opacity:0;filter:blur(10px);transform:translate3d(0,42px,-100px) rotateX(68deg) scale(.82)}
+  65%{opacity:1;filter:blur(0);transform:translate3d(0,-5px,12px) rotateX(-5deg) scale(1.025)}
+  100%{opacity:1;filter:blur(0);transform:translate3d(0,0,0) rotateX(0) scale(1)}
+}
+@keyframes heroMoodDepth{
+  0%{transform:translateY(12px) rotateX(35deg);filter:blur(5px)}
+  100%{transform:translateY(0) rotateX(0);filter:blur(0)}
+}
+@media(max-width:680px){
+  .hero-copy h1{
+    font-size:clamp(48px,12.2vw,76px)!important;
+    margin-top:6px!important;
+    margin-bottom:16px!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-copy h1,.hero-copy h1 span{animation:none!important;filter:none!important;transform:none!important}
+}
 </style>
 </head>
 <body>
