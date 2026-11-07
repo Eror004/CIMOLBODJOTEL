@@ -510,6 +510,39 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 @media(prefers-reduced-motion:reduce){
   .hero-real-product-wrap{animation:none!important}
 }
+
+/* ===== HERO PRODUCT — LARGER DISPLAY ===== */
+.hero-floating-stage{
+  min-height:570px!important;
+}
+.hero-soft-glow{
+  width:min(100%,500px)!important;
+  height:min(100%,500px)!important;
+}
+.hero-real-product-wrap{
+  width:min(100%,560px)!important;
+  height:510px!important;
+}
+.hero-real-product{
+  max-height:510px!important;
+}
+.hero-product-shadow{
+  width:320px!important;
+}
+@media(max-width:680px){
+  .hero-floating-stage{min-height:410px!important}
+  .hero-real-product-wrap{
+    width:min(100%,430px)!important;
+    height:380px!important;
+  }
+  .hero-real-product{max-height:380px!important}
+  .hero-soft-glow{
+    width:min(100%,390px)!important;
+    height:min(100%,390px)!important;
+  }
+  .hero-product-shadow{width:250px!important}
+}
+
 </style>
 </head>
 <body>
