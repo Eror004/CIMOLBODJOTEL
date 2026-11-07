@@ -460,6 +460,56 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 :where(.toast,.cart-count){background:#D94F83!important;color:#FFFFFF!important}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}}
 
+
+/* ===== TRANSPARENT PNG HERO — POLISHED PRESENTATION ===== */
+.hero-floating-stage{
+  min-height:500px!important;
+  isolation:isolate;
+}
+.hero-soft-glow{
+  width:min(92%,430px)!important;
+  height:min(92%,430px)!important;
+  background:radial-gradient(circle,rgba(244,169,195,.30) 0%,rgba(249,219,230,.22) 43%,transparent 73%)!important;
+  filter:blur(14px)!important;
+}
+.hero-real-product-wrap{
+  width:min(100%,480px)!important;
+  height:440px!important;
+  animation:heroPhotoFloat 5.5s ease-in-out infinite;
+}
+.hero-real-product{
+  width:100%!important;
+  height:100%!important;
+  max-height:440px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  filter:drop-shadow(0 18px 18px rgba(33,23,28,.12)) drop-shadow(0 28px 34px rgba(217,79,131,.16))!important;
+}
+.hero-product-shadow{
+  width:270px!important;
+  height:30px!important;
+  top:78%!important;
+  background:radial-gradient(ellipse,rgba(217,79,131,.22) 0%,rgba(217,79,131,.08) 42%,transparent 75%)!important;
+  filter:blur(15px)!important;
+}
+.hero-orbit-one{width:420px!important;height:280px!important;border-color:rgba(217,79,131,.24)!important}
+.hero-orbit-two{width:355px!important;height:355px!important;border-color:rgba(244,169,195,.42)!important}
+.hero-float-chip{z-index:4}
+.hero-float-price{z-index:4;box-shadow:0 12px 28px rgba(217,79,131,.12)!important}
+@media(max-width:680px){
+  .hero-floating-stage{min-height:355px!important}
+  .hero-real-product-wrap{width:min(100%,390px)!important;height:330px!important}
+  .hero-real-product{max-height:330px!important}
+  .hero-product-shadow{top:78%!important;width:220px!important}
+  .hero-orbit-one{width:310px!important;height:205px!important}
+  .hero-orbit-two{width:275px!important;height:275px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-real-product-wrap{animation:none!important}
+}
 </style>
 </head>
 <body>
