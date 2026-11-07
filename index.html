@@ -583,6 +583,69 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
   .hero-orbit-two{width:295px!important;height:295px!important}
 }
 
+
+/* ===== HERO ICON DECORATIONS + SCROLL ENTRANCE ===== */
+.hero-icon-cloud{
+  position:absolute;
+  inset:0;
+  z-index:5;
+  pointer-events:none;
+}
+.hero-icon{
+  position:absolute;
+  display:grid;
+  place-items:center;
+  width:58px;
+  height:58px;
+  border:1px solid rgba(217,79,131,.18);
+  border-radius:20px;
+  background:rgba(255,255,255,.88);
+  box-shadow:0 12px 30px rgba(217,79,131,.15);
+  backdrop-filter:blur(10px);
+  font-size:29px;
+  opacity:0;
+  transform:translateY(22px) scale(.65) rotate(-12deg);
+}
+.hero-icon-cimol{left:8%;top:22%;animation:heroIconPop .65s .18s cubic-bezier(.2,.8,.2,1) forwards,heroIconFloat 4.6s 1s ease-in-out infinite}
+.hero-icon-cheese{right:8%;top:15%;animation:heroIconPop .65s .3s cubic-bezier(.2,.8,.2,1) forwards,heroIconFloat 5s 1.1s ease-in-out infinite}
+.hero-icon-chili{right:4%;bottom:23%;animation:heroIconPop .65s .42s cubic-bezier(.2,.8,.2,1) forwards,heroIconFloat 4.3s 1.2s ease-in-out infinite}
+.hero-icon-heart{left:13%;bottom:20%;color:#D94F83;font-size:34px;animation:heroIconPop .65s .54s cubic-bezier(.2,.8,.2,1) forwards,heroIconFloat 4.8s 1.3s ease-in-out infinite}
+.hero-icon-sparkle{left:28%;top:9%;width:38px;height:38px;border:0;background:transparent;box-shadow:none;color:#D94F83;font-size:34px;animation:heroIconPop .65s .66s cubic-bezier(.2,.8,.2,1) forwards,heroIconTwinkle 2.5s 1.3s ease-in-out infinite}
+.hero-icon-star{right:27%;bottom:10%;width:38px;height:38px;border:0;background:transparent;box-shadow:none;color:#E28AAE;font-size:36px;animation:heroIconPop .65s .78s cubic-bezier(.2,.8,.2,1) forwards,heroIconTwinkle 2.8s 1.4s ease-in-out infinite}
+.hero-real-product{opacity:0;transform:translateY(38px) scale(.82)}
+.hero-floating-stage.hero-in-view .hero-real-product{
+  animation:heroImageEnter 1.05s .12s cubic-bezier(.18,.75,.25,1) forwards;
+}
+@keyframes heroImageEnter{
+  0%{opacity:0;transform:translateY(38px) scale(.82)}
+  70%{opacity:1;transform:translateY(-7px) scale(1.035)}
+  100%{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes heroIconPop{
+  to{opacity:1;transform:translateY(0) scale(1) rotate(0)}
+}
+@keyframes heroIconFloat{
+  0%,100%{translate:0 0}
+  50%{translate:0 -11px}
+}
+@keyframes heroIconTwinkle{
+  0%,100%{opacity:.65;scale:.9;rotate:-8deg}
+  50%{opacity:1;scale:1.16;rotate:10deg}
+}
+@media(max-width:680px){
+  .hero-icon{width:45px;height:45px;border-radius:16px;font-size:24px}
+  .hero-icon-cimol{left:2%;top:20%}
+  .hero-icon-cheese{right:2%;top:13%}
+  .hero-icon-chili{right:1%;bottom:19%}
+  .hero-icon-heart{left:4%;bottom:17%;font-size:29px}
+  .hero-icon-sparkle{left:24%;top:7%}
+  .hero-icon-star{right:22%;bottom:8%}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-icon{opacity:1;transform:none;animation:none!important}
+  .hero-real-product{opacity:1;transform:none;animation:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -600,11 +663,14 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
   <div class="hero-orbit hero-orbit-one"></div><div class="hero-orbit hero-orbit-two"></div>
   <div class="hero-product-shadow"></div>
   <div class="hero-real-product-wrap"><img class="hero-real-product" src="https://i.ibb.co.com/XrdWDtvF/0b3110f3-54f6-4c7a-82ff-2f78a6ff6645.png" alt="Foto hero produk CIMOL BODJOTEL" fetchpriority="high"></div>
-  <div class="hero-float-chip chip-top"><span>♡</span><b>CHEESY<br>HAPPINESS</b></div>
-  <div class="hero-float-chip chip-left"><span>✳</span><b>MADE WITH<br>LOVE</b></div>
-  <div class="hero-float-chip chip-right"><span>˚</span><b>SNACK<br>O'CLOCK</b></div>
-  <div class="hero-float-price">YOUR HAPPY<br><strong>BITE!</strong></div>
-  <span class="hero-spark spark-one">✦</span><span class="hero-spark spark-two">✳</span><span class="hero-spark spark-three">♡</span>
+  <div class="hero-icon-cloud" aria-hidden="true">
+    <span class="hero-icon hero-icon-cimol">🍡</span>
+    <span class="hero-icon hero-icon-cheese">🧀</span>
+    <span class="hero-icon hero-icon-chili">🌶️</span>
+    <span class="hero-icon hero-icon-heart">♡</span>
+    <span class="hero-icon hero-icon-sparkle">✦</span>
+    <span class="hero-icon hero-icon-star">✧</span>
+  </div>
 </div>
 </section>
 <div class="marquee"><div class="marquee-track"><span>GOOD FOOD <b>✳</b> GOOD MOOD <b>♡</b> CIMOL TIME <b>✳</b> SNACK HAPPY</span><span>GOOD FOOD <b>✳</b> GOOD MOOD <b>♡</b> CIMOL TIME <b>✳</b> SNACK HAPPY</span><span>GOOD FOOD <b>✳</b> GOOD MOOD <b>♡</b> CIMOL TIME <b>✳</b> SNACK HAPPY</span><span>GOOD FOOD <b>✳</b> GOOD MOOD <b>♡</b> CIMOL TIME <b>✳</b> SNACK HAPPY</span></div></div>
@@ -674,5 +740,25 @@ updateCount();renderProducts();
 </script>
 <script>
 (()=>{const nodes=document.querySelectorAll('section.section,.product,.benefit,.faq-item,.cta');if(!nodes.length)return; if(!('IntersectionObserver'in window)){nodes.forEach(n=>n.classList.add('cb-in-view'));return;}const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('cb-in-view');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -35px 0px'});nodes.forEach((n,i)=>{n.classList.add('cb-scroll-in');n.style.transitionDelay=(Math.min(i%4,3)*70)+'ms';io.observe(n)});})();
+</script>
+
+<script>
+(()=> {
+  const hero = document.querySelector('.hero-floating-stage');
+  if (!hero) return;
+  if (!('IntersectionObserver' in window)) {
+    hero.classList.add('hero-in-view');
+    return;
+  }
+  const heroObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        hero.classList.add('hero-in-view');
+        heroObserver.unobserve(hero);
+      }
+    });
+  }, {threshold:0.16});
+  heroObserver.observe(hero);
+})();
 </script>
 </body></html>
