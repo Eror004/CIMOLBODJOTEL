@@ -1327,6 +1327,40 @@ footer{border-top:1px solid #eee4e8}
   .hero-meta b{font-size:10px!important}
 }
 
+
+/* HERO FOOD ACCENTS — subtle, floating SVG details */
+.hero-floating-stage{position:relative;isolation:isolate}
+.hero-accent{
+  position:absolute;
+  z-index:4;
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  color:#D94F83;
+  opacity:.82;
+  pointer-events:none;
+  filter:drop-shadow(0 3px 5px rgba(90,40,62,.08));
+  animation:heroAccentFloat 5.8s ease-in-out infinite;
+}
+.hero-accent svg{display:block;width:100%;height:100%;overflow:visible}
+.hero-accent-chili{top:13%;right:8%;width:39px;height:39px;transform:rotate(12deg);animation-delay:-1.2s}
+.hero-accent-cheese{left:7%;top:29%;width:35px;height:35px;color:#C58B55;animation-delay:-3.1s}
+.hero-accent-spark{right:13%;bottom:13%;width:23px;height:23px;color:#D99A4C;animation-delay:-2s}
+@keyframes heroAccentFloat{
+  0%,100%{translate:0 0;rotate:-3deg}
+  50%{translate:0 -9px;rotate:4deg}
+}
+@media(max-width:680px){
+  .hero-accent{width:28px;height:28px}
+  .hero-accent-chili{top:12%;right:4%;width:29px;height:29px}
+  .hero-accent-cheese{left:3%;top:27%;width:27px;height:27px}
+  .hero-accent-spark{right:7%;bottom:12%;width:19px;height:19px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-accent{animation:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -1343,6 +1377,15 @@ footer{border-top:1px solid #eee4e8}
   <div class="hero-soft-glow"></div>
   <div class="hero-orbit hero-orbit-one"></div><div class="hero-orbit hero-orbit-two"></div>
   <div class="hero-product-shadow"></div>
+  <span class="hero-accent hero-accent-chili" aria-hidden="true">
+    <svg viewBox="0 0 48 48" fill="none"><path d="M36 10c-2 8-7 13-15 17-6 3-11 8-11 13 0 3 2 5 5 5 7 0 14-8 17-16 3-7 7-11 13-13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M34 10c2-3 5-5 9-5-1 4-3 7-7 9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+  </span>
+  <span class="hero-accent hero-accent-cheese" aria-hidden="true">
+    <svg viewBox="0 0 48 48" fill="none"><path d="m7 17 27-9 8 29-27 7L7 17Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><circle cx="19" cy="23" r="3" stroke="currentColor" stroke-width="2"/><circle cx="31" cy="17" r="2" stroke="currentColor" stroke-width="2"/><circle cx="30" cy="32" r="3" stroke="currentColor" stroke-width="2"/></svg>
+  </span>
+  <span class="hero-accent hero-accent-spark" aria-hidden="true">
+    <svg viewBox="0 0 48 48" fill="none"><path d="M24 4c2.5 11 5.5 14 16 20-10.5 2.5-13.5 5.5-16 20-2.5-14.5-5.5-17.5-16-20C18.5 18 21.5 15 24 4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+  </span>
   <div class="hero-real-product-wrap"><img class="hero-real-product" src="https://i.ibb.co.com/XrdWDtvF/0b3110f3-54f6-4c7a-82ff-2f78a6ff6645.png" alt="Foto hero produk CIMOL BODJOTEL" fetchpriority="high"></div>
 </div>
 </section>
