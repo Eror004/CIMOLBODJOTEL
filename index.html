@@ -1105,6 +1105,158 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
   #product-grid .product,#product-grid .real-product-photo,#product-grid .add-btn{transition:none!important}
 }
 
+
+
+/* ===== ART-DIRECTED DESIGN REFINEMENT ===== */
+:root{
+ --pink:#F4A9C3;--pink2:#F9DBE6;--pink3:#FFF1F6;
+ --hot:#D94F83;--ink:#21171C;--muted:#796C73;
+ --paper:#FFFFFF;--line:#F0DCE4;--shadow:0 8px 24px rgba(33,23,28,.045);
+}
+html,body{background:#fff!important;color:var(--ink)}
+body:before{display:none!important}
+.announcement{background:#21171c;color:#fff;letter-spacing:1.35px}
+.header{height:82px;background:rgba(255,255,255,.96);border-bottom:1px solid #eee5e9;backdrop-filter:blur(12px)}
+.brand img{width:45px;height:45px}
+.nav{gap:clamp(18px,2.8vw,36px)}
+.nav a{font-size:11px;letter-spacing:.35px;color:#6f6268}
+.cart-link{gap:9px;padding:11px 15px;border:1px solid #eadde3;border-radius:9px;background:#fff;color:#382b31}
+.cart-link svg{width:18px;height:18px;flex:none}
+.cart-count{border-radius:6px;min-width:22px;height:22px;background:#d94f83}
+.menu-toggle{width:42px;height:42px;border:1px solid #eadde3;border-radius:9px}
+.menu-toggle svg{width:19px;height:19px;vertical-align:middle}
+.hero{
+ min-height:610px;padding:76px max(7%,calc((100% - 1240px)/2)) 72px;
+ grid-template-columns:1.02fr .98fr;gap:5%;
+ background:#fff!important;
+}
+.hero:before{display:none}
+.hero h1{font-size:clamp(64px,7.2vw,98px);letter-spacing:-.078em;line-height:.94}
+.hero h1 span:after{display:none}
+.hero-copy>p{max-width:440px;font-size:14px;line-height:1.85;color:#71646b}
+.hero-eyebrow{letter-spacing:2px}
+.hero-buttons{gap:12px;margin-top:26px}
+.primary,.secondary{border-radius:8px;box-shadow:none!important;min-height:48px;padding:14px 19px}
+.primary:hover,.secondary:hover{transform:translateY(-2px);box-shadow:none!important}
+.secondary{border:1px solid #e8dce2;background:#fff}
+.hero-meta{gap:18px;color:#75676e}
+.hero-visual{min-height:440px;height:440px;background:none!important}
+.hero-floating-stage{min-height:440px;perspective:none;isolation:isolate}
+.hero-soft-glow,.hero-orbit,.hero-icon-cloud{display:none!important}
+.hero-product-shadow{top:82%;width:55%;height:20px;background:rgba(62,33,47,.13);filter:blur(14px);animation:none}
+.hero-real-product-wrap{width:min(94%,470px);height:420px;animation:none}
+.hero-real-product{max-height:420px;border-radius:12px;background:transparent;filter:drop-shadow(0 14px 18px rgba(50,27,38,.12))}
+.hero-real-product-wrap img{object-position:center}
+.marquee{padding:12px 0;background:#f9dbe6;border-block:1px solid #efd0dc}
+.marquee-track{animation-duration:42s}
+.marquee span{font-size:10px;letter-spacing:1.7px;color:#7f405b}
+.section{padding:86px max(7%,calc((100% - 1240px)/2))}
+.section-top{margin-bottom:34px}
+.section h2{font-size:clamp(38px,4.8vw,58px);letter-spacing:-.065em}
+.section-top p{font-size:12px;line-height:1.85;color:#75676e}
+.menu-section{background:#fff}
+.toolbar{margin:25px 0 22px}
+.search-wrap input,.sort,.filter{border-radius:8px}
+.filter{background:#fff;border-color:#e9dfe4;color:#665961}
+.filter.active,.filter:hover{background:#f9e4ec;border-color:#e8bfd0;color:#8e3159}
+.product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.product{
+ border:1px solid #eee4e8;border-radius:12px;background:#fff;
+ box-shadow:none;transform:none;transition:border-color .2s ease;
+}
+.product:hover{transform:translateY(-3px);border-color:#df9db7;box-shadow:0 10px 24px rgba(65,34,49,.07)}
+.product-art{height:230px;background:#f7eff2}
+.real-product-photo{border-radius:0;object-fit:cover}
+.product-badge{left:12px;top:12px;padding:7px 9px;border-radius:5px;background:rgba(255,255,255,.94);color:#7f405b;font-size:8px;letter-spacing:.7px;box-shadow:none}
+.art-caption{border-radius:4px!important;box-shadow:none!important}
+.product-body{padding:18px}
+.product-category{font-size:8px;letter-spacing:1.4px}
+.product h3{font-size:16px;line-height:1.35;letter-spacing:-.35px}
+.product p{font-size:11px;line-height:1.7;min-height:42px}
+.product-bottom{border-color:#f0e8eb}
+.add-btn{width:38px;height:38px;border-radius:8px;background:#f9e4ec;color:#9a3d66}
+.add-btn:hover{transform:translateY(-1px);background:#d94f83;color:#fff}
+.coming-soon-product{grid-template-columns:.78fr 1.22fr;border:1px solid #eee1e6;border-radius:12px;background:#fff;box-shadow:none}
+.coming-soon-art{min-height:260px;background:#f8e8ee}
+.coming-soon-orbit,.coming-spark{display:none}
+.cheese-bowl{transform:none;box-shadow:0 9px 16px rgba(75,39,54,.13)}
+.coming-soon-copy{padding:32px 38px}
+.coming-soon-copy h3{font-size:clamp(25px,2.8vw,34px);letter-spacing:-.8px}
+.coming-soon-status{border-radius:5px;background:#fff;border-color:#e9c5d3}
+.about{background:#fff;grid-template-columns:.9fr 1.1fr;gap:8%;padding:82px max(7%,calc((100% - 1240px)/2))}
+.about-gif{max-height:410px;filter:drop-shadow(0 10px 15px rgba(50,27,38,.10));animation:none}
+.about h2{font-size:clamp(42px,4.8vw,60px)}
+.about p{font-size:13px;line-height:1.9;color:#71646b}
+.about-points{gap:9px}
+.about-points span{display:inline-flex;align-items:center;gap:8px;padding:9px 11px;border:1px solid #eee3e8;border-radius:6px;background:#fff;color:#66545d;font-size:10px}
+.about-points svg{width:16px;height:16px;color:#c04b79;flex:none}
+.benefits{gap:16px;margin-top:32px}
+.benefit{padding:24px;border:1px solid #eee4e8;border-radius:10px;box-shadow:none;background:#fff}
+.benefit:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(50,27,38,.05)}
+.benefit-icon{width:42px;height:42px;border-radius:9px;background:#f9e7ee;color:#a6406c}
+.benefit-icon svg{width:22px;height:22px}
+.benefit h3{font-size:15px;letter-spacing:-.25px}
+.benefit p{font-size:11px;line-height:1.8}
+.testimonials{background:#fff}
+.review-card{border:1px solid #eee2e7;border-radius:12px;background:#fff;box-shadow:none;padding:34px}
+.review-card:before{display:none}
+.review-card-icon{border-radius:10px;background:#f9e7ee}
+.review-note-paper{border-radius:4px;box-shadow:0 8px 20px rgba(50,27,38,.06);transform:none}
+.review-submit{border-radius:8px;box-shadow:none}
+.review-submit:hover{transform:translateY(-2px);box-shadow:none}
+.faq{background:#fff}
+.faq-list,.faq-item{border-color:#eee4e8}
+.cta{border-radius:12px;box-shadow:none}
+footer{border-top:1px solid #eee4e8}
+@media(max-width:900px){
+ .hero{min-height:0;padding-top:58px;padding-bottom:54px}
+ .hero-visual{height:370px;min-height:370px}
+ .hero-real-product-wrap{height:360px}
+ .hero-real-product{max-height:360px}
+ .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .section{padding:68px 6%}
+ .about{padding:68px 6%}
+}
+@media(max-width:680px){
+ .header{height:68px;padding:0 5%}
+ .nav{top:68px;border-radius:8px;box-shadow:0 10px 22px rgba(40,20,30,.08)}
+ .hero{grid-template-columns:1fr;padding:42px 6% 28px;gap:0}
+ .hero h1{font-size:clamp(58px,14vw,76px);margin:20px 0 16px}
+ .hero-visual{height:310px;min-height:310px;margin-top:14px}
+ .hero-real-product-wrap{width:100%;height:305px}
+ .hero-real-product{max-height:305px}
+ .hero-meta{gap:10px;font-size:9px}
+ .section{padding:58px 5%}
+ .section-top{display:block}
+ .section-top p{margin-top:12px}
+ .product-grid{gap:12px}
+ .product-art{height:clamp(150px,42vw,190px)}
+ .product-body{padding:12px}
+ .product h3{font-size:14px}
+ .product p{font-size:10px;min-height:55px}
+ .product-bottom{gap:6px}
+ .price{font-size:12px}
+ .price small{font-size:7px}
+ .add-btn{width:34px;height:34px}
+ .coming-soon-product{grid-template-columns:1fr}
+ .coming-soon-art{min-height:190px}
+ .coming-soon-copy{padding:24px 20px}
+ .about{grid-template-columns:1fr;padding:58px 6%;gap:26px}
+ .about-gif{max-height:300px}
+ .about h2{font-size:42px}
+ .benefits{grid-template-columns:1fr;gap:10px}
+ .benefit{display:grid;grid-template-columns:44px 1fr;column-gap:13px;padding:17px}
+ .benefit-icon{grid-row:span 2}
+ .benefit h3{margin:1px 0 5px}
+ .benefit p{grid-column:2}
+ .review-card{padding:22px 18px}
+ .review-card-aside{padding-left:0}
+}
+@media(prefers-reduced-motion:reduce){
+ .marquee-track{animation:none!important}
+ .about-gif,.hero-real-product-wrap,.hero-product-shadow{animation:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -1112,24 +1264,16 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 <header class="header">
 <a class="brand" href="#home"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a>
 <nav class="nav" id="nav"><a href="#home">HOME</a><a href="#menu">OUR MENU</a><a href="#about">OUR STORY</a><a href="#faq">FAQ</a></nav>
-<div class="header-actions"><a class="cart-link" href="https://eror004.github.io/CIMOLBODJOTEL/checkout.html" aria-label="Buka keranjang dan checkout">🛍️ <span>Keranjang</span> <b class="cart-count" id="cart-count">0</b></a><button class="menu-toggle" id="menu-toggle" aria-label="Buka menu" aria-controls="nav" aria-expanded="false">☰</button></div>
+<div class="header-actions"><a class="cart-link" href="https://eror004.github.io/CIMOLBODJOTEL/checkout.html" aria-label="Buka keranjang dan checkout"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8h17l-1.4 12h-14L3.5 8Z"/><path d="M8 9V6.5a4 4 0 0 1 8 0V9"/></svg><span>Keranjang</span><b class="cart-count" id="cart-count">0</b></a><button class="menu-toggle" id="menu-toggle" aria-label="Buka menu" aria-controls="nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
 </header>
 <main>
 <section class="hero" id="home">
-<div class="hero-copy reveal"><div class="hero-eyebrow">FIND YOUR HAPPY BITE</div><h1 class="hero-headline">GOOD FOOD.<br>GOOD<br><span class="hero-mood-word">MOOD.</span></h1><p>Cimol bodjot yang bikin hari biasa jadi lebih seru. Pilih favoritmu, atur level pedasnya, lalu nikmati snack time versi kamu.</p><div class="hero-buttons"><a class="primary" href="#menu">EXPLORE THE MENU <span>↗</span></a><a class="secondary" href="#about">Kenalan yuk ♡</a></div><div class="hero-meta"><span><b>✳</b> Pilihan original & mozzarella</span><span><b>♡</b> Ready to eat & frozen</span></div></div>
+<div class="hero-copy reveal"><div class="hero-eyebrow">FIND YOUR HAPPY BITE</div><h1 class="hero-headline">GOOD FOOD.<br>GOOD<br><span class="hero-mood-word">MOOD.</span></h1><p>Cimol bodjot yang bikin hari biasa jadi lebih seru. Pilih favoritmu, atur level pedasnya, lalu nikmati snack time versi kamu.</p><div class="hero-buttons"><a class="primary" href="#menu">EXPLORE THE MENU <span>↗</span></a><a class="secondary" href="#about">Kenalan yuk ↗</a></div><div class="hero-meta"><span><b>✳</b> Pilihan original & mozzarella</span><span><b>♡</b> Ready to eat & frozen</span></div></div>
 <div class="hero-visual hero-floating-stage reveal">
   <div class="hero-soft-glow"></div>
   <div class="hero-orbit hero-orbit-one"></div><div class="hero-orbit hero-orbit-two"></div>
   <div class="hero-product-shadow"></div>
   <div class="hero-real-product-wrap"><img class="hero-real-product" src="https://i.ibb.co.com/XrdWDtvF/0b3110f3-54f6-4c7a-82ff-2f78a6ff6645.png" alt="Foto hero produk CIMOL BODJOTEL" fetchpriority="high"></div>
-  <div class="hero-icon-cloud" aria-hidden="true">
-    <span class="hero-icon hero-icon-cimol">🍡</span>
-    <span class="hero-icon hero-icon-cheese">🧀</span>
-    <span class="hero-icon hero-icon-chili">🌶️</span>
-    <span class="hero-icon hero-icon-heart">♡</span>
-    <span class="hero-icon hero-icon-sparkle">✦</span>
-    <span class="hero-icon hero-icon-star">✧</span>
-  </div>
 </div>
 </section>
 <div class="marquee"><div class="marquee-track"><span>GOOD FOOD <b>✳</b> GOOD MOOD <b>♡</b> CIMOL TIME <b>✳</b> SNACK HAPPY</span><span>GOOD FOOD <b>✳</b> GOOD MOOD <b>♡</b> CIMOL TIME <b>✳</b> SNACK HAPPY</span><span>GOOD FOOD <b>✳</b> GOOD MOOD <b>♡</b> CIMOL TIME <b>✳</b> SNACK HAPPY</span><span>GOOD FOOD <b>✳</b> GOOD MOOD <b>♡</b> CIMOL TIME <b>✳</b> SNACK HAPPY</span></div></div>
@@ -1158,8 +1302,8 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 </div>
 
 </section>
-<section class="about" id="about"><div class="about-gif-wrap reveal"><img class="about-gif" src="https://i.ibb.co.com/xqZw3j81/Animasi-Cimol-Bodjotel-Pedas-Keju.gif" alt="Animasi cimol Bodjotel pedas dengan isian mozzarella" loading="lazy"></div><div class="reveal"><span class="eyebrow">A LITTLE STORY / 02</span><h2>SNACK TIME,<br><em>YOUR TIME.</em></h2><p>CIMOL BODJOTEL hadir buat bikin waktu ngemil terasa lebih menyenangkan. Dari varian original sampai mozzarella, dari siap santap sampai frozen — pilih yang paling cocok dengan mood kamu hari ini.</p><div class="about-points"><span>♡ Pilihan varian</span><span>✳ Level pedas 1–4</span><span>❄ Pilihan frozen</span></div></div></section>
-<section class="section"><div class="section-top reveal"><div><span class="eyebrow">WHY YOU'LL LOVE IT / 03</span><h2>SMALL BITES,<br><em>BIG SMILES.</em></h2></div><p>Pengalaman pesan yang dibuat simpel supaya kamu bisa fokus memilih CIMOL favorit.</p></div><div class="benefits"><article class="benefit reveal"><div class="benefit-icon">🌶️</div><h3>Your spice, your rules</h3><p>Pilih level pedas 1 sampai 4 untuk varian siap santap.</p></article><article class="benefit reveal"><div class="benefit-icon">🧀</div><h3>Choose your mood</h3><p>Temukan pilihan original, mozzarella, dan frozen.</p></article><article class="benefit reveal"><div class="benefit-icon">💌</div><h3>Easy checkout</h3><p>Atur keranjang, isi detail, lalu lanjutkan konfirmasi melalui WhatsApp admin.</p></article></div></section>
+<section class="about" id="about"><div class="about-gif-wrap reveal"><img class="about-gif" src="https://i.ibb.co.com/xqZw3j81/Animasi-Cimol-Bodjotel-Pedas-Keju.gif" alt="Animasi cimol Bodjotel pedas dengan isian mozzarella" loading="lazy"></div><div class="reveal"><span class="eyebrow">A LITTLE STORY / 02</span><h2>SNACK TIME,<br><em>YOUR TIME.</em></h2><p>CIMOL BODJOTEL hadir buat bikin waktu ngemil terasa lebih menyenangkan. Dari varian original sampai mozzarella, dari siap santap sampai frozen — pilih yang paling cocok dengan mood kamu hari ini.</p><div class="about-points"><span><svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6.5h14v10H3zM6 3.5h8v3H6z"/><path d="M7 10h6"/></svg>Pilihan varian</span><span><svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2.5c1.2 3-2.2 4.1-.8 6.5.6 1 1.8 1.3 2.6.5 1.1-1 1.1-2.4.8-3.4 2.3 1.8 4 4.2 3.4 7.1-.5 2.6-2.7 4.3-6 4.3s-5.7-2-5.7-5.1c0-2.2 1.2-4 3.1-5.7-.1 2.2.5 3.1 1.4 3.2C10.2 7.7 8.9 5.1 10 2.5Z"/></svg>Level pedas 1–4</span><span><svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h12v11H4zM6 3.5h8V6H6zM7 10h6"/></svg>Pilihan frozen</span></div></div></section>
+<section class="section"><div class="section-top reveal"><div><span class="eyebrow">WHY YOU'LL LOVE IT / 03</span><h2>SMALL BITES,<br><em>BIG SMILES.</em></h2></div><p>Pengalaman pesan yang dibuat simpel supaya kamu bisa fokus memilih CIMOL favorit.</p></div><div class="benefits"><article class="benefit reveal"><div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4.5c2.5-1 4.3-.5 5-2 1.2 3.2-.4 5.1-3 6.2-1.5 4.8-4.5 9.3-8.5 11.1-2.1 1-4.5-.2-4.8-2.5C2.6 11.8 8 6.5 14.5 4.5Z"/><path d="M5.5 18.5c2.2-3.4 5.5-6.4 9.5-8.5"/></svg></div><h3>Your spice, your rules</h3><p>Pilih level pedas 1 sampai 4 untuk varian siap santap.</p></article><article class="benefit reveal"><div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 19 4l2 2v13H3z"/><path d="M3 9.5 8 12l-5 2.5M12 8.2v2.2M17 14v2M9 16v1.5"/></svg></div><h3>Choose your mood</h3><p>Temukan pilihan original, mozzarella, dan frozen.</p></article><article class="benefit reveal"><div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></div><h3>Easy checkout</h3><p>Atur keranjang, isi detail, lalu lanjutkan konfirmasi melalui WhatsApp admin.</p></article></div></section>
 <section class="section testimonials" id="testimonials">
   <div class="section-top reveal">
     <div><span class="eyebrow">YOUR VOICE MATTERS / 04</span><h2>SHARE YOUR<br><em>CIMOL MOMENT.</em></h2></div>
