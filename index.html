@@ -1361,6 +1361,84 @@ footer{border-top:1px solid #eee4e8}
   .hero-accent{animation:none!important}
 }
 
+
+/* HERO PRODUCT MOTION — make the food photo feel dimensional */
+.hero-floating-stage{
+  perspective:1100px!important;
+  transform-style:preserve-3d;
+}
+.hero-floating-stage::before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  left:50%;
+  top:48%;
+  width:min(88%,470px);
+  aspect-ratio:1;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+  background:radial-gradient(circle,rgba(244,169,195,.34) 0%,rgba(249,219,230,.2) 42%,rgba(255,255,255,0) 72%);
+  filter:blur(12px);
+  animation:heroAuraPulse 5.2s ease-in-out infinite;
+}
+.hero-real-product-wrap{
+  position:relative!important;
+  z-index:2!important;
+  transform-origin:50% 58%;
+  will-change:transform;
+  animation:heroProductMotion 6.4s cubic-bezier(.42,0,.58,1) infinite!important;
+}
+.hero-real-product{
+  transform-origin:50% 58%;
+  will-change:transform,filter;
+  animation:heroImageBreath 6.4s ease-in-out infinite!important;
+  filter:drop-shadow(0 17px 18px rgba(33,23,28,.13)) drop-shadow(0 30px 35px rgba(217,79,131,.2))!important;
+}
+.hero-product-shadow{
+  transform-origin:center;
+  animation:heroShadowMotion 6.4s ease-in-out infinite!important;
+}
+.hero-accent{
+  opacity:1!important;
+  filter:drop-shadow(0 5px 9px rgba(90,40,62,.13));
+}
+.hero-accent-chili{width:48px;height:48px}
+.hero-accent-cheese{width:43px;height:43px}
+.hero-accent-spark{width:29px;height:29px}
+@keyframes heroProductMotion{
+  0%,100%{transform:translate3d(0,-12px,0) rotate(-1.15deg)}
+  50%{transform:translate3d(0,-25px,0) rotate(1.15deg)}
+}
+@keyframes heroImageBreath{
+  0%,100%{transform:scale(.985) rotate(-.25deg);filter:drop-shadow(0 15px 17px rgba(33,23,28,.12)) drop-shadow(0 25px 29px rgba(217,79,131,.15))}
+  50%{transform:scale(1.035) rotate(.25deg);filter:drop-shadow(0 21px 22px rgba(33,23,28,.17)) drop-shadow(0 35px 39px rgba(217,79,131,.23))}
+}
+@keyframes heroShadowMotion{
+  0%,100%{transform:scale(.88);opacity:.55}
+  50%{transform:scale(1.12);opacity:.9}
+}
+@keyframes heroAuraPulse{
+  0%,100%{opacity:.58;scale:.94}
+  50%{opacity:1;scale:1.06}
+}
+@media(max-width:680px){
+  .hero-floating-stage::before{width:min(96%,380px);top:48%}
+  .hero-real-product-wrap{animation:heroProductMotionMobile 6.4s cubic-bezier(.42,0,.58,1) infinite!important}
+  .hero-accent-chili{width:37px;height:37px}
+  .hero-accent-cheese{width:34px;height:34px}
+  .hero-accent-spark{width:23px;height:23px}
+}
+@keyframes heroProductMotionMobile{
+  0%,100%{transform:translate3d(0,-38px,0) rotate(-1deg)}
+  50%{transform:translate3d(0,-49px,0) rotate(1deg)}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-floating-stage::before,.hero-real-product-wrap,.hero-real-product,.hero-product-shadow,.hero-accent{
+    animation:none!important;
+  }
+}
+
 </style>
 </head>
 <body>
