@@ -1295,6 +1295,69 @@ footer{border-top:1px solid #eee4e8}
   .hero-real-product{max-height:290px}
 }
 
+
+/* ===== MOBILE HERO: PHOTO AND COPY IN SEPARATE, NON-OVERLAPPING ROWS ===== */
+@media(max-width:680px){
+  #home.hero{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    justify-content:flex-start!important;
+    gap:0!important;
+    min-height:0!important;
+    height:auto!important;
+    padding:30px 7% 34px!important;
+    overflow:visible!important;
+  }
+  #home .hero-floating-stage{
+    order:0!important;
+    position:relative!important;
+    display:grid!important;
+    flex:0 0 285px!important;
+    width:100%!important;
+    max-width:100%!important;
+    height:285px!important;
+    min-height:285px!important;
+    margin:0 auto 26px!important;
+    overflow:visible!important;
+  }
+  #home .hero-real-product-wrap{
+    position:relative!important;
+    z-index:2!important;
+    display:grid!important;
+    width:min(92%,330px)!important;
+    height:270px!important;
+    margin:0 auto!important;
+  }
+  #home .hero-real-product{
+    width:100%!important;
+    height:100%!important;
+    max-height:270px!important;
+    object-fit:contain!important;
+  }
+  #home .hero-copy{
+    order:1!important;
+    position:relative!important;
+    z-index:3!important;
+    display:block!important;
+    flex:0 0 auto!important;
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  #home .hero-headline{
+    display:block!important;
+    position:relative!important;
+    z-index:1!important;
+    margin:18px 0 16px!important;
+    font-size:clamp(58px,14.5vw,78px)!important;
+    line-height:.9!important;
+    letter-spacing:-.085em!important;
+  }
+  #home .hero-copy>p{max-width:100%!important}
+}
+
 </style>
 </head>
 <body>
