@@ -661,6 +661,53 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
  .receipt-meta{font-size:10px!important}
 }
 
+
+/* ===== CLEAN COMPACT RECEIPT — EDITORIAL TICKET STYLE ===== */
+.receipt-wrap{padding:18px!important;align-items:center!important}
+.receipt-wrap .receipt{
+ width:min(100%,540px)!important;
+ max-width:540px!important;
+ max-height:min(76dvh,680px)!important;
+ overflow:auto!important;
+ border:1px solid #ead5de!important;
+ border-radius:18px!important;
+ box-shadow:0 18px 55px rgba(52,25,38,.13)!important;
+ background:#fff!important;
+}
+.receipt-head{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ flex-direction:column!important;gap:5px!important;text-align:center!important;
+ padding:17px 22px 15px!important;
+ background:#fff7fa!important;
+ border-bottom:1px dashed #e8cbd7!important;
+}
+.receipt-head img{width:40px!important;height:40px!important;padding:4px!important;border-radius:11px!important;background:#fff!important}
+.receipt-head h3{margin:2px 0 0!important;font-size:17px!important;letter-spacing:.7px!important;color:#30212b!important}
+.receipt-head p{margin:0!important;font-size:8px!important;letter-spacing:1.4px!important;color:#967b88!important}
+.receipt-body{padding:18px 22px 20px!important}
+.receipt-meta{display:flex!important;justify-content:space-between!important;gap:12px!important;padding-bottom:13px!important;border-bottom:1px solid #f1e6eb!important;font-size:10px!important;letter-spacing:.35px!important;color:#8b6e7c!important}
+.receipt-customer{margin-top:13px!important;padding:11px 13px!important;border:1px solid #f2e5eb!important;border-radius:10px!important;background:#fff!important;font-size:12px!important;line-height:1.7!important}
+.receipt-lines{padding:15px 0!important;gap:11px!important}
+.receipt-row{font-size:12px!important;line-height:1.5!important}
+.receipt-row small{font-size:10px!important;color:#8f7b84!important}
+.receipt-total{padding:12px 13px!important;border:1px solid #f0e1e8!important;border-radius:11px!important;background:#fff9fb!important;gap:9px!important}
+.receipt-total .grand{padding-top:9px!important;border-top:1px dashed #e5cbd6!important;font-size:12px!important;color:#c13e73!important}
+.receipt-total .grand b{font-size:19px!important}
+.receipt-actions{width:min(100%,540px)!important;max-width:540px!important;margin:12px auto 0!important;gap:8px!important}
+.receipt-actions button{min-height:44px!important;border-radius:11px!important;font-size:11px!important;letter-spacing:.3px!important}
+@media(max-width:780px){
+ .receipt-wrap{padding:12px!important}
+ .receipt-wrap .receipt{max-height:70dvh!important}
+ .receipt-head{padding:13px 16px 12px!important}
+ .receipt-head img{width:34px!important;height:34px!important}
+ .receipt-head h3{font-size:15px!important}
+ .receipt-body{padding:14px 16px 16px!important}
+ .receipt-customer{margin-top:10px!important;padding:9px 11px!important}
+ .receipt-lines{padding:12px 0!important;gap:9px!important}
+ .receipt-actions{flex-direction:column!important}
+ .receipt-actions button{min-height:42px!important}
+}
+
 </style></head>
 <body><div class="top">♡ CHECKOUT TIME <b>·</b> ONE STEP CLOSER TO YOUR HAPPY SNACK ♡</div>
 <header><a class="brand" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a><a class="back" href="index.html#menu">← LANJUT PILIH MENU</a></header>
@@ -676,7 +723,7 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 <label>Catatan tambahan <small style="font-weight:400;color:#9b8490">(opsional)</small><textarea id="notes" placeholder="Request khusus atau patokan tambahan..."></textarea></label>
 <button class="submit" type="submit"><span>BUAT STRUK PESANAN</span><span aria-hidden="true">↗</span></button><p class="fine">Setelah ringkasan dibuat, tekan tombol WhatsApp untuk mengirim pesanan. Pesanan diproses setelah admin mengonfirmasi detail dan total akhirnya.</p>
 </form></section></div>
-<section class="receipt-wrap" id="receipt-wrap" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Struk pesanan"><div class="receipt" id="receipt"><div class="receipt-head"><img src="https://i.imgur.com/jVIjhfF.png" alt=""><h3>CIMOL BODJOTEL</h3><p>SMALL BITES · BIG HAPPINESS</p></div><div class="receipt-body"><div class="receipt-meta"><span id="receipt-id">ORDER #—</span><span id="receipt-date">—</span></div><div class="receipt-customer" id="receipt-customer"></div><div class="receipt-lines" id="receipt-lines"></div><div class="receipt-total" id="receipt-total"></div></div><div class="receipt-foot">THANK YOU FOR SNACKING WITH US ♡<br>Pesanan menunggu konfirmasi admin.</div></div><div class="receipt-actions"><button type="button" id="close-receipt">TUTUP STRUK ✕</button><button type="button" id="print">PRINT / SIMPAN PDF</button><button type="button" class="wa" id="send-wa">KIRIM DETAIL KE WHATSAPP ↗</button></div></section>
+<section class="receipt-wrap" id="receipt-wrap" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Struk pesanan"><div class="receipt" id="receipt"><div class="receipt-head"><img src="https://i.imgur.com/jVIjhfF.png" alt=""><h3>CIMOL BODJOTEL</h3><p>SMALL BITES · BIG HAPPINESS</p></div><div class="receipt-body"><div class="receipt-meta"><span id="receipt-id">ORDER #—</span><span id="receipt-date">—</span></div><div class="receipt-customer" id="receipt-customer"></div><div class="receipt-lines" id="receipt-lines"></div><div class="receipt-total" id="receipt-total"></div></div></div><div class="receipt-actions"><button type="button" id="close-receipt">TUTUP STRUK ✕</button><button type="button" id="print">PRINT / SIMPAN PDF</button><button type="button" class="wa" id="send-wa">KIRIM DETAIL KE WHATSAPP ↗</button></div></section>
 </main><footer>© 2026 CIMOL BODJOTEL · GOOD FOOD, GOOD MOOD.</footer><div class="toast" id="toast" hidden></div>
 <script>
 (()=>{'use strict';const KEY='bodjotel_cart_v2',WA='6283853021353',products={original:{name:'Cimol Bodjot Aslian',kind:'ready',image:'https://i.imgur.com/s9suIRw.jpeg',prices:{small:8000,large:10000}},mozza:{name:'Cimol Bodjot Mozarellia',kind:'ready',image:'https://i.imgur.com/Tqbu63W.png',prices:{small:10000,large:15000}},frozen:{name:'Cimol Bodjot Frozen Aslian',kind:'frozen',image:'https://i.imgur.com/aMmnDSY.png',prices:{pack:10000}},'frozen-mozza':{name:'Cimol Bodjot Frozen Mozarellia',kind:'frozen',image:'https://i.imgur.com/aMmnDSY.png',prices:{pack:15000}}};const $=id=>document.getElementById(id),money=n=>'Rp'+Number(n).toLocaleString('id-ID');document.body.appendChild($('receipt-wrap'));let cart=[],lastMessage='';try{cart=JSON.parse(localStorage.getItem(KEY)||'[]');if(!Array.isArray(cart))cart=[]}catch{cart=[]}
