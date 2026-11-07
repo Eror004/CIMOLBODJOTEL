@@ -1,3 +1,46 @@
-<!doctype html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5a6c2"><title>Pesanan — CIMOL BODJOTEL</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css?v=20261106c"></head><body><div class="announcement">ALMOST THERE! YOUR HAPPY SNACK IS ONE CHECKOUT AWAY.</div><header class="site-header"><a class="brand" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt="Cimol Bodjotel"><span>CIMOL<br><b>BODJOTEL<span>.</span></b></span></a><nav><a class="nav-link" href="index.html">Beranda</a><a class="nav-link" href="index.html#menu">Menu</a><a class="nav-link active" href="order.html">Pesanan <span class="cart-count" data-cart-count>0</span></a></nav><a class="header-cta" href="index.html#menu">TAMBAH MENU <span>↗</span></a></header>
+<!doctype html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5a6c2"><title>Pesanan — CIMOL BODJOTEL</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css?v=20261106c"><style>
+/* ===== CIMOL BODJOTEL OFFICIAL LOGO PALETTE — SINGLE SOURCE OF TRUTH ===== */
+:root{
+ --pink:#F4A9C3!important;
+ --pink-light:#F9DBE6!important;
+ --pink2:#F9DBE6!important;
+ --pink3:#FFF1F6!important;
+ --rose:#D94F83!important;
+ --hot:#D94F83!important;
+ --ink:#21171C!important;
+ --paper:#FFFFFF!important;
+ --white:#FFFFFF!important;
+ --muted:#796C73!important;
+ --line:#F2D7E1!important;
+ --yellow:#F9DBE6!important;
+ --butter:#F9DBE6!important;
+ --shadow:0 12px 34px rgba(217,79,131,.12)!important;
+ --radius:20px;
+}
+html,body{background:#FFFFFF!important;color:#21171C}
+body{--theme-bg:#FFFFFF}
+::selection{background:#F9DBE6!important;color:#21171C!important}
+a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
+:where(.header,.site-header,header,.top,.announcement,.nav,.nav.open,.footer,footer,.site-footer){border-color:#F2D7E1!important}
+:where(.header,.site-header,header,.nav,.footer,footer,.site-footer,.card,.product,.product-card,.product-grid,.cart-link,.modal,.receipt,.form,.summary,.layout,.section,.section-inner){background-color:#FFFFFF}
+:where(.eyebrow,.pill,.badge,.product-badge,.product-category,.tag,.step,.filter,.cart-count,.hero-meta span,.benefit-icon){border-color:#F2D7E1!important}
+:where(.eyebrow,.pill,.badge,.product-badge,.tag,.step,.filter,.benefit-icon){background-color:#F9DBE6!important;color:#8E3159!important}
+:where(.price,.item-price,.modal-price,.frozen-price,.grand,.total strong,.receipt-total,.product-price){color:#D94F83!important}
+:where(.primary,.secondary,.button,.button-dark,.btn,.btn-primary,.header-cta,.add-button,.add-btn,.checkout-button,.submit,.back-menu,.wa,.hero-actions a,.hero-buttons a){border-color:#D94F83!important}
+:where(.primary,.button,.btn-primary,.header-cta,.add-button,.add-btn,.checkout-button,.submit,.wa){background:#D94F83!important;color:#FFFFFF!important}
+:where(.secondary,.button-dark,.btn,.back-menu,.hero-buttons .secondary){background:#F9DBE6!important;color:#21171C!important}
+:where(.primary,.secondary,.button,.button-dark,.btn,.btn-primary,.header-cta,.add-button,.add-btn,.checkout-button,.submit,.back-menu,.wa){box-shadow:0 5px 14px rgba(217,79,131,.12)}
+:where(button,a,.filter,.product,.product-card,.benefit,.faq-item){transition:background-color .22s ease,border-color .22s ease,color .22s ease,transform .22s ease}
+:where(button:hover,.primary:hover,.button:hover,.btn-primary:hover,.header-cta:hover,.add-button:hover,.add-btn:hover,.checkout-button:hover,.submit:hover,.wa:hover){background-color:#C83F75!important;border-color:#C83F75!important;color:#FFFFFF!important}
+:where(input,textarea,select){border-color:#E8C5D3!important;background-color:#FFFFFF!important;color:#21171C!important}
+:where(input,textarea,select):focus{border-color:#D94F83!important;outline-color:#D94F83!important;box-shadow:0 0 0 3px rgba(217,79,131,.12)!important}
+:where(.card,.product,.product-card,.summary,.receipt,.modal,.form,.layout){border-color:#F2D7E1!important}
+:where(.muted,.hint,.fine,.note-bottom,.cart-caption,.product-category,small){color:#796C73}
+:where(.hero,.intro,.section,.about,.faq,.cta,.menu-section){background-color:#FFFFFF}
+:where(.hero-copy h1,.hero h1,.section h2,.section h3,.intro h1,.intro h2,.card h2,.product h3,.product-card h3){color:#21171C}
+:where(.toast,.cart-count){background:#D94F83!important;color:#FFFFFF!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head><body><div class="announcement">ALMOST THERE! YOUR HAPPY SNACK IS ONE CHECKOUT AWAY.</div><header class="site-header"><a class="brand" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt="Cimol Bodjotel"><span>CIMOL<br><b>BODJOTEL<span>.</span></b></span></a><nav><a class="nav-link" href="index.html">Beranda</a><a class="nav-link" href="index.html#menu">Menu</a><a class="nav-link active" href="order.html">Pesanan <span class="cart-count" data-cart-count>0</span></a></nav><a class="header-cta" href="index.html#menu">TAMBAH MENU <span>↗</span></a></header>
 <main class="order-page"><div class="order-title"><span class="eyebrow">YOUR HAPPY SNACK CHECKOUT</span><h1>KERANJANG<br><em>KESAYANGAN.</em></h1><p>Cek lagi pilihanmu. Kalau sudah pas, tinggal kirim ke WhatsApp kami.</p></div><div class="order-layout"><section class="receipt"><div class="receipt-top"><span>✳ CIMOL BODJOTEL</span><span>YOUR ORDER / 001</span></div><div class="receipt-heading"><div><span class="eyebrow">THE GOOD STUFF</span><h2>Rincian<br>pesanan.</h2></div><span id="receipt-date"></span></div><div id="cart-items" class="cart-items"></div><div class="receipt-total"><span>Subtotal</span><b id="subtotal">Rp0</b></div><div class="receipt-total"><span>Ongkir</span><b id="shipping-label">Dihitung admin</b></div><div class="receipt-grand"><span>TOTAL SEMENTARA</span><b id="grand-total">Rp0</b></div><a class="back-menu" href="index.html#menu">＋ MASIH MAU TAMBAH?</a><div class="receipt-perforation"></div><p class="receipt-thanks">THANK YOU FOR CHOOSING US ♡</p><div class="receipt-barcode">|||| ||| || |||| ||| ||</div></section>
 <section class="checkout-panel"><span class="eyebrow">JUST A FEW DETAILS</span><h2>Siapa yang <em>lagi happy?</em></h2><p class="checkout-intro">Isi detail berikut supaya pesananmu bisa kami proses.</p><form id="checkout-form"><label>Nama lengkap<input name="customer" required placeholder="Nama kamu"></label><label>Nomor WhatsApp<input name="phone" required inputmode="tel" placeholder="08xxxxxxxxxx"></label><div class="form-two"><label>CARA TERIMA<select name="fulfillment" id="fulfillment"><option value="delivery">Diantar (ongkir terpisah)</option><option value="pickup">Ambil sendiri</option></select></label><label>PEMBAYARAN<select name="payment"><option value="COD">COD / Bayar saat diterima</option><option value="Transfer bank">Transfer bank</option></select></label></div><label id="address-wrap">ALAMAT PENGANTARAN<textarea name="address" id="address" rows="3" placeholder="Nama jalan, nomor rumah, patokan..."></textarea></label><label>CATATAN UNTUK KAMI<textarea name="notes" rows="2" placeholder="Contoh: sambal dipisah, patokan rumah..."></textarea></label><div class="checkout-hint"><b>NOTE FROM US</b><br>Ongkir dan detail rekening transfer akan dikonfirmasi admin melalui WhatsApp. Total di atas belum termasuk ongkir.</div><button class="button button-dark checkout-button" type="submit">KIRIM PESANAN VIA WHATSAPP <span>↗</span></button><p class="secure-note">Pesanan baru terkirim setelah kamu menekan tombol kirim di WhatsApp.</p></form></section></div></main><footer><a class="brand footer-brand" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt=""><span>CIMOL<br><b>BODJOTEL<span>.</span></b></span></a><p>Small bites. Big happiness.</p><a href="https://wa.me/6283853021353" target="_blank" rel="noopener">CHAT ADMIN ↗</a><small>© 2026 CIMOL BODJOTEL. MADE WITH LOVE.</small></footer><div class="toast" id="toast" role="status"></div><script src="app.js"></script></body></html>
