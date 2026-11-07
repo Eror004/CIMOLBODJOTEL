@@ -881,7 +881,7 @@ $('close-receipt').addEventListener('click',()=>{$('receipt-wrap').classList.rem
   const picker=document.createElement('div');
   picker.className='option-picker';
   picker.setAttribute('role','group');
-  picker.setAttribute('aria-label',id==='fulfillment'?'Metode menerima':id==='payment'?'Pembayaran':'Waktu pesanan');
+  picker.setAttribute('aria-label',id==='fulfillment'?'Metode menerima':id==='payment'?'Pembayaran':'Pilihan');
   items.forEach(item=>{
    const button=document.createElement('button');
    button.type='button';button.className='option-choice';
