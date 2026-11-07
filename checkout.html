@@ -832,13 +832,50 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
  .card h2{font-size:23px!important}
 }
 
+
+/* ===== CHECKOUT DESIGN SYSTEM REFINEMENT ===== */
+:root{--ink:#21171C;--hot:#D94F83;--pink2:#F9DBE6;--line:#EFE3E8;--muted:#796C73;--shadow:0 8px 24px rgba(33,23,28,.045)}
+html,body{background:#fff!important;color:#21171C}
+body:before{display:none!important}
+.top{background:#21171c;color:#fff;letter-spacing:1.3px}
+header{height:78px;background:rgba(255,255,255,.97);border-bottom:1px solid #eee5e9;backdrop-filter:blur(12px)}
+.brand img{width:44px;height:44px}
+.back{color:#9a3d66}
+main{padding-top:48px}
+.intro{margin-bottom:25px}
+h1{letter-spacing:-.075em}
+.steps{gap:8px}
+.step{border-radius:6px;background:#fff;border-color:#eee3e8}
+.step.active{background:#f9e4ec;border-color:#e8bfd0;color:#8e3159}
+.layout{gap:18px}
+.card{border:1px solid #eee4e8;border-radius:12px;padding:24px;box-shadow:none;animation:none}
+.card h2{font-size:17px;letter-spacing:-.3px}
+.item{border-color:#f0e8eb}
+.thumb{border-radius:8px;background:#f8e9ef}
+.summary{border-color:#eadde3}
+.hint{border-radius:7px;background:#fff7fa}
+input,select,textarea{border-radius:8px;border-color:#e8dce2;background:#fff}
+.submit{border-radius:8px;box-shadow:none;min-height:49px}
+.submit:hover{transform:translateY(-1px);box-shadow:none}
+.receipt-wrap{animation:none}
+.receipt{border-radius:12px;box-shadow:0 8px 24px rgba(33,23,28,.06)}
+.receipt-head{background:#f9e4ec}
+.option-choice{border-radius:9px!important;box-shadow:none!important}
+.option-choice[aria-pressed="true"]{border-color:#d94f83!important;background:#fff7fa!important}
+@media(max-width:700px){
+ header{height:68px;padding:0 5%}
+ main{padding:35px 16px 65px}
+ .card{padding:18px}
+ .intro{display:block}
+ .intro p{margin-top:10px}
+}
 </style></head>
 <body><div class="top">♡ CHECKOUT TIME <b>·</b> ONE STEP CLOSER TO YOUR HAPPY SNACK ♡</div>
 <header><a class="brand" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a><a class="back" href="index.html#menu">← LANJUT PILIH MENU</a></header>
 <main><div class="intro"><div><span class="eyebrow">YOUR SNACK IS WAITING</span><h1>LET'S MAKE<br>IT <em>YOURS.</em></h1></div><p>Atur pesananmu, lengkapi detail penerimaan, lalu kirim ringkasan pesanan langsung ke WhatsApp admin.</p></div>
 <div class="steps"><span class="step">01 · PILIH MENU</span><span class="step active">02 · CHECKOUT</span><span class="step">03 · KONFIRMASI ADMIN</span></div>
 <div class="layout">
-<section class="card cart-card"><div class="card-heading"><div><span class="card-kicker">YOUR PICKS / 01</span><h2>Keranjang <span id="count-label">(0 item)</span></h2></div><span class="card-icon" aria-hidden="true">♡</span></div><p class="cart-caption">Pilihan CIMOL favoritmu, siap masuk ke tahap berikutnya ♡</p><div class="items" id="items"><div class="empty"><b>Keranjangmu masih kosong ♡</b>Yuk cari CIMOL favoritmu dulu.<br><a href="index.html#menu">BROWSE MENU ↗</a></div></div><div class="summary"><div class="line"><span>Subtotal produk</span><b id="subtotal">Rp0</b></div><div class="line"><span>Ongkir</span><b id="shipping">Dikonfirmasi admin</b></div><div class="line total"><span>Subtotal sementara</span><b id="grand">Rp0</b></div></div><div class="hint">Ongkir belum termasuk subtotal. Admin akan mengonfirmasi ongkir dan total akhir berdasarkan lokasi pengiriman melalui WhatsApp.</div></section>
+<section class="card cart-card"><div class="card-heading"><div><span class="card-kicker">YOUR PICKS / 01</span><h2>Keranjang <span id="count-label">(0 item)</span></h2></div><span class="card-icon" aria-hidden="true">♡</span></div><p class="cart-caption">Pilihan CIMOL favoritmu, siap masuk ke tahap berikutnya ♡</p><div class="items" id="items"><div class="empty"><b>Keranjangmu masih kosong</b>Yuk cari CIMOL favoritmu dulu.<br><a href="index.html#menu">BROWSE MENU ↗</a></div></div><div class="summary"><div class="line"><span>Subtotal produk</span><b id="subtotal">Rp0</b></div><div class="line"><span>Ongkir</span><b id="shipping">Dikonfirmasi admin</b></div><div class="line total"><span>Subtotal sementara</span><b id="grand">Rp0</b></div></div><div class="hint">Ongkir belum termasuk subtotal. Admin akan mengonfirmasi ongkir dan total akhir berdasarkan lokasi pengiriman melalui WhatsApp.</div></section>
 <section class="card form-card"><div class="card-heading"><div><span class="card-kicker">ALMOST THERE / 02</span><h2>Lengkapi <span>pesananmu.</span></h2></div><span class="card-icon" aria-hidden="true">✳</span></div><p class="cart-caption">Isi beberapa detail ini supaya CIMOLmu sampai ke orang dan tempat yang tepat.</p><form class="form" id="checkout-form" novalidate><div class="form-section-title"><span>01</span> INFO PENERIMA</div>
 <label>Nama lengkap<input id="name" autocomplete="name" required placeholder="Nama yang menerima pesanan"></label>
 <div class="form-section-title"><span>02</span> PENGIRIMAN & PEMBAYARAN</div><label>Metode menerima<select id="fulfillment"><option value="delivery">Diantar ke alamat</option><option value="pickup">Ambil sendiri</option></select></label>
