@@ -752,6 +752,53 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
  .form select{min-height:57px!important;font-size:14px!important;padding:15px 48px 15px 16px!important}
 }
 
+
+/* ===== TAP-TO-SELECT OPTION CARDS ===== */
+.form .option-native{
+ position:absolute!important;width:1px!important;height:1px!important;padding:0!important;
+ margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;
+ white-space:nowrap!important;border:0!important;opacity:0!important;pointer-events:none!important;
+}
+.form .option-picker{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%;
+}
+.form .option-choice{
+ position:relative;display:flex;align-items:center;gap:11px;text-align:left;
+ width:100%;min-height:76px;padding:13px 35px 13px 13px;
+ border:1.5px solid #f0d9e3;border-radius:15px;background:linear-gradient(145deg,#fff,#fff8fb);
+ color:#4b2c3a;box-shadow:0 4px 13px rgba(130,57,86,.045);
+ transition:transform .18s,border-color .18s,background .18s,box-shadow .18s;
+}
+.form .option-choice:hover{transform:translateY(-2px);border-color:#e7a1bb;box-shadow:0 8px 18px rgba(190,65,112,.09)}
+.form .option-choice[aria-pressed="true"]{
+ border:1.8px solid #d93678;background:linear-gradient(135deg,#fff0f6,#ffe3ed);
+ box-shadow:0 0 0 3px rgba(217,54,120,.09),0 8px 18px rgba(190,65,112,.08);
+}
+.form .option-icon{
+ display:grid;place-items:center;flex:0 0 39px;width:39px;height:39px;
+ border-radius:12px;background:#fbe4ed;font-size:19px;
+}
+.form .option-choice[aria-pressed="true"] .option-icon{background:#f8c9da}
+.form .option-copy{display:grid;gap:4px;min-width:0}
+.form .option-copy strong{font-size:12px;font-weight:900;line-height:1.25;color:#4b2c3a}
+.form .option-copy small{font-size:9px;font-weight:600;line-height:1.4;color:#927783}
+.form .option-check{
+ position:absolute;right:11px;top:11px;width:17px;height:17px;
+ display:grid;place-items:center;border:1.4px solid #e8cbd7;border-radius:50%;
+ color:transparent;font-size:10px;font-weight:900;background:#fff;
+}
+.form .option-choice[aria-pressed="true"] .option-check{
+ color:#fff;background:#d93678;border-color:#d93678;
+}
+@media(max-width:520px){
+ .form .option-picker{gap:8px}
+ .form .option-choice{min-height:83px;padding:11px 26px 11px 10px;gap:8px;border-radius:13px}
+ .form .option-icon{width:33px;height:33px;flex-basis:33px;font-size:16px;border-radius:10px}
+ .form .option-copy strong{font-size:11px}
+ .form .option-copy small{font-size:8px}
+ .form .option-check{right:8px;top:8px;width:15px;height:15px}
+}
+
 </style></head>
 <body><div class="top">♡ CHECKOUT TIME <b>·</b> ONE STEP CLOSER TO YOUR HAPPY SNACK ♡</div>
 <header><a class="brand" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a><a class="back" href="index.html#menu">← LANJUT PILIH MENU</a></header>
@@ -780,7 +827,50 @@ const orderId='CB-'+Date.now().toString().slice(-8),date=new Date().toLocaleStri
 lastMessage=['HALO CIMOL BODJOTEL! Aku mau konfirmasi pesanan:','', 'Nomor: '+orderId,'Tanggal: '+date,'',...rows.map(x=>x.i+'. '+x.name+' / '+x.variant+' / '+x.qty+'x = '+money(x.price)),'','Subtotal produk: '+money(sum),'Ongkir: '+(pickup?'Ambil sendiri':'Mohon konfirmasi admin'),'Subtotal sementara: '+money(sum),'','Nama: '+name,'Metode menerima: '+(pickup?'Ambil sendiri':'Diantar'),'Alamat: '+(pickup?'-':address),'Pembayaran: '+payment,'Waktu: '+timing,'Catatan: '+(notes||'-'),'','Mohon konfirmasi pesanan dan total akhirnya. Terima kasih!'].join('\n');$('receipt-wrap').classList.add('show');$('receipt-wrap').setAttribute('aria-hidden','false');document.body.classList.add('receipt-open');$('close-receipt').focus();toast('Struk digital berhasil dibuat ♡')});
 $('close-receipt').addEventListener('click',()=>{$('receipt-wrap').classList.remove('show');$('receipt-wrap').setAttribute('aria-hidden','true');document.body.classList.remove('receipt-open');$('name').focus()});$('receipt-wrap').addEventListener('click',e=>{if(e.target===$('receipt-wrap'))$('close-receipt').click()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('receipt-wrap').classList.contains('show'))$('close-receipt').click()});$('print').addEventListener('click',()=>window.print());$('send-wa').addEventListener('click',()=>{if(!lastMessage){toast('Buat struk terlebih dahulu.');return}window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(lastMessage),'_blank','noopener')});render();
 })();
-</script><script>
+</script>
+<script>
+(()=> {
+ const configs={
+  fulfillment:[
+   {value:'delivery',icon:'🚚',title:'Diantar',desc:'Antar ke alamatmu'},
+   {value:'pickup',icon:'🛍️',title:'Ambil sendiri',desc:'Ambil pesanan langsung'}
+  ],
+  payment:[
+   {value:'COD',icon:'💵',title:'COD',desc:'Bayar saat diterima'},
+   {value:'Transfer bank',icon:'🏦',title:'Transfer bank',desc:'Bayar melalui rekening'}
+  ],
+  timing:[
+   {value:'Secepatnya',icon:'⚡',title:'Secepatnya',desc:'Siapkan secepat mungkin'},
+   {value:'Atur dengan admin',icon:'🗓️',title:'Atur dengan admin',desc:'Tentukan waktu bersama admin'}
+  ]
+ };
+ Object.entries(configs).forEach(([id,items])=>{
+  const select=document.getElementById(id);
+  if(!select||select.dataset.cardsReady)return;
+  select.dataset.cardsReady='1';
+  select.classList.add('option-native');
+  const picker=document.createElement('div');
+  picker.className='option-picker';
+  picker.setAttribute('role','group');
+  picker.setAttribute('aria-label',id==='fulfillment'?'Metode menerima':id==='payment'?'Pembayaran':'Waktu pesanan');
+  items.forEach(item=>{
+   const button=document.createElement('button');
+   button.type='button';button.className='option-choice';
+   button.dataset.value=item.value;
+   button.setAttribute('aria-pressed',String(select.value===item.value));
+   button.innerHTML='<span class="option-icon" aria-hidden="true">'+item.icon+'</span><span class="option-copy"><strong>'+item.title+'</strong><small>'+item.desc+'</small></span><span class="option-check" aria-hidden="true">✓</span>';
+   button.addEventListener('click',()=>{
+    select.value=item.value;
+    select.dispatchEvent(new Event('change',{bubbles:true}));
+    picker.querySelectorAll('.option-choice').forEach(choice=>choice.setAttribute('aria-pressed',String(choice===button)));
+   });
+   picker.appendChild(button);
+  });
+  select.insertAdjacentElement('afterend',picker);
+ });
+})();
+</script>
+<script>
 (()=>{const nodes=document.querySelectorAll('.intro,.steps,.card,.note-bottom');if(!nodes.length)return; if(!('IntersectionObserver'in window)){nodes.forEach(n=>n.classList.add('cb-in-view'));return;}const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('cb-in-view');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -35px 0px'});nodes.forEach((n,i)=>{n.classList.add('cb-scroll-in');n.style.transitionDelay=(Math.min(i%4,3)*70)+'ms';io.observe(n)});})();
 </script>
 </body></html>
