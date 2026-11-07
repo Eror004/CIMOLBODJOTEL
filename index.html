@@ -1208,7 +1208,7 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
 (()=>{'use strict';
-const KEY='bodjotel_cart_v2',products={original:{name:'Cimol Bodjot Aslian',kind:'ready',prices:{small:8000,large:10000}},mozza:{name:'Cimol Bodjot Mozarellia',kind:'ready',prices:{small:10000,large:15000}},frozen:{name:'Cimol Bodjot Frozen Aslian',kind:'frozen',prices:{pack:10000}},'frozen-mozza':{name:'Cimol Bodjot Frozen Mozarellia',kind:'frozen',prices:{pack:15000}}};
+const KEY='cimolCart',products={original:{name:'Cimol Bodjot Aslian',kind:'ready',prices:{small:8000,large:10000}},mozza:{name:'Cimol Bodjot Mozarellia',kind:'ready',prices:{small:10000,large:15000}},frozen:{name:'Cimol Bodjot Frozen Aslian',kind:'frozen',prices:{pack:10000}},'frozen-mozza':{name:'Cimol Bodjot Frozen Mozarellia',kind:'frozen',prices:{pack:15000}}};
 const $=id=>document.getElementById(id),money=n=>'Rp'+Number(n).toLocaleString('id-ID');
 let cart=[];try{cart=JSON.parse(localStorage.getItem(KEY)||'[]');if(!Array.isArray(cart))cart=[]}catch{cart=[]}
 let active=null,size='small',spice=1,toastTimer;
