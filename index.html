@@ -543,6 +543,46 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
   .hero-product-shadow{width:250px!important}
 }
 
+
+/* ===== HERO PRODUCT — BIGGER + LIFTED ON MOBILE ===== */
+.hero-floating-stage{
+  min-height:620px!important;
+}
+.hero-real-product-wrap{
+  width:min(100%,620px)!important;
+  height:570px!important;
+  transform:translateY(-12px);
+}
+.hero-real-product{max-height:570px!important}
+.hero-soft-glow{
+  width:min(100%,560px)!important;
+  height:min(100%,560px)!important;
+}
+.hero-product-shadow{width:350px!important}
+@media(max-width:680px){
+  .hero-floating-stage{
+    min-height:430px!important;
+    margin-top:-18px!important;
+    margin-bottom:8px!important;
+  }
+  .hero-real-product-wrap{
+    width:min(112vw,460px)!important;
+    height:430px!important;
+    transform:translateY(-38px)!important;
+  }
+  .hero-real-product{max-height:430px!important}
+  .hero-soft-glow{
+    width:min(110vw,430px)!important;
+    height:min(110vw,430px)!important;
+  }
+  .hero-product-shadow{
+    width:260px!important;
+    top:82%!important;
+  }
+  .hero-orbit-one{width:330px!important;height:220px!important}
+  .hero-orbit-two{width:295px!important;height:295px!important}
+}
+
 </style>
 </head>
 <body>
