@@ -5,3 +5,46 @@
 @media(max-width:650px){.announcement{font-size:7px;letter-spacing:1px}.header{height:66px;padding:0 5%}.logo img{width:35px;height:35px}.header-order{padding:9px}.header-order span{display:none}nav{gap:14px}nav a{font-size:10px}.hero{padding:48px 7% 45px;grid-template-columns:1fr;gap:15px}.hero h1{font-size:clamp(67px,17vw,94px)}.hero-art{height:350px;margin-top:4px}.hero-bowl{height:245px;width:min(72%,300px)}.sticker{width:83px;height:83px;font-size:12px}.section{padding:65px 6%}.section-head{align-items:start;flex-direction:column;gap:12px}.section h2,.faq h2{font-size:clamp(38px,10vw,52px)}.products{gap:12px}.product-art{height:175px}.product-info{padding:13px}.product-info h3{font-size:15px}.product-info p{font-size:9px}.product-foot b{font-size:13px}.product-foot button{width:33px;height:33px}.art-tag{font-size:7px}.manifesto{padding:45px 7%}.manifesto-inner{grid-template-columns:78px 1fr;gap:18px}.manifesto-stamp{width:75px;height:75px;font-size:11px}.manifesto h2{font-size:35px}.manifesto-aside{display:none}.how{grid-template-columns:1fr;gap:30px}.faq{padding:55px 7%}.checkout{grid-template-columns:1fr}.cart-panel,.form-panel{padding:19px}.order{padding-inline:6%}.order-heading h2{font-size:54px}.final-cta{padding:65px 15px}footer{padding:25px 6%;gap:15px}footer p{order:3;width:100%;margin:0}footer small{width:100%;margin:0}footer>a:not(.logo){margin-left:auto}.form-row{grid-template-columns:1fr 1fr}}
 @media(max-width:380px){nav{gap:9px}nav a{font-size:9px}.products{grid-template-columns:1fr}.product-art{height:220px}.hero h1{font-size:64px}.form-row{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* ===== CIMOL BODJOTEL OFFICIAL LOGO PALETTE — SINGLE SOURCE OF TRUTH ===== */
+:root{
+ --pink:#F4A9C3!important;
+ --pink-light:#F9DBE6!important;
+ --pink2:#F9DBE6!important;
+ --pink3:#FFF1F6!important;
+ --rose:#D94F83!important;
+ --hot:#D94F83!important;
+ --ink:#21171C!important;
+ --paper:#FFFFFF!important;
+ --white:#FFFFFF!important;
+ --muted:#796C73!important;
+ --line:#F2D7E1!important;
+ --yellow:#F9DBE6!important;
+ --butter:#F9DBE6!important;
+ --shadow:0 12px 34px rgba(217,79,131,.12)!important;
+ --radius:20px;
+}
+html,body{background:#FFFFFF!important;color:#21171C}
+body{--theme-bg:#FFFFFF}
+::selection{background:#F9DBE6!important;color:#21171C!important}
+a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
+:where(.header,.site-header,header,.top,.announcement,.nav,.nav.open,.footer,footer,.site-footer){border-color:#F2D7E1!important}
+:where(.header,.site-header,header,.nav,.footer,footer,.site-footer,.card,.product,.product-card,.product-grid,.cart-link,.modal,.receipt,.form,.summary,.layout,.section,.section-inner){background-color:#FFFFFF}
+:where(.eyebrow,.pill,.badge,.product-badge,.product-category,.tag,.step,.filter,.cart-count,.hero-meta span,.benefit-icon){border-color:#F2D7E1!important}
+:where(.eyebrow,.pill,.badge,.product-badge,.tag,.step,.filter,.benefit-icon){background-color:#F9DBE6!important;color:#8E3159!important}
+:where(.price,.item-price,.modal-price,.frozen-price,.grand,.total strong,.receipt-total,.product-price){color:#D94F83!important}
+:where(.primary,.secondary,.button,.button-dark,.btn,.btn-primary,.header-cta,.add-button,.add-btn,.checkout-button,.submit,.back-menu,.wa,.hero-actions a,.hero-buttons a){border-color:#D94F83!important}
+:where(.primary,.button,.btn-primary,.header-cta,.add-button,.add-btn,.checkout-button,.submit,.wa){background:#D94F83!important;color:#FFFFFF!important}
+:where(.secondary,.button-dark,.btn,.back-menu,.hero-buttons .secondary){background:#F9DBE6!important;color:#21171C!important}
+:where(.primary,.secondary,.button,.button-dark,.btn,.btn-primary,.header-cta,.add-button,.add-btn,.checkout-button,.submit,.back-menu,.wa){box-shadow:0 5px 14px rgba(217,79,131,.12)}
+:where(button,a,.filter,.product,.product-card,.benefit,.faq-item){transition:background-color .22s ease,border-color .22s ease,color .22s ease,transform .22s ease}
+:where(button:hover,.primary:hover,.button:hover,.btn-primary:hover,.header-cta:hover,.add-button:hover,.add-btn:hover,.checkout-button:hover,.submit:hover,.wa:hover){background-color:#C83F75!important;border-color:#C83F75!important;color:#FFFFFF!important}
+:where(input,textarea,select){border-color:#E8C5D3!important;background-color:#FFFFFF!important;color:#21171C!important}
+:where(input,textarea,select):focus{border-color:#D94F83!important;outline-color:#D94F83!important;box-shadow:0 0 0 3px rgba(217,79,131,.12)!important}
+:where(.card,.product,.product-card,.summary,.receipt,.modal,.form,.layout){border-color:#F2D7E1!important}
+:where(.muted,.hint,.fine,.note-bottom,.cart-caption,.product-category,small){color:#796C73}
+:where(.hero,.intro,.section,.about,.faq,.cta,.menu-section){background-color:#FFFFFF}
+:where(.hero-copy h1,.hero h1,.section h2,.section h3,.intro h1,.intro h2,.card h2,.product h3,.product-card h3){color:#21171C}
+:where(.toast,.cart-count){background:#D94F83!important;color:#FFFFFF!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}}
