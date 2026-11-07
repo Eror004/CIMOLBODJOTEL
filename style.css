@@ -102,7 +102,7 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 .coming-spark{position:absolute;color:#fff;font-size:23px}.spark-one{top:48px;right:23%}.spark-two{bottom:45px;left:19%;font-size:17px}
 .coming-art-caption{position:absolute;right:17px;bottom:15px;color:#9d496c;text-align:right;font:700 8px/1.45 'Space Grotesk',sans-serif;letter-spacing:1.3px}
 .coming-soon-copy{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:34px 42px}
-.coming-soon-kicker{display:inline-flex;align-items:center;gap:9px;color:#b34873;font:700 9px 'Space Grotesk',sans-serif;letter-spacing:1.8px}
+.coming-soon-kicker{display:inline-flex;align-items:center;gap:0;color:#b34873;font:700 11px 'Space Grotesk',sans-serif;letter-spacing:2px}
 .coming-pulse,.status-dot{width:7px;height:7px;border-radius:50%;background:#d94f83;box-shadow:0 0 0 4px rgba(217,79,131,.12)}
 .coming-soon-copy h3{margin:13px 0 10px;color:#291a22;font:700 clamp(25px,3vw,36px)/1.08 'Space Grotesk',sans-serif;letter-spacing:-1.1px}
 .coming-soon-copy h3 em{color:#c34c7a;font-style:normal}
