@@ -804,6 +804,25 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
   .hero-copy h1,.hero-copy h1 span{animation:none!important;filter:none!important;transform:none!important}
 }
 
+
+/* ===== HERO HEADLINE SIZE + POSITION REFINEMENT ===== */
+.hero-copy .hero-headline{
+  font-size:clamp(72px,9.1vw,126px)!important;
+  line-height:.86!important;
+  margin-top:18px!important;
+  margin-bottom:20px!important;
+  transform:translateY(-9px);
+}
+@media(max-width:680px){
+  .hero-copy .hero-headline{
+    font-size:clamp(68px,17.2vw,98px)!important;
+    line-height:.87!important;
+    margin-top:15px!important;
+    margin-bottom:18px!important;
+    transform:translateY(-7px);
+  }
+}
+
 /* ===== HERO HEADLINE: DISTINCT 3D MOOD ENTRANCE ===== */
 .hero-copy .hero-headline{
   perspective:900px;
