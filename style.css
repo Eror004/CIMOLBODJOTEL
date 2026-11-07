@@ -111,6 +111,10 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 .coming-soon-status{display:inline-flex;align-items:center;gap:9px;padding:9px 12px;border:1px solid #e9b9cb;border-radius:999px;background:#fff;color:#b34873;font:700 9px 'Space Grotesk',sans-serif;letter-spacing:1.1px}
 .coming-soon-status .status-dot{width:6px;height:6px;box-shadow:none}
 
+/* SUPPLIED PRODUCT PHOTO — KUah Keju */
+.coming-soon-art{position:relative;isolation:isolate;background:#f3e9ed!important}
+.coming-soon-photo{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+@media(max-width:700px){.coming-soon-photo{object-position:center}}
 /* COMING SOON — product-cover label treatment */
 .coming-soon-art::after{
   content:"COMING SOON";
