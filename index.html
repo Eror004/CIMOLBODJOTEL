@@ -823,6 +823,21 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
   }
 }
 
+/* ===== HERO HEADLINE: EXACT THREE-LINE LEFT ALIGNMENT ===== */
+.hero-copy .hero-headline{
+  display:block!important;
+  width:100%;
+  text-align:left!important;
+}
+.hero-copy .hero-headline .hero-mood-word{
+  display:block!important;
+  width:max-content;
+  font-size:calc(1em + 5px);
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-copy .hero-headline .hero-mood-word{display:block!important}
+}
+
 /* ===== HERO HEADLINE: DISTINCT 3D MOOD ENTRANCE ===== */
 .hero-copy .hero-headline{
   perspective:900px;
@@ -849,6 +864,10 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 @media(prefers-reduced-motion:reduce){
   .hero-copy .hero-headline .hero-mood-word{opacity:1;filter:none;transform:none;animation:none!important}
 }
+/* Keep each headline row on the same left edge. */
+.hero-copy .hero-headline{text-align:left!important}
+.hero-copy .hero-headline .hero-mood-word{display:block!important;width:max-content}
+
 
 </style>
 </head>
