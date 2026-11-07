@@ -725,6 +725,48 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
   .hero-icon{opacity:1!important;transform:none!important;translate:none!important;rotate:none!important;scale:1!important;animation:none!important}
 }
 
+
+/* ===== HERO MOTION V2 — SMOOTH, PREMIUM, FLOATING ===== */
+.hero-floating-stage .hero-icon{
+  opacity:0;
+  filter:blur(8px);
+  transform:translate3d(0,22px,0) scale(.68) rotate(-12deg);
+  animation:heroIconModernIn .95s cubic-bezier(.2,.8,.2,1) forwards,
+            heroIconModernFloat 6.8s ease-in-out infinite;
+  will-change:transform,opacity,filter;
+}
+.hero-floating-stage .hero-icon-cimol{animation-delay:.08s,1.05s}
+.hero-floating-stage .hero-icon-cheese{animation-delay:.2s,1.25s}
+.hero-floating-stage .hero-icon-chili{animation-delay:.32s,1.45s}
+.hero-floating-stage .hero-icon-heart{animation-delay:.44s,1.65s}
+.hero-floating-stage .hero-icon-sparkle{animation-delay:.56s,1.2s}
+.hero-floating-stage .hero-icon-star{animation-delay:.68s,1.4s}
+.hero-floating-stage .hero-icon-sparkle,
+.hero-floating-stage .hero-icon-star{
+  animation-name:heroIconModernIn,heroIconModernTwinkle;
+}
+@keyframes heroIconModernIn{
+  0%{opacity:0;filter:blur(8px);transform:translate3d(0,22px,0) scale(.68) rotate(-12deg)}
+  72%{opacity:1;filter:blur(0);transform:translate3d(0,-4px,0) scale(1.08) rotate(3deg)}
+  100%{opacity:1;filter:blur(0);transform:translate3d(0,0,0) scale(1) rotate(0)}
+}
+@keyframes heroIconModernFloat{
+  0%,100%{translate:0 0;rotate:-3deg}
+  50%{translate:0 -13px;rotate:3deg}
+}
+@keyframes heroIconModernTwinkle{
+  0%,100%{translate:0 0;rotate:-8deg;scale:.92;opacity:.72;filter:drop-shadow(0 0 0 rgba(217,79,131,0))}
+  50%{translate:0 -8px;rotate:9deg;scale:1.14;opacity:1;filter:drop-shadow(0 5px 12px rgba(217,79,131,.25))}
+}
+@media(max-width:680px){
+  .hero-floating-stage .hero-icon{will-change:transform,opacity}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-floating-stage .hero-icon{
+    opacity:1!important;filter:none!important;transform:none!important;
+    translate:none!important;rotate:none!important;scale:1!important;animation:none!important;
+  }
+}
 </style>
 </head>
 <body>
