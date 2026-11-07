@@ -951,6 +951,9 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
     z-index:1!important;
     left:auto!important;
     bottom:auto!important;
+    display:flex!important;
+    justify-content:center!important;
+    align-items:center!important;
     width:100%!important;
     max-width:420px!important;
     margin:-4px auto -12px!important;
@@ -961,13 +964,16 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
   .about > .about-gif-wrap .about-gif{
     display:block!important;
     position:relative!important;
-    left:50%!important;
+    left:auto!important;
     width:150%!important;
     max-width:none!important;
     max-height:none!important;
     height:auto!important;
-    transform:translateX(-50%)!important;
+    margin-left:-25%!important;
+    margin-right:-25%!important;
+    transform:none!important;
     transform-origin:center!important;
+    object-position:center!important;
     filter:drop-shadow(0 16px 22px #b66e8b35)!important;
   }
   .about h2{font-size:clamp(39px,10vw,48px)!important;line-height:.98!important}
