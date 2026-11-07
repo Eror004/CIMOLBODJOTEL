@@ -1552,6 +1552,13 @@ body{background:#fff!important;color:var(--ink);font-family:'DM Sans',sans-serif
  .reveal,.cb-scroll-in{opacity:1!important;transform:none!important;transition:none!important}
 }
 
+
+/* FIX: REMOVE THE OVERSIZED BACKGROUND WORD THAT CROSSES THE HERO PHOTO */
+.hero::after{
+ content:none!important;
+ display:none!important;
+}
+
 </style>
 </head>
 <body>
