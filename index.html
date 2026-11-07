@@ -869,6 +869,58 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 .hero-copy .hero-headline .hero-mood-word{display:block!important;width:max-content}
 
 
+
+/* ===== HERO EYEBROW — BOLDER SIZE + SOFT MOTION ===== */
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  width:max-content;
+  max-width:100%;
+  margin:0 0 2px;
+  padding:10px 16px;
+  border:1px solid #efc6d6;
+  border-radius:999px;
+  background:linear-gradient(110deg,#fffafd,#fff0f5);
+  color:#a34e70;
+  font:900 11px/1 'Plus Jakarta Sans',sans-serif;
+  letter-spacing:2px;
+  box-shadow:0 8px 24px #ad648018;
+  opacity:0;
+  transform:translate3d(0,14px,0) scale(.96);
+  filter:blur(5px);
+  will-change:transform,opacity,filter;
+}
+.hero-eyebrow:before{
+  content:"✦";
+  color:#d95788;
+  font-size:13px;
+  animation:heroEyebrowSpark 2.4s ease-in-out infinite;
+}
+.hero-copy.visible .hero-eyebrow{
+  animation:heroEyebrowEnter .8s .08s cubic-bezier(.2,.8,.2,1) forwards,
+            heroEyebrowFloat 4.5s 1s ease-in-out infinite;
+}
+@keyframes heroEyebrowEnter{
+  0%{opacity:0;transform:translate3d(0,14px,0) scale(.96);filter:blur(5px)}
+  75%{opacity:1;transform:translate3d(0,-2px,0) scale(1.015);filter:blur(0)}
+  100%{opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0)}
+}
+@keyframes heroEyebrowFloat{
+  0%,100%{translate:0 0}
+  50%{translate:0 -3px}
+}
+@keyframes heroEyebrowSpark{
+  0%,100%{opacity:.65;transform:scale(.85) rotate(0)}
+  50%{opacity:1;transform:scale(1.18) rotate(18deg)}
+}
+@media(max-width:680px){
+  .hero-eyebrow{font-size:10px;letter-spacing:1.65px;padding:9px 13px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-eyebrow,.hero-eyebrow:before{opacity:1;filter:none;transform:none;animation:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -880,7 +932,7 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 </header>
 <main>
 <section class="hero" id="home">
-<div class="hero-copy reveal"><h1 class="hero-headline">GOOD FOOD.<br>GOOD<br><span class="hero-mood-word">MOOD.</span></h1><p>Cimol bodjot yang bikin hari biasa jadi lebih seru. Pilih favoritmu, atur level pedasnya, lalu nikmati snack time versi kamu.</p><div class="hero-buttons"><a class="primary" href="#menu">EXPLORE THE MENU <span>↗</span></a><a class="secondary" href="#about">Kenalan yuk ♡</a></div><div class="hero-meta"><span><b>✳</b> Pilihan original & mozzarella</span><span><b>♡</b> Ready to eat & frozen</span></div></div>
+<div class="hero-copy reveal"><div class="hero-eyebrow">FIND YOUR HAPPY BITE</div><h1 class="hero-headline">GOOD FOOD.<br>GOOD<br><span class="hero-mood-word">MOOD.</span></h1><p>Cimol bodjot yang bikin hari biasa jadi lebih seru. Pilih favoritmu, atur level pedasnya, lalu nikmati snack time versi kamu.</p><div class="hero-buttons"><a class="primary" href="#menu">EXPLORE THE MENU <span>↗</span></a><a class="secondary" href="#about">Kenalan yuk ♡</a></div><div class="hero-meta"><span><b>✳</b> Pilihan original & mozzarella</span><span><b>♡</b> Ready to eat & frozen</span></div></div>
 <div class="hero-visual hero-floating-stage reveal">
   <div class="hero-soft-glow"></div>
   <div class="hero-orbit hero-orbit-one"></div><div class="hero-orbit hero-orbit-two"></div>
