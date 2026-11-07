@@ -1553,10 +1553,34 @@ body{background:#fff!important;color:var(--ink);font-family:'DM Sans',sans-serif
 }
 
 
-/* FIX: REMOVE THE OVERSIZED BACKGROUND WORD THAT CROSSES THE HERO PHOTO */
-.hero::after{
- content:none!important;
- display:none!important;
+
+/* MOBILE HERO META: KEEP BOTH LABELS FULLY READABLE ABOVE THE PRODUCT */
+@media(max-width:680px){
+ .hero-copy{position:relative!important;z-index:5!important}
+ .hero-meta{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  width:100%!important;
+  max-width:100%!important;
+  gap:8px 13px!important;
+  margin-top:21px!important;
+  overflow:visible!important;
+ }
+ .hero-meta span{
+  display:inline-flex!important;
+  flex:0 1 auto!important;
+  max-width:100%!important;
+  white-space:normal!important;
+  line-height:1.45!important;
+ }
+ .hero-visual{
+  position:relative!important;
+  z-index:1!important;
+  margin-top:22px!important;
+ }
+ .hero-real-product-wrap{max-width:100%!important}
 }
 
 </style>
