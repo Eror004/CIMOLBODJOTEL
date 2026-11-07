@@ -933,6 +933,21 @@ main{max-width:1120px!important;padding-top:42px!important;padding-bottom:72px!i
  .cb-scroll-in{opacity:1!important;transform:none!important;transition:none!important}
 }
 
+
+/* ===== ADDRESS DELIVERY OPTIONS: MANUAL OR WHATSAPP LOCATION PIN ===== */
+.address-choice-wrap{display:grid;gap:10px}
+.address-choice-label{font-size:13px;font-weight:800;color:#713d56}
+.address-mode{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.address-mode-choice{min-width:0;text-align:left;display:grid;gap:5px;padding:14px 13px;border:1px solid #efc3d4;border-radius:12px;background:#fff;color:#34212b;transition:border-color .2s,background .2s,box-shadow .2s}
+.address-mode-choice strong{font:800 12px/1.35 'Plus Jakarta Sans',sans-serif}
+.address-mode-choice small{font:500 11px/1.5 'DM Sans',sans-serif;color:#806b77}
+.address-mode-choice.is-active{border-color:#d93678;background:#fff1f6;box-shadow:inset 0 0 0 1px #d9367830}
+.location-share-panel{padding:16px;border:1px solid #f0c3d5;border-radius:13px;background:#fff7fa}
+.location-share-title{margin:0 0 5px;font:800 14px 'Plus Jakarta Sans',sans-serif;color:#34212b}
+.location-share-copy,.location-share-note{margin:0;color:#755f6b;font-size:12px;line-height:1.7}
+.location-share-button{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:13px 0 9px;padding:14px 15px;border-radius:10px;background:#d93678;color:#fff!important;font:800 11px 'Plus Jakarta Sans',sans-serif;letter-spacing:.35px}
+.location-share-note{font-size:11px;color:#8b7580}
+@media(max-width:480px){.address-mode{grid-template-columns:1fr}.address-mode-choice{padding:13px}.location-share-panel{padding:14px}}
 </style></head>
 <body><div class="top">♡ CHECKOUT TIME <b>·</b> ONE STEP CLOSER TO YOUR HAPPY SNACK ♡</div>
 <header><a class="brand" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a><a class="back" href="index.html#menu">← LANJUT PILIH MENU</a></header>
@@ -943,7 +958,20 @@ main{max-width:1120px!important;padding-top:42px!important;padding-bottom:72px!i
 <section class="card form-card"><div class="card-heading"><div><span class="card-kicker">ALMOST THERE / 02</span><h2>Lengkapi <span>pesananmu.</span></h2></div><span class="card-icon" aria-hidden="true">✳</span></div><p class="cart-caption">Isi beberapa detail ini supaya CIMOLmu sampai ke orang dan tempat yang tepat.</p><form class="form" id="checkout-form" novalidate><div class="form-section-title"><span>01</span> INFO PENERIMA</div>
 <label>Nama lengkap<input id="name" autocomplete="name" required placeholder="Nama yang menerima pesanan"></label>
 <div class="form-section-title"><span>02</span> PENGIRIMAN & PEMBAYARAN</div><label>Metode menerima<select id="fulfillment"><option value="delivery">Diantar ke alamat</option><option value="pickup">Ambil sendiri</option></select></label>
-<label id="address-group">Alamat lengkap<textarea id="address" autocomplete="street-address" required placeholder="Nama jalan, nomor rumah, RT/RW, kecamatan, patokan..."></textarea></label>
+<div class="address-choice-wrap" id="address-group">
+  <span class="address-choice-label">Alamat penerima</span>
+  <div class="address-mode" role="group" aria-label="Cara membagikan alamat">
+    <button class="address-mode-choice is-active" type="button" data-address-mode="manual" aria-pressed="true"><strong>Isi alamat manual</strong><small>Tulis alamat lengkap di sini</small></button>
+    <button class="address-mode-choice" type="button" data-address-mode="share" aria-pressed="false"><strong>Share lokasi via WhatsApp</strong><small>Kirim pin lokasi langsung ke admin</small></button>
+  </div>
+  <label class="address-manual" id="address-manual">Alamat lengkap<textarea id="address" autocomplete="street-address" required placeholder="Nama jalan, nomor rumah, RT/RW, kecamatan, patokan..."></textarea></label>
+  <div class="location-share-panel hidden" id="location-share-panel">
+    <p class="location-share-title">Kirim titik lokasi rumahmu</p>
+    <p class="location-share-copy">WhatsApp akan terbuka. Di ruang chat, tekan ikon lampiran atau tombol +, pilih <b>Lokasi</b>, lalu kirim pin lokasi kamu ke admin.</p>
+    <a class="location-share-button" href="https://wa.me/6283853021353?text=Halo%20CIMOL%20BODJOTEL%2C%20saya%20ingin%20mengirim%20pin%20lokasi%20untuk%20pesanan%20saya." target="_blank" rel="noopener noreferrer">KIRIM PIN LOKASI VIA WHATSAPP <span aria-hidden="true">↗</span></a>
+    <p class="location-share-note">Setelah mengirim pin, kembali ke halaman ini untuk membuat struk pesanan.</p>
+  </div>
+</div>
 <label>Pembayaran<select id="payment"><option value="COD">COD (bayar saat diterima)</option><option value="Transfer bank">Transfer bank</option></select></label>
 <label>Catatan tambahan <small style="font-weight:400;color:#9b8490">(opsional)</small><textarea id="notes" placeholder="Request khusus atau patokan tambahan..."></textarea></label>
 <button class="submit" type="submit"><span>BUAT STRUK PESANAN</span><span aria-hidden="true">↗</span></button><p class="fine">Setelah ringkasan dibuat, tekan tombol WhatsApp untuk mengirim pesanan. Pesanan diproses setelah admin mengonfirmasi detail dan total akhirnya.</p>
@@ -955,10 +983,28 @@ main{max-width:1120px!important;padding-top:42px!important;padding-bottom:72px!i
 const safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const total=()=>cart.reduce((s,x)=>s+(products[x.id]?.prices[x.size]||0)*x.qty,0);function toast(t){const el=$('toast');el.textContent=t;el.hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.hidden=true,2500)}
 function render(){cart=cart.filter(x=>products[x.id]&&products[x.id].prices[x.size]&&Number.isInteger(x.qty)&&x.qty>0);const n=cart.reduce((s,x)=>s+x.qty,0);$('count-label').textContent='('+n+' item)';if(!cart.length)$('items').innerHTML='<div class="empty"><b>Keranjangmu masih kosong ♡</b>Yuk cari CIMOL favoritmu dulu.<br><a href="index.html#menu">BROWSE MENU ↗</a></div>';else $('items').innerHTML=cart.map(x=>{const p=products[x.id],variant=x.size==='small'?'Ukuran kecil':x.size==='large'?'Ukuran besar':'1 pack';return '<article class="item"><div class="thumb"><img src="'+p.image+'" alt="'+safe(p.name)+'" loading="lazy"></div><div><strong>'+safe(p.name)+'</strong><small>'+variant+(p.kind==='ready'?' · Level pedas '+x.spice:'')+'</small><div class="qty"><button type="button" data-step="-1" data-key="'+safe(x.key)+'" aria-label="Kurangi">−</button><b>'+x.qty+'</b><button type="button" data-step="1" data-key="'+safe(x.key)+'" aria-label="Tambah">+</button><button class="remove" type="button" data-remove="'+safe(x.key)+'">Hapus</button></div></div><div class="item-price">'+money(p.prices[x.size]*x.qty)+'</div></article>'}).join('');$('subtotal').textContent=money(total());$('grand').textContent=money(total());localStorage.setItem(KEY,JSON.stringify(cart))}
 $('items').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.step){const it=cart.find(x=>x.key===b.dataset.key);if(it)it.qty+=Number(b.dataset.step);cart=cart.filter(x=>x.qty>0)}if(b.dataset.remove)cart=cart.filter(x=>x.key!==b.dataset.remove);render()});
-$('fulfillment').addEventListener('change',()=>{const pickup=$('fulfillment').value==='pickup';$('address-group').classList.toggle('hidden',pickup);$('address').required=!pickup;if(pickup)$('address').value=''});
-$('checkout-form').addEventListener('submit',e=>{e.preventDefault();if(!cart.length){toast('Keranjang masih kosong. Pilih menu dulu ya!');return}const name=$('name').value.trim(),pickup=$('fulfillment').value==='pickup',address=$('address').value.trim(),payment=$('payment').value,notes=$('notes').value.trim();if(name.length<2){toast('Isi nama lengkapmu dulu ya.');$('name').focus();return}if(!pickup&&address.length<8){toast('Alamatnya dilengkapi dulu ya.');$('address').focus();return}
-const orderId='CB-'+Date.now().toString().slice(-8),date=new Date().toLocaleString('id-ID',{dateStyle:'medium',timeStyle:'short'}),rows=cart.map((x,i)=>{const p=products[x.id];return {i:i+1,name:p.name,variant:(x.size==='small'?'Kecil':x.size==='large'?'Besar':'1 pack')+(p.kind==='ready'?' · Pedas '+x.spice:''),qty:x.qty,price:p.prices[x.size]*x.qty}}),sum=total();$('receipt-id').textContent='ORDER '+orderId;$('receipt-date').textContent=date;$('receipt-customer').innerHTML='<b>'+safe(name)+'</b><br>'+(pickup?'Ambil sendiri':safe(address))+'<br>'+safe(payment);$('receipt-lines').innerHTML=rows.map(x=>'<div class="receipt-row"><span>'+x.i+'. '+safe(x.name)+'<small>'+safe(x.variant)+' × '+x.qty+'</small></span><b>'+money(x.price)+'</b></div>').join('');$('receipt-total').innerHTML='<div class="receipt-row"><span>Subtotal produk</span><b>'+money(sum)+'</b></div><div class="receipt-row"><span>Ongkir</span><b>'+(pickup?'Ambil sendiri':'Dikonfirmasi admin')+'</b></div><div class="receipt-row grand"><span>SUBTOTAL SEMENTARA</span><b>'+money(sum)+'</b></div>';
-lastMessage=['HALO CIMOL BODJOTEL! Aku mau konfirmasi pesanan:','', 'Nomor: '+orderId,'Tanggal: '+date,'',...rows.map(x=>x.i+'. '+x.name+' / '+x.variant+' / '+x.qty+'x = '+money(x.price)),'','Subtotal produk: '+money(sum),'Ongkir: '+(pickup?'Ambil sendiri':'Mohon konfirmasi admin'),'Subtotal sementara: '+money(sum),'','Nama: '+name,'Metode menerima: '+(pickup?'Ambil sendiri':'Diantar'),'Alamat: '+(pickup?'-':address),'Pembayaran: '+payment,'Catatan: '+(notes||'-'),'','Mohon konfirmasi pesanan dan total akhirnya. Terima kasih!'].join('\n');$('receipt-wrap').classList.add('show');$('receipt-wrap').setAttribute('aria-hidden','false');document.body.classList.add('receipt-open');$('close-receipt').focus();toast('Struk digital berhasil dibuat ♡')});
+let addressMode='manual';
+function setAddressMode(mode){
+ addressMode=mode;
+ document.querySelectorAll('[data-address-mode]').forEach(button=>{
+  const active=button.dataset.addressMode===mode;
+  button.classList.toggle('is-active',active);
+  button.setAttribute('aria-pressed',String(active));
+ });
+ $('address-manual').classList.toggle('hidden',mode!=='manual');
+ $('location-share-panel').classList.toggle('hidden',mode!=='share');
+ $('address').required=mode==='manual'&&$('fulfillment').value!=='pickup';
+}
+document.querySelectorAll('[data-address-mode]').forEach(button=>button.addEventListener('click',()=>setAddressMode(button.dataset.addressMode)));
+$('fulfillment').addEventListener('change',()=>{
+ const pickup=$('fulfillment').value==='pickup';
+ $('address-group').classList.toggle('hidden',pickup);
+ $('address').required=!pickup&&addressMode==='manual';
+ if(pickup)$('address').value='';
+});
+$('checkout-form').addEventListener('submit',e=>{e.preventDefault();if(!cart.length){toast('Keranjang masih kosong. Pilih menu dulu ya!');return}const name=$('name').value.trim(),pickup=$('fulfillment').value==='pickup',address=$('address').value.trim(),payment=$('payment').value,notes=$('notes').value.trim();if(name.length<2){toast('Isi nama lengkapmu dulu ya.');$('name').focus();return}if(!pickup&&addressMode==='manual'&&address.length<8){toast('Alamatnya dilengkapi dulu ya.');$('address').focus();return}
+const orderId='CB-'+Date.now().toString().slice(-8),date=new Date().toLocaleString('id-ID',{dateStyle:'medium',timeStyle:'short'}),rows=cart.map((x,i)=>{const p=products[x.id];return {i:i+1,name:p.name,variant:(x.size==='small'?'Kecil':x.size==='large'?'Besar':'1 pack')+(p.kind==='ready'?' · Pedas '+x.spice:''),qty:x.qty,price:p.prices[x.size]*x.qty}}),sum=total();$('receipt-id').textContent='ORDER '+orderId;$('receipt-date').textContent=date;$('receipt-customer').innerHTML='<b>'+safe(name)+'</b><br>'+(pickup?'Ambil sendiri':addressMode==='share'?'Pin lokasi dikirim via WhatsApp':safe(address))+'<br>'+safe(payment);$('receipt-lines').innerHTML=rows.map(x=>'<div class="receipt-row"><span>'+x.i+'. '+safe(x.name)+'<small>'+safe(x.variant)+' × '+x.qty+'</small></span><b>'+money(x.price)+'</b></div>').join('');$('receipt-total').innerHTML='<div class="receipt-row"><span>Subtotal produk</span><b>'+money(sum)+'</b></div><div class="receipt-row"><span>Ongkir</span><b>'+(pickup?'Ambil sendiri':'Dikonfirmasi admin')+'</b></div><div class="receipt-row grand"><span>SUBTOTAL SEMENTARA</span><b>'+money(sum)+'</b></div>';
+lastMessage=['HALO CIMOL BODJOTEL! Aku mau konfirmasi pesanan:','', 'Nomor: '+orderId,'Tanggal: '+date,'',...rows.map(x=>x.i+'. '+x.name+' / '+x.variant+' / '+x.qty+'x = '+money(x.price)),'','Subtotal produk: '+money(sum),'Ongkir: '+(pickup?'Ambil sendiri':'Mohon konfirmasi admin'),'Subtotal sementara: '+money(sum),'','Nama: '+name,'Metode menerima: '+(pickup?'Ambil sendiri':'Diantar'),'Alamat: '+(pickup?'-':addressMode==='share'?'Pin lokasi akan dikirim terpisah melalui WhatsApp':address),'Pembayaran: '+payment,'Catatan: '+(notes||'-'),'','Mohon konfirmasi pesanan dan total akhirnya. Terima kasih!'].join('\n');$('receipt-wrap').classList.add('show');$('receipt-wrap').setAttribute('aria-hidden','false');document.body.classList.add('receipt-open');$('close-receipt').focus();toast('Struk digital berhasil dibuat ♡')});
 $('close-receipt').addEventListener('click',()=>{$('receipt-wrap').classList.remove('show');$('receipt-wrap').setAttribute('aria-hidden','true');document.body.classList.remove('receipt-open');$('name').focus()});$('receipt-wrap').addEventListener('click',e=>{if(e.target===$('receipt-wrap'))$('close-receipt').click()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('receipt-wrap').classList.contains('show'))$('close-receipt').click()});$('print').addEventListener('click',()=>window.print());$('send-wa').addEventListener('click',()=>{if(!lastMessage){toast('Buat struk terlebih dahulu.');return}window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(lastMessage),'_blank','noopener')});render();
 })();
 </script>
