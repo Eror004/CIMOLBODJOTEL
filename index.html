@@ -1257,6 +1257,44 @@ footer{border-top:1px solid #eee4e8}
  .about-gif,.hero-real-product-wrap,.hero-product-shadow{animation:none!important}
 }
 
+
+/* ===== HERO LAYOUT FIX: KEEP COPY CLEAR OF PRODUCT PHOTO ===== */
+@media(min-width:901px){
+  .hero{
+    grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)!important;
+    gap:clamp(28px,4vw,58px)!important;
+  }
+  .hero-copy{width:100%;max-width:590px;min-width:0}
+  .hero-headline{font-size:clamp(58px,6.5vw,94px)!important;max-width:100%;letter-spacing:-.085em}
+  .hero-floating-stage{width:100%;min-width:0;max-width:540px;justify-self:end}
+  .hero-real-product-wrap{width:min(86%,390px);height:370px}
+  .hero-real-product{max-height:370px}
+}
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:10px!important;
+    min-height:0!important;
+    padding-top:66px!important;
+    padding-bottom:36px!important;
+  }
+  .hero-copy{width:100%;max-width:650px}
+  .hero-headline{font-size:clamp(62px,10vw,88px)!important}
+  .hero-floating-stage{
+    width:100%;max-width:560px;height:390px;min-height:390px;
+    margin:8px auto 0!important;justify-self:center;
+  }
+  .hero-real-product-wrap{width:min(82%,390px);height:340px}
+  .hero-real-product{max-height:340px}
+}
+@media(max-width:680px){
+  .hero{padding:48px 7% 28px!important;gap:0!important}
+  .hero-headline{font-size:clamp(60px,15.5vw,86px)!important}
+  .hero-floating-stage{height:320px;min-height:320px;margin-top:8px!important}
+  .hero-real-product-wrap{width:min(92%,340px);height:290px}
+  .hero-real-product{max-height:290px}
+}
+
 </style>
 </head>
 <body>
