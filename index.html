@@ -1210,7 +1210,7 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 (()=>{'use strict';
 const KEY='cimolCart',LEGACY_KEY='bodjotel_cart_v2',products={original:{name:'Cimol Bodjot Aslian',kind:'ready',prices:{small:8000,large:10000}},mozza:{name:'Cimol Bodjot Mozarellia',kind:'ready',prices:{small:10000,large:15000}},frozen:{name:'Cimol Bodjot Frozen Aslian',kind:'frozen',prices:{pack:10000}},'frozen-mozza':{name:'Cimol Bodjot Frozen Mozarellia',kind:'frozen',prices:{pack:15000}}};
 const $=id=>document.getElementById(id),money=n=>'Rp'+Number(n).toLocaleString('id-ID');
-let cart=[];try{cart=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem(LEGACY_KEY)||'[]');if(!Array.isArray(cart))cart=[]}catch{cart=[]}
+let cart=[];try{cart=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem(LEGACY_KEY)||'[]');if(!Array.isArray(cart))cart=[];if(!localStorage.getItem(KEY)&&cart.length)localStorage.setItem(KEY,JSON.stringify(cart))}catch{cart=[]}
 let active=null,size='small',spice=1,toastTimer;
 function save(){localStorage.setItem(KEY,JSON.stringify(cart));updateCount()}
 function updateCount(){$('cart-count').textContent=cart.reduce((s,x)=>s+x.qty,0)}
