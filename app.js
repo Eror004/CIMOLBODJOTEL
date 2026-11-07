@@ -1,5 +1,5 @@
 const WA_NUMBER="6283853021353";
-const PRODUCTS={original:{name:"Cimol Bodjot Aslian",kind:"cooked",prices:{small:8000,large:10000}},mozzarella:{name:"Cimol Bodjot Mozarellia",kind:"cooked",prices:{small:10000,large:15000}},frozenOriginal:{name:"Cimol Bodjot Frozen Aslian",kind:"frozen",prices:{pack:10000}},frozenMozzarella:{name:"Cimol Bodjot Frozen Mozarellia",kind:"frozen",prices:{pack:15000}}};
+const PRODUCTS={original:{name:"Cimol Bodjot Aslian",kind:"cooked",prices:{small:8000,large:10000}},mozzarella:{name:"Cimol Bodjot Mozarellia",kind:"cooked",prices:{small:10000,large:15000}},frozenOriginal:{name:"Cimol Bodjot Frozen Aslian",kind:"frozen",prices:{pack:10000}},frozenMozzarella:{name:"Cimol Bodjot Frozen Mozarellia",kind:"frozen",prices:{pack:15000}},mozza:{name:"Cimol Bodjot Mozarellia",kind:"cooked",prices:{small:10000,large:15000}},frozen:{name:"Cimol Bodjot Frozen Aslian",kind:"frozen",prices:{pack:10000}},"frozen-mozza":{name:"Cimol Bodjot Frozen Mozarellia",kind:"frozen",prices:{pack:15000}}};
 const money=n=>new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(n);
 const getCart=()=>{try{return JSON.parse(localStorage.getItem("cimolCart")||"[]")}catch{return[]}};
 const saveCart=cart=>{localStorage.setItem("cimolCart",JSON.stringify(cart));updateCounts()};
