@@ -88,3 +88,27 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 @media(max-width:900px){.review-card{grid-template-columns:minmax(0,1fr) 280px;gap:20px;padding:28px}.review-card-aside{padding-left:20px}.review-card-content{grid-template-columns:56px minmax(0,1fr);gap:15px}.review-card-icon{width:56px;height:56px}.review-card-icon svg{width:34px;height:34px}}
 @media(max-width:700px){.review-card{grid-template-columns:1fr;gap:28px;margin-top:25px;padding:24px 20px;border-radius:23px}.review-card-top{padding-bottom:15px}.review-card-content{padding:24px 0 20px}.review-card-content h3{font-size:27px}.review-card-content p{font-size:12px}.review-submit{width:100%;min-height:52px;padding:0 13px;font-size:9px;letter-spacing:.8px}.review-card-aside{padding:27px 5px 5px;border-left:0;border-top:1px solid rgba(166,91,120,.18)}.review-note-paper{width:min(88%,310px)}.review-aside-caption{margin-top:17px}.review-trust-note{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.review-submit{transition:none}}
+
+/* ===== UPCOMING PRODUCT: KUAH KEJU ===== */
+.coming-soon-product{position:relative;display:grid;grid-template-columns:minmax(250px,.8fr) minmax(0,1.2fr);min-height:275px;margin-top:26px;border:1px solid #efd3df;border-radius:25px;background:linear-gradient(112deg,#f8dce7 0%,#fff7fa 48%,#fff 100%);box-shadow:0 16px 42px rgba(112,45,73,.07);overflow:hidden}
+.coming-soon-art{position:relative;display:grid;place-items:center;min-height:275px;background:radial-gradient(ellipse at 48% 54%,#fff7fa 0%,#f5cbd9 48%,#edb3c8 100%);overflow:hidden}
+.coming-soon-orbit{position:absolute;width:230px;height:230px;border:1px solid rgba(177,71,111,.2);border-radius:50%}
+.orbit-one{width:190px;height:190px}.orbit-two{width:255px;height:255px}
+.cheese-bowl{position:relative;z-index:1;width:158px;height:91px;border:5px solid #fff;border-top:0;border-radius:10px 10px 72px 72px;background:linear-gradient(180deg,#e8a7be,#bd557d);box-shadow:0 15px 25px rgba(107,42,69,.2);transform:rotate(-7deg)}
+.cheese-bowl:before{content:"";position:absolute;left:-7px;right:-7px;top:-12px;height:25px;border:5px solid #fff;border-radius:50%;background:#f9e3a2;box-shadow:0 4px 0 rgba(174,102,52,.12)}
+.cheese-sauce{position:absolute;z-index:2;left:12px;right:12px;top:-3px;height:16px;border-radius:50%;background:radial-gradient(ellipse,#ffe6a1 0 55%,#e7b65f 57% 70%,transparent 72%)}
+.cheese-bowl i{position:absolute;z-index:3;width:31px;height:25px;border:2px solid #a95c40;border-radius:48%;background:radial-gradient(circle at 30% 25%,#ffe0a4,#d99155 72%,#a95c40);box-shadow:inset -3px -3px 0 rgba(117,57,37,.2)}
+.cheese-bowl i:nth-of-type(1){left:22px;top:-20px;transform:rotate(20deg)}.cheese-bowl i:nth-of-type(2){left:61px;top:-25px;transform:rotate(-14deg)}.cheese-bowl i:nth-of-type(3){right:20px;top:-17px;transform:rotate(16deg)}.cheese-bowl i:nth-of-type(4){left:63px;top:1px;width:28px;height:22px}
+.coming-spark{position:absolute;color:#fff;font-size:23px}.spark-one{top:48px;right:23%}.spark-two{bottom:45px;left:19%;font-size:17px}
+.coming-art-caption{position:absolute;right:17px;bottom:15px;color:#9d496c;text-align:right;font:700 8px/1.45 'Space Grotesk',sans-serif;letter-spacing:1.3px}
+.coming-soon-copy{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:34px 42px}
+.coming-soon-kicker{display:inline-flex;align-items:center;gap:9px;color:#b34873;font:700 9px 'Space Grotesk',sans-serif;letter-spacing:1.8px}
+.coming-pulse,.status-dot{width:7px;height:7px;border-radius:50%;background:#d94f83;box-shadow:0 0 0 4px rgba(217,79,131,.12)}
+.coming-soon-copy h3{margin:13px 0 10px;color:#291a22;font:700 clamp(25px,3vw,36px)/1.08 'Space Grotesk',sans-serif;letter-spacing:-1.1px}
+.coming-soon-copy h3 em{color:#c34c7a;font-style:normal}
+.coming-soon-copy p{max-width:510px;margin:0;color:#77636d;font:500 13px/1.8 'DM Sans',sans-serif}
+.coming-soon-bottom{display:flex;align-items:center;flex-wrap:wrap;gap:15px;margin-top:23px}
+.coming-soon-status{display:inline-flex;align-items:center;gap:9px;padding:9px 12px;border:1px solid #e9b9cb;border-radius:999px;background:#fff;color:#b34873;font:700 9px 'Space Grotesk',sans-serif;letter-spacing:1.1px}
+.coming-soon-status .status-dot{width:6px;height:6px;box-shadow:none}
+.coming-soon-note{color:#a58b96;font:600 8px 'Space Grotesk',sans-serif;letter-spacing:1.1px}
+@media(max-width:700px){.coming-soon-product{grid-template-columns:1fr;margin-top:20px;border-radius:21px}.coming-soon-art{min-height:205px}.coming-soon-copy{padding:25px 22px 27px}.coming-soon-copy h3{font-size:28px}.coming-soon-copy p{font-size:12px}.coming-soon-bottom{gap:10px;margin-top:18px}.coming-soon-note{font-size:7px}}
