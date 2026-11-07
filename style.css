@@ -110,5 +110,40 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 .coming-soon-bottom{display:flex;align-items:center;flex-wrap:wrap;gap:15px;margin-top:23px}
 .coming-soon-status{display:inline-flex;align-items:center;gap:9px;padding:9px 12px;border:1px solid #e9b9cb;border-radius:999px;background:#fff;color:#b34873;font:700 9px 'Space Grotesk',sans-serif;letter-spacing:1.1px}
 .coming-soon-status .status-dot{width:6px;height:6px;box-shadow:none}
+
+/* COMING SOON — product-cover label treatment */
+.coming-soon-art::after{
+  content:"COMING SOON";
+  position:absolute;
+  z-index:5;
+  top:50%;
+  left:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:min(78%,290px);
+  min-height:38px;
+  padding:0 18px;
+  transform:translate(-50%,-50%) rotate(-9deg);
+  border:1px solid rgba(255,255,255,.82);
+  background:#21171c;
+  color:#fff;
+  box-shadow:0 8px 22px rgba(33,23,28,.2);
+  font:700 11px/1 'Space Grotesk',sans-serif;
+  letter-spacing:2.8px;
+  text-align:center;
+  white-space:nowrap;
+  pointer-events:none;
+}
+.coming-soon-bottom .coming-soon-status{display:none}
+@media(max-width:700px){
+  .coming-soon-art::after{
+    width:min(82%,270px);
+    min-height:35px;
+    font-size:10px;
+    letter-spacing:2.4px;
+  }
+}
+
 .coming-soon-note{color:#a58b96;font:600 8px 'Space Grotesk',sans-serif;letter-spacing:1.1px}
 @media(max-width:700px){.coming-soon-product{grid-template-columns:1fr;margin-top:20px;border-radius:21px}.coming-soon-art{min-height:205px}.coming-soon-copy{padding:25px 22px 27px}.coming-soon-copy h3{font-size:28px}.coming-soon-copy p{font-size:12px}.coming-soon-bottom{gap:10px;margin-top:18px}.coming-soon-note{font-size:7px}}
