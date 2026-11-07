@@ -1583,6 +1583,34 @@ body{background:#fff!important;color:var(--ink);font-family:'DM Sans',sans-serif
  .hero-real-product-wrap{max-width:100%!important}
 }
 
+
+/* HERO MOTION — expressive food photography, still controlled */
+.hero-real-product-wrap{animation:heroProductLift 6.8s cubic-bezier(.42,0,.58,1) infinite!important;transform-origin:50% 58%}
+.hero-real-product{animation:heroProductTilt 6.8s ease-in-out infinite!important}
+.hero-accent{transform-origin:center;will-change:transform,opacity}
+.hero-accent-chili{animation:accentChili 5.4s ease-in-out infinite!important}
+.hero-accent-cheese{animation:accentCheese 6.2s ease-in-out infinite!important}
+.hero-accent-spark{animation:accentSpark 3.8s ease-in-out infinite!important}
+.hero-accent-twinkle{top:17%;left:19%;width:25px;height:25px;color:#D99A4C;animation:accentTwinkle 3.4s ease-in-out infinite!important}
+.hero-accent-heart{right:7%;top:54%;width:25px;height:25px;color:#D94F83;animation:accentHeart 5.2s ease-in-out infinite!important}
+@keyframes heroProductLift{0%,100%{transform:translate3d(0,8px,0) rotate(-1.1deg)}50%{transform:translate3d(0,-9px,0) rotate(1.1deg)}}
+@keyframes heroProductTilt{
+ 0%,100%{transform:perspective(900px) rotateY(-2deg) rotateZ(-.25deg) scale(.99);filter:drop-shadow(0 15px 18px rgba(33,23,28,.13))}
+ 50%{transform:perspective(900px) rotateY(2deg) rotateZ(.25deg) scale(1.035);filter:drop-shadow(0 24px 27px rgba(33,23,28,.19))}
+}
+@keyframes accentChili{0%,100%{translate:0 0;rotate:-8deg;scale:.96}50%{translate:5px -13px;rotate:9deg;scale:1.08}}
+@keyframes accentCheese{0%,100%{translate:0 0;rotate:-5deg}50%{translate:-4px -9px;rotate:7deg}}
+@keyframes accentSpark{0%,100%{scale:.78;rotate:-12deg;opacity:.45}50%{scale:1.2;rotate:18deg;opacity:1}}
+@keyframes accentTwinkle{0%,100%{scale:.6;rotate:0deg;opacity:.25}50%{scale:1.25;rotate:45deg;opacity:1}}
+@keyframes accentHeart{0%,100%{translate:0 2px;scale:.85;rotate:-8deg;opacity:.55}50%{translate:0 -9px;scale:1.12;rotate:8deg;opacity:1}}
+@media(max-width:680px){
+ .hero-real-product-wrap{animation:heroProductLiftMobile 6.8s ease-in-out infinite!important}
+ .hero-accent-twinkle{top:15%;left:12%;width:21px;height:21px}
+ .hero-accent-heart{right:5%;top:51%;width:21px;height:21px}
+}
+@keyframes heroProductLiftMobile{0%,100%{transform:translate3d(0,9px,0) rotate(-.8deg)}50%{transform:translate3d(0,-5px,0) rotate(.8deg)}}
+@media(prefers-reduced-motion:reduce){.hero-real-product-wrap,.hero-real-product,.hero-accent{animation:none!important}}
+
 </style>
 </head>
 <body>
@@ -1607,6 +1635,12 @@ body{background:#fff!important;color:var(--ink);font-family:'DM Sans',sans-serif
   </span>
   <span class="hero-accent hero-accent-spark" aria-hidden="true">
     <svg viewBox="0 0 48 48" fill="none"><path d="M24 4c2.5 11 5.5 14 16 20-10.5 2.5-13.5 5.5-16 20-2.5-14.5-5.5-17.5-16-20C18.5 18 21.5 15 24 4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+  </span>
+  <span class="hero-accent hero-accent-twinkle" aria-hidden="true">
+    <svg viewBox="0 0 48 48" fill="none"><path d="M24 3v12M24 33v12M3 24h12M33 24h12M9 9l8 8M31 31l8 8M39 9l-8 8M17 31l-8 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+  </span>
+  <span class="hero-accent hero-accent-heart" aria-hidden="true">
+    <svg viewBox="0 0 48 48" fill="none"><path d="M24 40S6 29 6 16c0-9 12-13 18-3 6-10 18-6 18 3 0 13-18 24-18 24Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/></svg>
   </span>
   <div class="hero-real-product-wrap"><img class="hero-real-product" src="https://i.ibb.co.com/XrdWDtvF/0b3110f3-54f6-4c7a-82ff-2f78a6ff6645.png" alt="Foto hero produk CIMOL BODJOTEL" fetchpriority="high"></div>
 </div>
