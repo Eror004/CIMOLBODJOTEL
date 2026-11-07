@@ -175,3 +175,39 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
  .review-submit{min-height:46px!important}
  .coming-soon-copy{padding:23px 19px 25px!important}
 }
+
+
+/* ===== INSTAGRAM: AUTHENTIC BRAND CONTENT ===== */
+.instagram-section{padding-top:clamp(68px,8vw,112px)!important;padding-bottom:clamp(68px,8vw,112px)!important}
+.instagram-heading-row{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:34px 0 18px;padding-bottom:13px;border-bottom:1px solid #eee3e8}
+.instagram-label{color:#b34873;font:700 10px/1.3 'Space Grotesk',sans-serif;letter-spacing:1.8px}
+.instagram-handle{display:inline-flex;align-items:center;gap:8px;color:#21171c;text-decoration:none;font:700 10px/1.3 'Space Grotesk',sans-serif;letter-spacing:1px}
+.instagram-handle svg{width:16px;height:16px}
+.instagram-post-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:24px}
+.instagram-post{min-width:0;padding:14px;border:1px solid #eee3e8;background:#fff}
+.instagram-post .instagram-media{min-width:0!important;width:100%!important;max-width:540px!important}
+.instagram-post-link{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding:13px 2px 2px;border-top:1px solid #f0e6ea;color:#21171c;text-decoration:none;font:700 9px/1.4 'Space Grotesk',sans-serif;letter-spacing:1.15px}
+.instagram-post-link span,.instagram-bottom-link span{color:#c34c7a;font-size:15px}
+.instagram-story-card{display:grid;grid-template-columns:58px minmax(0,1fr) 24px;align-items:center;gap:18px;margin-top:28px;padding:23px 25px;border:1px solid #ead9e0;background:#fff;color:inherit;text-decoration:none;transition:border-color .2s ease,transform .2s ease}
+.instagram-story-card:hover{border-color:#d99ab3;transform:translateY(-2px)}
+.instagram-story-icon{display:grid;place-items:center;width:54px;height:54px;background:#fbedf2;color:#c34c7a}
+.instagram-story-icon svg{width:27px;height:27px}
+.instagram-story-copy{display:grid;gap:6px}
+.instagram-story-copy strong{color:#21171c;font:650 clamp(16px,2vw,21px)/1.25 'Plus Jakarta Sans','DM Sans',sans-serif;letter-spacing:-.35px}
+.instagram-story-copy small{color:#796c73;font:500 11px/1.6 'DM Sans',sans-serif}
+.instagram-story-arrow{color:#c34c7a;font-size:22px}
+.instagram-bottom-link{display:flex;justify-content:center;margin-top:25px}
+.instagram-bottom-link a{display:inline-flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #d9a0b7;color:#21171c;text-decoration:none;font:700 10px/1.4 'Space Grotesk',sans-serif;letter-spacing:1.5px}
+@media(max-width:700px){
+ .instagram-heading-row{margin-top:26px}
+ .instagram-post-grid{grid-template-columns:1fr;gap:18px}
+ .instagram-post{padding:10px}
+ .instagram-story-card{grid-template-columns:44px minmax(0,1fr) 18px;gap:12px;margin-top:20px;padding:17px 14px}
+ .instagram-story-icon{width:42px;height:42px}
+ .instagram-story-icon svg{width:22px;height:22px}
+ .instagram-story-copy strong{font-size:16px}
+ .instagram-story-copy small{font-size:10px}
+ .instagram-label{font-size:9px;letter-spacing:1.4px}
+ .instagram-handle{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){.instagram-story-card{transition:none}}
