@@ -593,23 +593,91 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 :where(.toast,.cart-count){background:#D94F83!important;color:#FFFFFF!important}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}}
 
+
+/* ===== GEN Z CHECKOUT + DIGITAL RECEIPT REFRESH ===== */
+.card{border:1px solid #f1c9d9!important;border-radius:26px!important;box-shadow:0 18px 48px rgba(194,65,119,.09)!important}
+.card-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:8px}
+.card-heading h2{margin:5px 0 0!important;font-size:clamp(22px,2.5vw,27px)!important;letter-spacing:-1px}
+.card-kicker{display:block;color:#cf477d;font-size:10px;font-weight:900;letter-spacing:2px}
+.card-icon{width:46px;height:46px;display:grid;place-items:center;flex:0 0 46px;border-radius:15px;background:linear-gradient(145deg,#ffe8f0,#f7bdd1);color:#c93672;font-size:23px}
+.cart-caption{margin:0 0 20px!important}
+#count-label{display:inline-flex;align-items:center;margin-left:5px;padding:5px 9px;border-radius:99px;background:#fff0f6;color:#bd3c72;font:800 11px 'DM Sans',sans-serif;letter-spacing:0}
+.item{padding:17px 0;border-bottom:1px solid #f7e6ed}
+.thumb{box-shadow:0 5px 14px rgba(192,73,119,.10)}
+.qty{flex-wrap:wrap}
+.qty button{min-width:34px;min-height:34px;border-radius:10px;font-weight:900}
+.qty button.remove{padding:0 10px;color:#b83d70;background:#fff0f5;border-color:#f6d5e1}
+.summary{padding:18px 16px;margin-top:20px;border:1px solid #f2d5e0;border-radius:18px;background:linear-gradient(145deg,#fff8fb,#fff)}
+.summary .line{font-size:14px}
+.summary .line.total{padding-top:14px;font-size:15px}
+.summary .line.total b{font-size:25px}
+.hint{border-radius:15px;background:#fff3f7;border:1px solid #f6dce6}
+.form{gap:14px}
+.form-section-title{display:flex;align-items:center;gap:10px;margin:7px 0 1px;padding-bottom:10px;border-bottom:1px solid #f4e0e8;color:#8a526b;font-size:10px;font-weight:900;letter-spacing:1.7px}
+.form-section-title span{display:grid;place-items:center;width:27px;height:27px;border-radius:9px;background:#f9dce7;color:#c33f75;font-size:11px;letter-spacing:0}
+.form label{gap:8px}
+.form input,.form select,.form textarea{border-radius:14px!important;background:#fff!important;border:1.5px solid #efd6e0!important;min-height:51px}
+.form textarea{min-height:92px}
+.form input::placeholder,.form textarea::placeholder{color:#b29ca6}
+.submit{display:flex;align-items:center;justify-content:center;gap:10px;border-radius:15px!important;min-height:59px!important;background:linear-gradient(110deg,#d93678,#ef6b9b)!important;box-shadow:0 8px 20px rgba(217,54,120,.22)!important;font-size:14px!important;letter-spacing:.7px!important}
+.submit:hover{transform:translateY(-2px);filter:saturate(1.08)}
+.receipt-wrap{padding:10px 0 4px}
+.receipt-wrap .receipt{border:1px solid #f0cad9!important;border-radius:28px!important;box-shadow:0 24px 70px rgba(153,54,96,.14)!important}
+.receipt-head{padding:30px 24px 34px!important;background:radial-gradient(circle at 15% 0%,#fff 0,transparent 35%),linear-gradient(130deg,#f7a9c5,#fbdce7 58%,#ffeef4)!important}
+.receipt-head img{width:62px!important;height:62px!important;padding:7px;border-radius:18px;background:#ffffffb8}
+.receipt-head h3{font-size:23px!important;letter-spacing:1px!important}
+.receipt-head p{font-size:9px!important;letter-spacing:2.2px!important;font-weight:900}
+.receipt-body{padding:26px!important}
+.receipt-meta{padding-bottom:17px!important;font-size:11px!important;font-weight:800!important;color:#9a6078!important}
+.receipt-customer{margin-top:18px!important;padding:15px 17px;border-radius:15px;background:#fff4f8;font-size:13px!important;line-height:1.9!important}
+.receipt-lines{padding:20px 0!important;gap:14px!important}
+.receipt-row{font-size:13px!important;line-height:1.6!important}
+.receipt-row small{font-size:11px!important;color:#947b87!important}
+.receipt-total{padding:17px;border:1px dashed #e8bfd0;border-radius:16px;background:#fffafd;gap:12px}
+.receipt-total .grand{font-size:14px!important;color:#c93672!important}
+.receipt-total .grand b{font-size:25px!important}
+.receipt-foot{padding:19px!important;background:#30212b!important;color:#ffe4ed!important;font-size:10px!important;letter-spacing:1px!important;line-height:1.9}
+.receipt-actions{gap:10px}
+.receipt-actions button{border-radius:14px!important;min-height:52px!important;font-size:12px!important;font-weight:900!important}
+.receipt-actions .wa{background:#d93678!important;border-color:#d93678!important}
+@media(max-width:780px){
+ .layout{gap:15px}
+ .card{padding:21px!important;border-radius:22px!important}
+ .card-heading h2{font-size:23px!important}
+ .card-icon{width:42px;height:42px;flex-basis:42px}
+ .summary{padding:16px 14px}
+ .form-section-title{font-size:10px}
+ .receipt-wrap .receipt{max-height:86dvh!important;overflow:auto}
+ .receipt-body{padding:19px!important}
+ .receipt-head{padding:24px 18px 30px!important}
+ .receipt-actions{flex-direction:column}
+}
+@media(max-width:420px){
+ .card{padding:18px!important}
+ .item{grid-template-columns:56px minmax(0,1fr);gap:10px}
+ .thumb{width:56px;height:56px}
+ .item-price{grid-column:2}
+ .summary .line.total b{font-size:23px}
+ .receipt-meta{font-size:10px!important}
+}
+
 </style></head>
 <body><div class="top">♡ CHECKOUT TIME <b>·</b> ONE STEP CLOSER TO YOUR HAPPY SNACK ♡</div>
 <header><a class="brand" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a><a class="back" href="index.html#menu">← LANJUT PILIH MENU</a></header>
 <main><div class="intro"><div><span class="eyebrow">YOUR SNACK IS WAITING</span><h1>LET'S MAKE<br>IT <em>YOURS.</em></h1></div><p>Atur pesananmu, lengkapi detail penerimaan, lalu kirim ringkasan pesanan langsung ke WhatsApp admin.</p></div>
 <div class="steps"><span class="step">01 · PILIH MENU</span><span class="step active">02 · CHECKOUT</span><span class="step">03 · KONFIRMASI ADMIN</span></div>
 <div class="layout">
-<section class="card"><h2>Keranjang <span id="count-label">(0 item)</span></h2><p class="cart-caption">Pilihan camilan favoritmu, siap masuk ke tahap berikutnya ♡</p><div class="items" id="items"><div class="empty"><b>Keranjangmu masih kosong ♡</b>Yuk cari camilan favoritmu dulu.<br><a href="index.html#menu">BROWSE MENU ↗</a></div></div><div class="summary"><div class="line"><span>Subtotal produk</span><b id="subtotal">Rp0</b></div><div class="line"><span>Ongkir</span><b id="shipping">Dikonfirmasi admin</b></div><div class="line total"><span>Subtotal sementara</span><b id="grand">Rp0</b></div></div><div class="hint">Ongkir belum termasuk subtotal. Admin akan mengonfirmasi ongkir dan total akhir berdasarkan lokasi pengiriman melalui WhatsApp.</div></section>
-<section class="card"><h2>Detail <span>pesanan</span></h2><p class="cart-caption">Cukup isi nama dan cara menerima pesanan. Nomor WhatsApp pribadi tidak diperlukan.</p><form class="form" id="checkout-form" novalidate>
+<section class="card cart-card"><div class="card-heading"><div><span class="card-kicker">YOUR PICKS / 01</span><h2>Keranjang <span id="count-label">(0 item)</span></h2></div><span class="card-icon" aria-hidden="true">♡</span></div><p class="cart-caption">Pilihan camilan favoritmu, siap masuk ke tahap berikutnya ♡</p><div class="items" id="items"><div class="empty"><b>Keranjangmu masih kosong ♡</b>Yuk cari camilan favoritmu dulu.<br><a href="index.html#menu">BROWSE MENU ↗</a></div></div><div class="summary"><div class="line"><span>Subtotal produk</span><b id="subtotal">Rp0</b></div><div class="line"><span>Ongkir</span><b id="shipping">Dikonfirmasi admin</b></div><div class="line total"><span>Subtotal sementara</span><b id="grand">Rp0</b></div></div><div class="hint">Ongkir belum termasuk subtotal. Admin akan mengonfirmasi ongkir dan total akhir berdasarkan lokasi pengiriman melalui WhatsApp.</div></section>
+<section class="card form-card"><div class="card-heading"><div><span class="card-kicker">ALMOST THERE / 02</span><h2>Lengkapi <span>pesananmu.</span></h2></div><span class="card-icon" aria-hidden="true">✳</span></div><p class="cart-caption">Isi beberapa detail ini supaya camilanmu sampai ke orang dan tempat yang tepat.</p><form class="form" id="checkout-form" novalidate><div class="form-section-title"><span>01</span> INFO PENERIMA</div>
 <label>Nama lengkap<input id="name" autocomplete="name" required placeholder="Nama yang menerima pesanan"></label>
-<label>Metode menerima<select id="fulfillment"><option value="delivery">Diantar ke alamat</option><option value="pickup">Ambil sendiri</option></select></label>
+<div class="form-section-title"><span>02</span> PENGIRIMAN & PEMBAYARAN</div><label>Metode menerima<select id="fulfillment"><option value="delivery">Diantar ke alamat</option><option value="pickup">Ambil sendiri</option></select></label>
 <label id="address-group">Alamat lengkap<textarea id="address" autocomplete="street-address" required placeholder="Nama jalan, nomor rumah, RT/RW, kecamatan, patokan..."></textarea></label>
 <div class="two"><label>Pembayaran<select id="payment"><option value="COD">COD (bayar saat diterima)</option><option value="Transfer bank">Transfer bank</option></select></label><label>Waktu pesanan<select id="timing"><option>Secepatnya</option><option>Atur dengan admin</option></select></label></div>
 <label>Catatan tambahan <small style="font-weight:400;color:#9b8490">(opsional)</small><textarea id="notes" placeholder="Request khusus atau patokan tambahan..."></textarea></label>
-<button class="submit" type="submit"><span>BUAT RINGKASAN PESANAN</span><span aria-hidden="true">↗</span></button><p class="fine">Setelah ringkasan dibuat, tekan tombol WhatsApp untuk mengirim pesanan. Pesanan diproses setelah admin mengonfirmasi detail dan total akhirnya.</p>
+<button class="submit" type="submit"><span>BUAT STRUK PESANAN</span><span aria-hidden="true">↗</span></button><p class="fine">Setelah ringkasan dibuat, tekan tombol WhatsApp untuk mengirim pesanan. Pesanan diproses setelah admin mengonfirmasi detail dan total akhirnya.</p>
 </form></section></div>
 <section class="receipt-wrap" id="receipt-wrap" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Struk pesanan"><div class="receipt" id="receipt"><div class="receipt-head"><img src="https://i.imgur.com/jVIjhfF.png" alt=""><h3>CIMOL BODJOTEL</h3><p>SMALL BITES · BIG HAPPINESS</p></div><div class="receipt-body"><div class="receipt-meta"><span id="receipt-id">ORDER #—</span><span id="receipt-date">—</span></div><div class="receipt-customer" id="receipt-customer"></div><div class="receipt-lines" id="receipt-lines"></div><div class="receipt-total" id="receipt-total"></div></div><div class="receipt-foot">THANK YOU FOR SNACKING WITH US ♡<br>Pesanan menunggu konfirmasi admin.</div></div><div class="receipt-actions"><button type="button" id="close-receipt">TUTUP STRUK ✕</button><button type="button" id="print">PRINT / SIMPAN PDF</button><button type="button" class="wa" id="send-wa">KIRIM DETAIL KE WHATSAPP ↗</button></div></section>
-<p class="note-bottom">Made with love & a little chili oil. ♡</p></main><footer>© 2026 CIMOL BODJOTEL · GOOD FOOD, GOOD MOOD.</footer><div class="toast" id="toast" hidden></div>
+</main><footer>© 2026 CIMOL BODJOTEL · GOOD FOOD, GOOD MOOD.</footer><div class="toast" id="toast" hidden></div>
 <script>
 (()=>{'use strict';const KEY='bodjotel_cart_v2',WA='6283853021353',products={original:{name:'Cimol Bodjot Aslian',kind:'ready',image:'https://i.imgur.com/s9suIRw.jpeg',prices:{small:8000,large:10000}},mozza:{name:'Cimol Bodjot Mozarellia',kind:'ready',image:'https://i.imgur.com/Tqbu63W.png',prices:{small:10000,large:15000}},frozen:{name:'Cimol Bodjot Frozen Aslian',kind:'frozen',image:'https://i.imgur.com/aMmnDSY.png',prices:{pack:10000}},'frozen-mozza':{name:'Cimol Bodjot Frozen Mozarellia',kind:'frozen',image:'https://i.imgur.com/aMmnDSY.png',prices:{pack:15000}}};const $=id=>document.getElementById(id),money=n=>'Rp'+Number(n).toLocaleString('id-ID');document.body.appendChild($('receipt-wrap'));let cart=[],lastMessage='';try{cart=JSON.parse(localStorage.getItem(KEY)||'[]');if(!Array.isArray(cart))cart=[]}catch{cart=[]}
 const safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const total=()=>cart.reduce((s,x)=>s+(products[x.id]?.prices[x.size]||0)*x.qty,0);function toast(t){const el=$('toast');el.textContent=t;el.hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.hidden=true,2500)}
