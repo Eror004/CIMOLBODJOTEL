@@ -1880,3 +1880,30 @@ body{background:#fff!important;color:var(--ink);font-family:'DM Sans',sans-serif
  .hero-floating-stage.hero-in-view .hero-real-product,
  .hero-floating-stage .hero-accent{animation:none!important}
 }
+
+/* KUAH KEJU — premium launch stamp (photo asset remains unchanged) */
+.coming-soon-art::after{
+  content:"✦  COMING SOON  ✦";
+  width:min(76%,292px);
+  min-height:48px;
+  padding:0 22px;
+  border:1px solid rgba(255,255,255,.95);
+  outline:1px solid rgba(195,76,122,.72);
+  outline-offset:4px;
+  border-radius:3px;
+  background:linear-gradient(105deg,#a92f64 0%,#d65b8b 48%,#a92f64 100%);
+  color:#fff;
+  box-shadow:0 9px 22px rgba(119,34,72,.28),0 2px 5px rgba(255,255,255,.3) inset;
+  font:800 11px/1 'Space Grotesk',sans-serif;
+  letter-spacing:2.2px;
+  text-shadow:0 1px 2px rgba(70,15,38,.22);
+  transform:translate(-50%,-50%) rotate(-7deg);
+}
+@media(max-width:680px){
+ .coming-soon-art::after{
+  width:min(78%,270px);
+  min-height:42px;
+  font-size:10px;
+  letter-spacing:1.8px;
+ }
+}
