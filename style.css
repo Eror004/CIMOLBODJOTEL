@@ -115,24 +115,24 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 .coming-soon-art{position:relative;isolation:isolate;background:#f3e9ed!important}
 .coming-soon-photo{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center}
 @media(max-width:700px){.coming-soon-photo{object-position:center}}
-/* COMING SOON — realistic raised 3D enamel stamp; product photo unchanged */
-.coming-soon-art{perspective:900px}
+/* COMING SOON — subtle embossed paper label; product photo unchanged */
+.coming-soon-art{perspective:700px}
 .coming-soon-art::before{
   content:"";
   position:absolute;
   z-index:4;
   top:50%;
   left:50%;
-  width:min(82%,310px);
-  height:49px;
-  border-radius:7px;
-  transform:translate(-48%,-39%) rotate(-7deg) rotateX(8deg);
-  background:linear-gradient(180deg,#76203f 0%,#8f244b 35%,#54162f 100%);
-  box-shadow:0 18px 20px rgba(39,16,27,.34),0 7px 0 #4d142b,0 10px 0 #722044;
+  width:min(80%,300px);
+  height:43px;
+  border-radius:3px;
+  transform:translate(-48%,-40%) rotate(-6deg);
+  background:#9f536f;
+  box-shadow:0 5px 9px rgba(54,29,40,.17);
   pointer-events:none;
 }
 .coming-soon-art::after{
-  content:"✦  COMING SOON  ✦";
+  content:"COMING SOON";
   position:absolute;
   z-index:5;
   top:50%;
@@ -140,30 +140,24 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
   display:flex;
   align-items:center;
   justify-content:center;
-  width:min(82%,310px);
-  min-height:49px;
-  padding:0 22px;
+  width:min(80%,300px);
+  min-height:43px;
+  padding:0 20px;
   box-sizing:border-box;
-  transform:translate(-50%,-50%) rotate(-7deg) rotateX(8deg);
-  transform-style:preserve-3d;
-  border:1px solid rgba(255,255,255,.92);
-  border-radius:7px;
-  background:
-    linear-gradient(180deg,rgba(255,255,255,.34) 0%,rgba(255,255,255,.08) 18%,transparent 42%),
-    linear-gradient(110deg,#a92c60 0%,#e45a91 46%,#c43872 72%,#a92c60 100%);
-  color:#fff;
+  transform:translate(-50%,-50%) rotate(-6deg);
+  border:1px solid rgba(255,255,255,.72);
+  border-radius:3px;
+  background:linear-gradient(180deg,#d58aa5 0%,#c77b98 100%);
+  color:#fffafc;
   box-shadow:
-    inset 0 2px 2px rgba(255,255,255,.58),
-    inset 0 -4px 0 rgba(91,18,49,.22),
-    inset 0 0 0 2px rgba(255,255,255,.12),
-    0 2px 0 #8c2450,
-    0 5px 0 #6e1b3d,
-    0 9px 13px rgba(42,17,29,.34);
-  font:900 11px/1 'Plus Jakarta Sans','DM Sans',sans-serif;
-  letter-spacing:2.1px;
+    inset 0 1px 0 rgba(255,255,255,.35),
+    inset 0 -1px 0 rgba(112,48,73,.12),
+    0 1px 2px rgba(67,31,46,.12);
+  font:800 10px/1 'Plus Jakarta Sans','DM Sans',sans-serif;
+  letter-spacing:2.4px;
   text-align:center;
   white-space:nowrap;
-  text-shadow:0 1px 0 rgba(91,18,49,.55),0 2px 2px rgba(60,12,34,.35);
+  text-shadow:0 1px 1px rgba(91,43,62,.2);
   pointer-events:none;
 }
 .coming-soon-bottom .coming-soon-status{display:none}
