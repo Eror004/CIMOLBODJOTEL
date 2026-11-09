@@ -944,3 +944,7 @@ main{max-width:1120px!important;padding-top:42px!important;padding-bottom:72px!i
 .location-share-button{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:13px 0 9px;padding:14px 15px;border-radius:10px;background:#d93678;color:#fff!important;font:800 11px 'Plus Jakarta Sans',sans-serif;letter-spacing:.35px}
 .location-share-note{font-size:11px;color:#8b7580}
 @media(max-width:480px){.address-mode{grid-template-columns:1fr}.address-mode-choice{padding:13px}.location-share-panel{padding:14px}}
+
+/* ===== CHECKOUT BRAND ICON ACCENTS ===== */
+.checkout-main{position:relative;isolation:isolate}
+.checkout-main::after{content:"✳";position:absolute;z-index:-1;right:3%;top:12%;color:rgba(194,72,124,.10);font:800 clamp(42px,6vw,76px)/1 'DM Sans',sans-serif;pointer-events:none}
