@@ -1880,3 +1880,93 @@ body{background:#fff!important;color:var(--ink);font-family:'DM Sans',sans-serif
  .hero-floating-stage.hero-in-view .hero-real-product,
  .hero-floating-stage .hero-accent{animation:none!important}
 }
+
+
+
+/* ===== HERO COPY MOTION — editorial reveal + tactile interactions ===== */
+@keyframes heroTitleReveal{
+  0%{opacity:0;filter:blur(12px);transform:translate3d(0,30px,0) scale(.985);clip-path:inset(0 0 100% 0)}
+  65%{opacity:1;filter:blur(0);clip-path:inset(0 0 0 0)}
+  100%{opacity:1;filter:blur(0);transform:translate3d(0,0,0) scale(1);clip-path:inset(0)}
+}
+@keyframes heroTextFocus{
+  0%{opacity:0;filter:blur(9px);transform:translate3d(0,18px,0)}
+  100%{opacity:1;filter:blur(0);transform:translate3d(0,0,0)}
+}
+@keyframes heroButtonEnter{
+  0%{opacity:0;filter:blur(7px);transform:translate3d(0,22px,0) scale(.94)}
+  72%{opacity:1;transform:translate3d(0,-3px,0) scale(1.015)}
+  100%{opacity:1;filter:blur(0);transform:translate3d(0,0,0) scale(1)}
+}
+@keyframes heroMetaEnter{
+  0%{opacity:0;filter:blur(5px);transform:translate3d(-12px,10px,0) scale(.96)}
+  100%{opacity:1;filter:blur(0);transform:translate3d(0,0,0) scale(1)}
+}
+@keyframes heroMetaSpark{
+  0%,100%{transform:rotate(0) scale(1)}
+  45%{transform:rotate(18deg) scale(1.18)}
+}
+.hero-copy .hero-headline{
+  animation:heroTitleReveal .95s cubic-bezier(.16,1,.3,1) both;
+}
+.hero-copy>p{
+  opacity:0;
+  animation:heroTextFocus .82s cubic-bezier(.2,.8,.2,1) .28s forwards;
+  will-change:transform,opacity,filter;
+}
+.hero-copy .hero-buttons>a{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  opacity:0;
+  animation:heroButtonEnter .82s cubic-bezier(.16,1,.3,1) forwards;
+  transition:transform .32s cubic-bezier(.2,.8,.2,1),box-shadow .32s ease,background-color .32s ease,border-color .32s ease;
+  will-change:transform,opacity;
+}
+.hero-copy .hero-buttons>a:nth-child(1){animation-delay:.48s}
+.hero-copy .hero-buttons>a:nth-child(2){animation-delay:.64s}
+.hero-copy .hero-buttons>a::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:-40% auto -40% -55%;
+  width:38%;
+  transform:skewX(-22deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);
+  transition:left .65s cubic-bezier(.2,.7,.2,1);
+}
+.hero-copy .hero-buttons>a:hover{
+  transform:translate3d(0,-5px,0) scale(1.025);
+  box-shadow:0 13px 28px rgba(217,79,131,.2);
+}
+.hero-copy .hero-buttons>a:hover::before{left:125%}
+.hero-copy .hero-buttons>a:active{transform:translate3d(0,-1px,0) scale(.985)}
+.hero-copy .hero-buttons>a span{
+  display:inline-block;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.hero-copy .hero-buttons>a:hover span{transform:translate3d(4px,-3px,0) rotate(8deg)}
+.hero-copy .hero-meta>span{
+  opacity:0;
+  animation:heroMetaEnter .72s cubic-bezier(.16,1,.3,1) forwards;
+  will-change:transform,opacity,filter;
+}
+.hero-copy .hero-meta>span:nth-child(1){animation-delay:.82s}
+.hero-copy .hero-meta>span:nth-child(2){animation-delay:.96s}
+.hero-copy .hero-meta>span b{
+  display:inline-block;
+  color:var(--rose);
+  transform-origin:center;
+  animation:heroMetaSpark 2.8s ease-in-out 1.35s infinite;
+}
+@media(hover:none){
+  .hero-copy .hero-buttons>a:hover{transform:none;box-shadow:none}
+  .hero-copy .hero-buttons>a:hover::before{left:-55%}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-copy .hero-headline,.hero-copy>p,.hero-copy .hero-buttons>a,.hero-copy .hero-meta>span{
+    opacity:1!important;animation:none!important;filter:none!important;transform:none!important;clip-path:none!important;will-change:auto;
+  }
+  .hero-copy .hero-buttons>a,.hero-copy .hero-buttons>a::before,.hero-copy .hero-buttons>a span{transition:none!important}
+  .hero-copy .hero-meta>span b{animation:none!important}
+}
