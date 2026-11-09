@@ -2129,3 +2129,17 @@ body{background:#fff!important;color:var(--ink);font-family:'DM Sans',sans-serif
   #menu .product p{min-height:5.1em}
   #menu .product-bottom{min-height:62px;gap:7px}
 }
+
+
+/* Slightly richer pink on the product add-to-cart control */
+#menu .product-bottom .add-btn{
+  background:#F4B2C9!important;
+  color:#963B61!important;
+  border:1px solid #E99AB7!important;
+  box-shadow:0 5px 13px rgba(217,79,131,.18)!important;
+}
+#menu .product-bottom .add-btn:hover{
+  background:#E982A8!important;
+  color:#fff!important;
+  border-color:#E982A8!important;
+}
