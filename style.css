@@ -1880,3 +1880,43 @@ body{background:#fff!important;color:var(--ink);font-family:'DM Sans',sans-serif
  .hero-floating-stage.hero-in-view .hero-real-product,
  .hero-floating-stage .hero-accent{animation:none!important}
 }
+
+
+/* ===== HERO COPY MICRO-ANIMATIONS — subtle, staggered entrance ===== */
+@keyframes heroCopyRiseIn{
+  from{opacity:0;transform:translate3d(0,18px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+.hero-copy>p,
+.hero-copy .hero-buttons>a,
+.hero-copy .hero-meta>span{
+  opacity:0;
+  animation:heroCopyRiseIn .72s cubic-bezier(.2,.75,.25,1) forwards;
+  will-change:transform,opacity;
+}
+.hero-copy>p{animation-delay:.18s}
+.hero-copy .hero-buttons>a:nth-child(1){animation-delay:.34s}
+.hero-copy .hero-buttons>a:nth-child(2){animation-delay:.48s}
+.hero-copy .hero-meta>span:nth-child(1){animation-delay:.62s}
+.hero-copy .hero-meta>span:nth-child(2){animation-delay:.74s}
+.hero-copy .hero-buttons>a{
+  transition:transform .28s cubic-bezier(.2,.7,.25,1),box-shadow .28s ease,border-color .28s ease,color .28s ease;
+}
+.hero-copy .hero-buttons>a:hover{
+  transform:translate3d(0,-3px,0);
+}
+.hero-copy .hero-buttons .primary:hover{
+  box-shadow:0 9px 22px rgba(33,23,28,.16)!important;
+}
+.hero-copy .hero-buttons .secondary:hover{
+  box-shadow:0 7px 18px rgba(217,79,131,.10);
+}
+.hero-copy .hero-meta>span{
+  transform-origin:left center;
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-copy>p,.hero-copy .hero-buttons>a,.hero-copy .hero-meta>span{
+    opacity:1!important;animation:none!important;transform:none!important;will-change:auto;
+  }
+  .hero-copy .hero-buttons>a{transition:none!important}
+}
