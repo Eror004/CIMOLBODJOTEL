@@ -115,9 +115,9 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 .coming-soon-art{position:relative;isolation:isolate;background:#f3e9ed!important}
 .coming-soon-photo{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center}
 @media(max-width:700px){.coming-soon-photo{object-position:center}}
-/* COMING SOON — product-cover label treatment */
+/* COMING SOON — premium launch ribbon, photo stays untouched */
 .coming-soon-art::after{
-  content:"COMING SOON";
+  content:"✦  COMING SOON  ✦";
   position:absolute;
   z-index:5;
   top:50%;
@@ -125,18 +125,22 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
   display:flex;
   align-items:center;
   justify-content:center;
-  width:min(78%,290px);
-  min-height:38px;
-  padding:0 18px;
-  transform:translate(-50%,-50%) rotate(-9deg);
-  border:1px solid rgba(255,255,255,.82);
-  background:#21171c;
+  width:min(82%,310px);
+  min-height:48px;
+  padding:0 25px;
+  transform:translate(-50%,-50%) rotate(-7deg);
+  border:2px solid rgba(255,255,255,.96);
+  border-radius:7px;
+  outline:1px solid rgba(185,47,102,.48);
+  outline-offset:4px;
+  background:linear-gradient(105deg,#a92d60 0%,#d94f83 48%,#b83268 100%);
   color:#fff;
-  box-shadow:0 8px 22px rgba(33,23,28,.2);
-  font:700 11px/1 'Space Grotesk',sans-serif;
-  letter-spacing:2.8px;
+  box-shadow:0 12px 24px rgba(91,28,55,.28),inset 0 1px 0 rgba(255,255,255,.28);
+  font:800 11px/1 'Plus Jakarta Sans','DM Sans',sans-serif;
+  letter-spacing:2.2px;
   text-align:center;
   white-space:nowrap;
+  text-shadow:0 1px 1px rgba(80,20,45,.18);
   pointer-events:none;
 }
 .coming-soon-bottom .coming-soon-status{display:none}
