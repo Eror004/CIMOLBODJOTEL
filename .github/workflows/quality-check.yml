@@ -1,0 +1,71 @@
+name: Quality checks
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm install
+      - name: Build site
+        run: npm run build
+      - name: Check inline JavaScript syntax
+        run: |
+          python3 - <<'PY'
+          import pathlib, re
+          for page in ("index.html", "checkout.html"):
+              html = pathlib.Path(page).read_text(encoding="utf-8")
+              for i, match in enumerate(re.finditer(r"<script\\b([^>]*)>([\\s\\S]*?)</script\\s*>", html, re.I)):
+                  if re.search(r"\\bsrc\\s*=", match.group(1), re.I):
+                      continue
+                  pathlib.Path(f"/tmp/cimol-inline-{page[:-5]}-{i}.js").write_text(match.group(2), encoding="utf-8")
+          PY
+          for file in /tmp/cimol-inline-*.js; do node --check "$file"; done
+      - name: Test cart validation and price sorting
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const catalog = {
+            original:{kind:'ready',prices:{small:8000,large:10000}},
+            mozza:{kind:'ready',prices:{small:10000,large:15000}},
+            frozen:{kind:'frozen',prices:{pack:10000}},
+            'frozen-mozza':{kind:'frozen',prices:{pack:15000}}
+          };
+          for (const page of ['index.html','checkout.html']) {
+            const source=fs.readFileSync(page,'utf8');
+            const match=source.match(/function normalizeCart\\(items, catalog=products\\)\\s*\\{[\\s\\S]*?\\n\\}/);
+            assert.ok(match, page+' must define normalizeCart');
+            const normalize=new Function('products', match[0]+'; return normalizeCart;')(catalog);
+            const cart=normalize([
+              {id:'original',size:'small',qty:2,spice:4},
+              {id:'original',size:'small',qty:3,spice:4},
+              {id:'mozza',size:'large',qty:1,spice:2},
+              {id:'unknown',size:'small',qty:1},
+              {id:'original',size:'pack',qty:1},
+              {id:'frozen',size:'pack',qty:-2},
+              {id:'original',size:'large',qty:1,spice:9}
+            ]);
+            assert.equal(cart.length,3);
+            assert.equal(cart.find(x=>x.id==='original'&&x.size==='small').qty,5);
+            assert.equal(cart.find(x=>x.id==='original'&&x.size==='large').spice,1);
+            assert.ok(cart.every(x=>x.qty>=1&&x.qty<=99));
+          }
+          const home=fs.readFileSync('index.html','utf8');
+          const sortMatch=home.match(/function compareProductPrice\\(a,b,sort\\)\\s*\\{[\\s\\S]*?\\n\\}/);
+          assert.ok(sortMatch,'homepage must define compareProductPrice');
+          const compare=new Function(sortMatch[0]+'; return compareProductPrice;')();
+          assert.ok(compare(catalog.original,catalog.mozza,'low')<0);
+          assert.ok(compare(catalog.original,catalog.mozza,'high')>0);
+          assert.ok(compare(catalog.frozen,catalog['frozen-mozza'],'high')>0);
+          console.log('Cart validation and price sorting checks passed.');
+          NODE
