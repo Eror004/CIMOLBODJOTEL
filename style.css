@@ -2076,3 +2076,35 @@ body{background:#fff!important;color:var(--ink);font-family:'DM Sans',sans-serif
   .faq .faq-item,.faq .faq-q,.faq .faq-q span:last-child,.faq .faq-a{transition:none!important}
   .faq .faq-item{opacity:1;transform:none;filter:none}
 }
+
+
+/* ===== CIMOL BODJOTEL BRAND WATERMARKS & SECTION ICONS ===== */
+.hero,.menu-section,.about,.about + .section,.instagram-section,.testimonials,.faq,.cta,.footer{position:relative;isolation:isolate}
+.hero::before,.menu-section::before,.about::before,.about + .section::before,.instagram-section::before,.testimonials::before,.faq::before,.cta::before,.footer::before{
+ content:"";position:absolute;z-index:-1;width:clamp(180px,25vw,340px);height:clamp(180px,25vw,340px);
+ background:url('https://i.imgur.com/jVIjhfF.png') center/contain no-repeat;opacity:.055;pointer-events:none;filter:saturate(.8)
+}
+.hero::before{right:2%;top:50%;transform:translateY(-50%);width:clamp(240px,31vw,430px);height:clamp(240px,31vw,430px);opacity:.065}
+.menu-section::before{right:3%;top:9%;opacity:.045}
+.about::before{left:2%;top:50%;transform:translateY(-50%);opacity:.07}
+.about + .section::before{right:3%;bottom:2%;opacity:.05}
+.instagram-section::before{right:2%;top:10%;opacity:.05}
+.testimonials::before{left:2%;bottom:0;opacity:.055}
+.faq::before{right:3%;top:12%;opacity:.05}
+.cta::before{right:5%;top:50%;transform:translateY(-50%);opacity:.09;filter:grayscale(1) brightness(0) invert(1)}
+.footer::before{left:2%;top:50%;transform:translateY(-50%);opacity:.055}
+.menu-section::after,.about::after,.about + .section::after,.instagram-section::after,.testimonials::after,.faq::after,.cta::after{
+ position:absolute;z-index:-1;pointer-events:none;font-family:'DM Sans',sans-serif;font-weight:800;line-height:1;color:rgba(194,72,124,.12)
+}
+.menu-section::after{content:"✳";right:8%;bottom:13%;font-size:clamp(34px,5vw,62px);transform:rotate(-12deg)}
+.about::after{content:"♡";right:7%;top:15%;font-size:clamp(42px,6vw,76px);transform:rotate(12deg)}
+.about + .section::after{content:"✦";left:7%;top:15%;font-size:clamp(38px,5vw,64px)}
+.instagram-section::after{content:"◎";left:5%;bottom:12%;font-size:clamp(42px,6vw,72px)}
+.testimonials::after{content:"✧";right:7%;top:13%;font-size:clamp(38px,5vw,64px)}
+.faq::after{content:"?";left:5%;bottom:12%;font-size:clamp(46px,7vw,86px);font-weight:900}
+.cta::after{content:"♡";left:8%;top:16%;font-size:clamp(38px,5vw,64px);color:rgba(255,255,255,.16)}
+@media(max-width:680px){
+ .hero::before{right:-18%;top:58%;width:250px;height:250px;opacity:.045}
+ .menu-section::before,.about + .section::before,.instagram-section::before,.testimonials::before,.faq::before,.footer::before{width:170px;height:170px;opacity:.035}
+ .menu-section::after,.about::after,.about + .section::after,.instagram-section::after,.testimonials::after,.faq::after,.cta::after{font-size:34px}
+}
