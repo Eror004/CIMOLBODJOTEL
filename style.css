@@ -2076,3 +2076,54 @@ body{background:#fff!important;color:var(--ink);font-family:'DM Sans',sans-serif
   .faq .faq-item,.faq .faq-q,.faq .faq-q span:last-child,.faq .faq-a{transition:none!important}
   .faq .faq-item{opacity:1;transform:none;filter:none}
 }
+
+
+/* ===== FAQ BACKGROUND — soft editorial depth ===== */
+.faq{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 8% 18%,rgba(246,177,203,.34) 0%,rgba(246,177,203,0) 34%),
+    radial-gradient(ellipse at 92% 78%,rgba(231,159,190,.25) 0%,rgba(231,159,190,0) 36%),
+    linear-gradient(132deg,#fffafd 0%,#fff3f7 48%,#fff8fb 100%)!important;
+}
+.faq::before,
+.faq::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  pointer-events:none;
+  border-radius:50%;
+}
+.faq::before{
+  width:clamp(220px,34vw,460px);
+  aspect-ratio:1;
+  top:-17%;
+  right:-9%;
+  border:1px solid rgba(205,91,139,.13);
+  box-shadow:
+    0 0 0 22px rgba(205,91,139,.025),
+    0 0 0 48px rgba(205,91,139,.018),
+    inset 0 0 70px rgba(238,174,199,.12);
+}
+.faq::after{
+  width:clamp(150px,22vw,300px);
+  aspect-ratio:1;
+  bottom:-15%;
+  left:-7%;
+  background:radial-gradient(circle,rgba(244,185,207,.28) 0%,rgba(244,185,207,.08) 48%,transparent 72%);
+  filter:blur(8px);
+}
+.faq .section-top,
+.faq .faq-list{
+  position:relative;
+  z-index:1;
+}
+@media(prefers-reduced-motion:no-preference){
+  .faq::before{animation:faqBackdropDrift 16s ease-in-out infinite alternate}
+  @keyframes faqBackdropDrift{
+    from{transform:translate3d(0,0,0) scale(1)}
+    to{transform:translate3d(-18px,14px,0) scale(1.035)}
+  }
+}
