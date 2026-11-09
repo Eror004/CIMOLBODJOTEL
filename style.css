@@ -2127,3 +2127,112 @@ body{background:#fff!important;color:var(--ink);font-family:'DM Sans',sans-serif
     to{transform:translate3d(-18px,14px,0) scale(1.035)}
   }
 }
+
+
+/* ===== SITE-WIDE BACKGROUND ART DIRECTION — CIMOL BODJOTEL ===== */
+body{
+  background:
+    radial-gradient(ellipse at 4% 9%,rgba(246,185,207,.22),transparent 28%),
+    radial-gradient(ellipse at 96% 37%,rgba(239,181,204,.16),transparent 26%),
+    radial-gradient(ellipse at 12% 82%,rgba(246,199,216,.14),transparent 25%),
+    #fffafd;
+}
+.hero{
+  position:relative;
+  isolation:isolate;
+  background:
+    radial-gradient(ellipse at 82% 45%,rgba(241,172,198,.32),transparent 39%),
+    radial-gradient(ellipse at 5% 4%,rgba(255,226,237,.8),transparent 35%),
+    linear-gradient(115deg,#fffafd 0%,#fff5f8 55%,#fffafd 100%);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  width:clamp(250px,36vw,510px);
+  aspect-ratio:1;
+  right:-8%;
+  top:8%;
+  border:1px solid rgba(203,87,137,.12);
+  border-radius:50%;
+  box-shadow:0 0 0 24px rgba(203,87,137,.025),0 0 0 54px rgba(203,87,137,.018);
+  pointer-events:none;
+}
+.menu-section{
+  position:relative;
+  isolation:isolate;
+  background:
+    radial-gradient(ellipse at 95% 8%,rgba(246,197,215,.26),transparent 30%),
+    linear-gradient(180deg,#fff 0%,#fff9fb 48%,#fff 100%)!important;
+}
+.menu-section::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:-110px;
+  top:25%;
+  width:260px;
+  aspect-ratio:1;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(244,187,207,.18),transparent 70%);
+  pointer-events:none;
+}
+.about{
+  position:relative;
+  isolation:isolate;
+  background:
+    radial-gradient(ellipse at 12% 88%,rgba(255,255,255,.78),transparent 35%),
+    radial-gradient(ellipse at 88% 8%,rgba(255,255,255,.62),transparent 32%),
+    linear-gradient(118deg,#f9dce7 0%,#fff0f5 48%,#fbe4ec 100%)!important;
+}
+.about::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  width:clamp(180px,25vw,340px);
+  aspect-ratio:1;
+  right:-8%;
+  bottom:-34%;
+  border:1px solid rgba(193,89,133,.12);
+  border-radius:50%;
+  box-shadow:0 0 0 22px rgba(193,89,133,.025),0 0 0 48px rgba(193,89,133,.018);
+  pointer-events:none;
+}
+.about + .section{
+  position:relative;
+  isolation:isolate;
+  background:
+    radial-gradient(ellipse at 88% 12%,rgba(245,196,214,.25),transparent 32%),
+    linear-gradient(145deg,#fffafd 0%,#fff4f8 52%,#fff 100%);
+}
+.instagram-section{
+  position:relative;
+  isolation:isolate;
+  background:
+    radial-gradient(ellipse at 0% 55%,rgba(246,190,210,.23),transparent 32%),
+    radial-gradient(ellipse at 100% 5%,rgba(251,220,232,.58),transparent 34%),
+    linear-gradient(135deg,#fff 0%,#fff8fb 54%,#fff 100%);
+}
+.testimonials{
+  background:
+    radial-gradient(ellipse at 92% 14%,rgba(238,177,201,.25),transparent 32%),
+    radial-gradient(ellipse at 4% 90%,rgba(251,218,231,.55),transparent 34%),
+    linear-gradient(160deg,#fffafd 0%,#fff2f7 54%,#fffafd 100%)!important;
+}
+.cta{
+  background:
+    radial-gradient(ellipse at 12% 8%,rgba(218,104,151,.26),transparent 40%),
+    radial-gradient(ellipse at 88% 95%,rgba(246,171,198,.17),transparent 38%),
+    linear-gradient(120deg,#30212b 0%,#513044 52%,#35232e 100%)!important;
+}
+.footer{
+  position:relative;
+  background:
+    radial-gradient(ellipse at 95% 0%,rgba(246,190,210,.22),transparent 35%),
+    linear-gradient(180deg,#fffafd 0%,#fff1f6 100%)!important;
+}
+@media(prefers-reduced-motion:no-preference){
+  .hero::before{animation:siteBackgroundDrift 19s ease-in-out infinite alternate}
+  @keyframes siteBackgroundDrift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-16px,13px,0)}}
+}
+@media(prefers-reduced-motion:reduce){.hero::before{animation:none!important}}
