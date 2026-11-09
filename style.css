@@ -2076,3 +2076,56 @@ body{background:#fff!important;color:var(--ink);font-family:'DM Sans',sans-serif
   .faq .faq-item,.faq .faq-q,.faq .faq-q span:last-child,.faq .faq-a{transition:none!important}
   .faq .faq-item{opacity:1;transform:none;filter:none}
 }
+
+
+/* ===== PRODUCT CARDS — consistent title, description and price alignment ===== */
+#menu .product-grid{
+  align-items:stretch;
+}
+#menu .product{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  min-width:0;
+}
+#menu .product-body{
+  display:flex;
+  flex:1 1 auto;
+  flex-direction:column;
+  align-items:stretch;
+}
+#menu .product h3{
+  min-height:2.5em;
+  margin-bottom:9px;
+}
+#menu .product p{
+  min-height:5.1em;
+}
+#menu .product-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  min-height:66px;
+  margin-top:auto;
+  padding-top:13px;
+}
+#menu .product-bottom .price{
+  min-width:0;
+  line-height:1.15;
+}
+#menu .product-bottom .price small{
+  line-height:1.35;
+  letter-spacing:.02em;
+}
+#menu .product-bottom .add-btn{
+  flex:0 0 39px;
+  display:grid;
+  place-items:center;
+  line-height:1;
+}
+@media(max-width:680px){
+  #menu .product h3{min-height:2.5em}
+  #menu .product p{min-height:5.1em}
+  #menu .product-bottom{min-height:62px;gap:7px}
+}
