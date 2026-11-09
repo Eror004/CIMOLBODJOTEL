@@ -1880,3 +1880,41 @@ body{background:#fff!important;color:var(--ink);font-family:'DM Sans',sans-serif
  .hero-floating-stage.hero-in-view .hero-real-product,
  .hero-floating-stage .hero-accent{animation:none!important}
 }
+
+
+/* CIMOL BODJOTEL — polished interactive FAQ */
+.faq{background:linear-gradient(180deg,#fff8fb 0%,#fff 100%);position:relative;overflow:hidden}
+.faq-list{width:min(100%,900px);margin:34px auto 0;border:0;display:grid;gap:13px}
+.faq-item{border:1px solid #f0dce5;border-radius:18px;background:rgba(255,255,255,.94);overflow:hidden;box-shadow:0 5px 18px rgba(119,48,78,.045);transition:border-color .28s ease,box-shadow .28s ease,transform .28s ease}
+.faq-item:hover{transform:translateY(-2px);border-color:#e9b6cb;box-shadow:0 10px 24px rgba(175,66,113,.09)}
+.faq-q{width:100%;min-height:76px;padding:16px 19px;border:0;background:transparent;display:grid;grid-template-columns:38px 1fr 38px;align-items:center;gap:14px;text-align:left;color:var(--ink);font:800 15px/1.5 'Plus Jakarta Sans',sans-serif;cursor:pointer}
+.faq-q-number{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;background:#fff0f6;color:#c43d78;font-size:11px;font-weight:900;letter-spacing:.04em;transition:background .28s ease,color .28s ease,transform .28s ease}
+.faq-q-label{transition:color .25s ease}
+.faq-toggle{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#fff0f6;color:#c43d78;justify-self:end;transition:background .28s ease,transform .35s cubic-bezier(.2,.8,.2,1),color .28s ease}
+.faq-toggle span{width:12px;height:12px;position:relative}
+.faq-toggle span:before,.faq-toggle span:after{content:"";position:absolute;left:0;top:5px;width:12px;height:2px;border-radius:2px;background:currentColor;transition:transform .28s ease}
+.faq-toggle span:after{transform:rotate(90deg)}
+.faq-a{display:block;max-height:0;overflow:hidden;opacity:0;padding:0 70px 0 71px;color:#75616b;font-size:13px;line-height:1.9;transition:max-height .42s cubic-bezier(.2,.7,.2,1),opacity .28s ease,padding .35s ease}
+.faq-a-inner{padding-bottom:2px}
+.faq-item.open{border-color:#e7a9c3;background:linear-gradient(120deg,#fff3f8 0%,#fff 82%);box-shadow:0 12px 28px rgba(188,66,119,.11)}
+.faq-item.open .faq-q-number{background:#c43d78;color:#fff;transform:rotate(-5deg)}
+.faq-item.open .faq-q-label{color:#b93270}
+.faq-item.open .faq-toggle{background:#c43d78;color:#fff;transform:rotate(180deg)}
+.faq-item.open .faq-toggle span:after{transform:rotate(0)}
+.faq-item.open .faq-a{max-height:180px;opacity:1;padding-bottom:21px}
+.faq-note{width:min(100%,900px);margin:23px auto 0;display:flex;align-items:center;justify-content:center;gap:9px;color:#8c6879;font-size:12px;text-align:center}
+.faq-note strong{color:#b93270}
+.faq-note-icon{width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:#ffeaf2;color:#c43d78}
+@media(max-width:680px){
+ .faq-list{margin-top:24px;gap:10px}
+ .faq-q{min-height:68px;padding:13px 13px;grid-template-columns:31px 1fr 32px;gap:10px;font-size:13px}
+ .faq-q-number{width:29px;height:29px;border-radius:10px;font-size:10px}
+ .faq-toggle{width:30px;height:30px}
+ .faq-a{padding-left:54px;padding-right:48px;font-size:12px;line-height:1.8}
+ .faq-item.open .faq-a{padding-bottom:17px}
+ .faq-note{font-size:11px;margin-top:18px}
+}
+@media(prefers-reduced-motion:reduce){
+ .faq-item,.faq-q-number,.faq-q-label,.faq-toggle,.faq-toggle span:before,.faq-toggle span:after,.faq-a{transition:none!important}
+ .faq-item:hover{transform:none}
+}
