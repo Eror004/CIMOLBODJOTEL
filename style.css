@@ -115,7 +115,22 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
 .coming-soon-art{position:relative;isolation:isolate;background:#f3e9ed!important}
 .coming-soon-photo{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center}
 @media(max-width:700px){.coming-soon-photo{object-position:center}}
-/* COMING SOON — product-cover label treatment */
+/* COMING SOON — subtle embossed paper label; product photo unchanged */
+.coming-soon-art{perspective:700px}
+.coming-soon-art::before{
+  content:"";
+  position:absolute;
+  z-index:4;
+  top:50%;
+  left:50%;
+  width:min(80%,300px);
+  height:43px;
+  border-radius:3px;
+  transform:translate(-48%,-40%) rotate(-6deg);
+  background:#9f536f;
+  box-shadow:0 5px 9px rgba(54,29,40,.17);
+  pointer-events:none;
+}
 .coming-soon-art::after{
   content:"COMING SOON";
   position:absolute;
@@ -125,18 +140,24 @@ a:not(.button):not(.btn):not(.primary):not(.secondary){color:inherit}
   display:flex;
   align-items:center;
   justify-content:center;
-  width:min(78%,290px);
-  min-height:38px;
-  padding:0 18px;
-  transform:translate(-50%,-50%) rotate(-9deg);
-  border:1px solid rgba(255,255,255,.82);
-  background:#21171c;
-  color:#fff;
-  box-shadow:0 8px 22px rgba(33,23,28,.2);
-  font:700 11px/1 'Space Grotesk',sans-serif;
-  letter-spacing:2.8px;
+  width:min(80%,300px);
+  min-height:43px;
+  padding:0 20px;
+  box-sizing:border-box;
+  transform:translate(-50%,-50%) rotate(-6deg);
+  border:1px solid rgba(255,255,255,.72);
+  border-radius:3px;
+  background:linear-gradient(180deg,#d58aa5 0%,#c77b98 100%);
+  color:#fffafc;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.35),
+    inset 0 -1px 0 rgba(112,48,73,.12),
+    0 1px 2px rgba(67,31,46,.12);
+  font:800 10px/1 'Plus Jakarta Sans','DM Sans',sans-serif;
+  letter-spacing:2.4px;
   text-align:center;
   white-space:nowrap;
+  text-shadow:0 1px 1px rgba(91,43,62,.2);
   pointer-events:none;
 }
 .coming-soon-bottom .coming-soon-status{display:none}
