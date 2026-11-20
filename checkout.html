@@ -28,13 +28,6 @@
 <label>Catatan tambahan <small style="font-weight:400;color:#9b8490">(opsional)</small><textarea id="notes" placeholder="Request khusus atau patokan tambahan..."></textarea></label>
 <button class="submit" type="submit"><span>BUAT STRUK PESANAN</span><span aria-hidden="true">↗</span></button><p class="fine">Setelah ringkasan dibuat, tekan tombol WhatsApp untuk mengirim pesanan. Pesanan diproses setelah admin mengonfirmasi detail dan total akhirnya.</p>
 </form></section></div>
-<div class="mobile-checkout-bar" id="mobile-checkout-bar" hidden>
-  <div class="mobile-checkout-info">
-    <small id="mobile-bar-count">0 item dipilih</small>
-    <strong id="mobile-bar-total">Rp0</strong>
-  </div>
-  <button type="button" class="mobile-checkout-cta" id="mobile-bar-btn">Buat Struk <span>↗</span></button>
-</div>
 <section class="receipt-wrap" id="receipt-wrap" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Struk pesanan"><div class="receipt" id="receipt"><div class="sheet-handle" aria-hidden="true"><span></span></div><div class="receipt-head"><img src="https://i.imgur.com/jVIjhfF.png" alt=""><h3>CIMOL BODJOTEL</h3><p>SMALL BITES · BIG HAPPINESS</p></div><div class="receipt-body"><div class="receipt-meta"><span id="receipt-id">ORDER #—</span><span id="receipt-date">—</span></div><div class="receipt-customer" id="receipt-customer"></div><div class="receipt-lines" id="receipt-lines"></div><div class="receipt-total" id="receipt-total"></div></div></div><div class="receipt-actions"><button type="button" id="close-receipt">TUTUP STRUK ✕</button><button type="button" id="print">PRINT / SIMPAN PDF</button><button type="button" class="wa" id="send-wa">KIRIM DETAIL KE WHATSAPP ↗</button></div></section>
 </main><footer>© 2026 CIMOL BODJOTEL · GOOD FOOD, GOOD MOOD.</footer><div class="toast" id="toast" hidden></div>
 <script>
@@ -79,7 +72,7 @@ function persistCart(){
 let cart=readStoredCart(),lastMessage='',storageWarningShown=false;
 const safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const total=()=>cart.reduce((s,x)=>s+(products[x.id]?.prices[x.size]||0)*x.qty,0);function toast(t){const el=$('toast');el.textContent=t;el.hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.hidden=true,2500)}
 function bumpTotals(){
- [$('subtotal'),$('grand'),$('mobile-bar-total')].forEach(el=>{
+ [$('subtotal'),$('grand')].forEach(el=>{
   if(!el)return;
   el.classList.remove('price-bump');
   void el.offsetWidth;
@@ -100,18 +93,6 @@ function render(){
  }
  $('subtotal').textContent=money(sum);
  $('grand').textContent=money(sum);
- const mbar=$('mobile-checkout-bar');
- if(mbar){
-  if(n>0){
-   mbar.hidden=false;
-   requestAnimationFrame(()=>mbar.classList.add('is-visible'));
-   $('mobile-bar-count').textContent=n+' item dipilih';
-   $('mobile-bar-total').textContent=money(sum);
-  }else{
-   mbar.classList.remove('is-visible');
-   setTimeout(()=>{if(!cart.length)mbar.hidden=true;},240);
-  }
- }
  if(!persistCart()&&!storageWarningShown){storageWarningShown=true;toast('Penyimpanan browser dibatasi. Jangan tutup atau muat ulang halaman ini sebelum pesanan dikirim.');}
 }
 $('items').addEventListener('click',e=>{
@@ -138,26 +119,6 @@ if($('clear-cart')){
   cart=[];
   render();
   toast('Keranjang berhasil dikosongkan ♡');
- });
-}
-if($('mobile-bar-btn')){
- $('mobile-bar-btn').addEventListener('click',()=>{
-  const name=$('name').value.trim();
-  const pickup=$('fulfillment').value==='pickup';
-  const address=$('address').value.trim();
-  if(name.length<2){
-   $('form-card').scrollIntoView({behavior:'smooth',block:'start'});
-   setTimeout(()=>$('name').focus(),350);
-   toast('Lengkapi nama penerima dulu ya ♡');
-   return;
-  }
-  if(!pickup&&addressMode==='manual'&&address.length<8){
-   $('address-group').scrollIntoView({behavior:'smooth',block:'center'});
-   setTimeout(()=>$('address').focus(),350);
-   toast('Lengkapi alamat pengiriman dulu ya ♡');
-   return;
-  }
-  $('checkout-form').requestSubmit();
  });
 }
 window.addEventListener('pageshow',()=>{cart=readStoredCart();render();});

@@ -965,7 +965,7 @@ main{max-width:1120px!important;padding-top:42px!important;padding-bottom:72px!i
   animation:priceBump .32s cubic-bezier(.22,1,.36,1);
 }
 
-:where(.submit,.back,.qty button,.option-choice,.address-mode-choice,.location-share-button,.receipt-actions button,.mobile-checkout-cta,.clear-cart-btn,.add-more-link):active{
+:where(.submit,.back,.qty button,.option-choice,.address-mode-choice,.location-share-button,.receipt-actions button,.clear-cart-btn,.add-more-link):active{
   transform:scale(.96)!important;
 }
 
@@ -1022,70 +1022,11 @@ main{max-width:1120px!important;padding-top:42px!important;padding-bottom:72px!i
   background:#e2cad4;
 }
 
-/* Sticky Mobile Checkout Bar */
-.mobile-checkout-bar{
-  display:none;
-}
 .toast{
-  bottom:92px!important;
   z-index:10005!important;
 }
 
 @media(max-width:780px){
-  body{padding-bottom:84px}
-  .mobile-checkout-bar{
-    position:fixed;
-    left:50%;
-    bottom:max(14px,env(safe-area-inset-bottom,14px));
-    z-index:90;
-    transform:translate3d(-50%,130%,0);
-    opacity:0;
-    width:calc(100% - 26px);
-    max-width:500px;
-    padding:11px 13px 11px 16px;
-    border-radius:18px;
-    background:rgba(33,23,28,.95)!important;
-    color:#fff!important;
-    border:1px solid rgba(244,169,195,.28)!important;
-    box-shadow:0 18px 42px rgba(33,23,28,.28),0 4px 14px rgba(217,79,131,.22)!important;
-    backdrop-filter:blur(16px);
-    -webkit-backdrop-filter:blur(16px);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    transition:transform .36s cubic-bezier(.22,1,.36,1),opacity .26s ease;
-  }
-  .mobile-checkout-bar[hidden]{display:none!important}
-  .mobile-checkout-bar.is-visible{
-    transform:translate3d(-50%,0,0);
-    opacity:1;
-  }
-  .mobile-checkout-info{
-    display:grid;
-    gap:2px;
-  }
-  .mobile-checkout-info small{
-    font:600 11px/1.2 'DM Sans',sans-serif;
-    color:#e4c5d2!important;
-  }
-  .mobile-checkout-info strong{
-    font:800 16px/1.2 'Plus Jakarta Sans',sans-serif;
-    color:#ff9ec2!important;
-  }
-  .mobile-checkout-cta{
-    padding:12px 16px;
-    border-radius:12px;
-    border:0!important;
-    background:#D94F83!important;
-    color:#fff!important;
-    font:800 12px/1 'Plus Jakarta Sans',sans-serif;
-    letter-spacing:.3px;
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-  }
-
   /* Bottom sheet style for receipt modal on mobile */
   .sheet-handle{display:flex}
   .receipt-wrap.closing .receipt{
@@ -1093,7 +1034,7 @@ main{max-width:1120px!important;padding-top:42px!important;padding-bottom:72px!i
   }
 }
 @media print{
-  .mobile-checkout-bar,.sheet-handle,.clear-cart-btn,.add-more-link{display:none!important}
+  .sheet-handle,.clear-cart-btn,.add-more-link{display:none!important}
 }
 
 /* ===== VISUAL COHESION: BRAND LOGO & BUTTON SYSTEM ON CHECKOUT ===== */
