@@ -2749,11 +2749,7 @@ body{background:#fff!important;color:var(--ink);font-family:'DM Sans',sans-serif
   letter-spacing:1.8px!important;
 }
 .coming-soon-bottom .coming-soon-status{
-  display:inline-flex!important;
-  border-radius:999px!important;
-  background:#FCE8F0!important;
-  border-color:#EABFD0!important;
-  color:#9A3560!important;
+  display:none!important;
 }
 @media(max-width:680px){
   .brand img{width:40px!important;height:40px!important}
