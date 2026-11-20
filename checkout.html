@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fff7fa"><title>Checkout — CIMOL BODJOTEL</title><link rel="icon" href="https://i.imgur.com/jVIjhfF.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="checkout.css?v=20261109-audit-cleanup"></head>
+<link rel="stylesheet" href="checkout.css?v=20261120-visual-polish"></head>
 <body><div class="top">♡ CHECKOUT TIME <b>·</b> ONE STEP CLOSER TO YOUR HAPPY SNACK ♡</div>
 <header><a class="brand" href="index.html"><img src="https://i.imgur.com/jVIjhfF.png" alt="Logo Cimol Bodjotel"><span>CIMOL<strong>BODJOTEL<em>.</em></strong></span></a><a class="back" href="index.html#menu">← LANJUT PILIH MENU</a></header>
 <main><div class="intro"><div><span class="eyebrow">YOUR SNACK IS WAITING</span><h1>LET'S MAKE<br>IT <em>YOURS.</em></h1></div><p>Atur pesananmu, lengkapi detail penerimaan, lalu kirim ringkasan pesanan langsung ke WhatsApp admin.</p></div>
-<div class="steps"><span class="step">01 · PILIH MENU</span><span class="step active">02 · CHECKOUT</span><span class="step">03 · KONFIRMASI ADMIN</span></div>
+<div class="steps"><a class="step" href="index.html#menu">01 · PILIH MENU</a><span class="step active" id="step-checkout">02 · CHECKOUT</span><span class="step" id="step-confirm">03 · KONFIRMASI ADMIN</span></div>
 <div class="layout">
-<section class="card cart-card"><div class="card-heading"><div><span class="card-kicker">YOUR PICKS / 01</span><h2>Keranjang <span id="count-label">(0 item)</span></h2></div><span class="card-icon" aria-hidden="true">♡</span></div><p class="cart-caption">Pilihan CIMOL favoritmu, siap masuk ke tahap berikutnya ♡</p><div class="items" id="items"><div class="empty"><b>Keranjangmu masih kosong</b>Yuk cari CIMOL favoritmu dulu.<br><a href="index.html#menu">BROWSE MENU ↗</a></div></div><div class="summary"><div class="line"><span>Subtotal produk</span><b id="subtotal">Rp0</b></div><div class="line"><span>Ongkir</span><b id="shipping">Dikonfirmasi admin</b></div><div class="line total"><span>Subtotal sementara</span><b id="grand">Rp0</b></div></div><div class="hint">Ongkir belum termasuk subtotal. Admin akan mengonfirmasi ongkir dan total akhir berdasarkan lokasi pengiriman melalui WhatsApp.</div></section>
-<section class="card form-card"><div class="card-heading"><div><span class="card-kicker">ALMOST THERE / 02</span><h2>Lengkapi <span>pesananmu.</span></h2></div><span class="card-icon" aria-hidden="true">✳</span></div><p class="cart-caption">Isi beberapa detail ini supaya CIMOLmu sampai ke orang dan tempat yang tepat.</p><form class="form" id="checkout-form" novalidate><div class="form-section-title"><span>01</span> INFO PENERIMA</div>
+<section class="card cart-card"><div class="card-heading"><div><span class="card-kicker">YOUR PICKS / 01</span><h2>Keranjang <span id="count-label">(0 item)</span></h2></div><div class="cart-head-actions"><button type="button" class="clear-cart-btn" id="clear-cart" hidden>Kosongkan</button><span class="card-icon" aria-hidden="true">♡</span></div></div><p class="cart-caption">Pilihan CIMOL favoritmu, siap masuk ke tahap berikutnya ♡</p><div class="items" id="items"><div class="empty"><b>Keranjangmu masih kosong</b>Yuk cari CIMOL favoritmu dulu.<br><a href="index.html#menu">BROWSE MENU ↗</a></div></div><a class="add-more-link" id="add-more-link" href="index.html#menu" hidden>＋ Tambah varian cimol lainnya</a><div class="summary"><div class="line"><span>Subtotal produk</span><b id="subtotal">Rp0</b></div><div class="line"><span>Ongkir</span><b id="shipping">Dikonfirmasi admin</b></div><div class="line total"><span>Subtotal sementara</span><b id="grand">Rp0</b></div></div><div class="hint">Ongkir belum termasuk subtotal. Admin akan mengonfirmasi ongkir dan total akhir berdasarkan lokasi pengiriman melalui WhatsApp.</div></section>
+<section class="card form-card" id="form-card"><div class="card-heading"><div><span class="card-kicker">ALMOST THERE / 02</span><h2>Lengkapi <span>pesananmu.</span></h2></div><span class="card-icon" aria-hidden="true">✳</span></div><p class="cart-caption">Isi beberapa detail ini supaya CIMOLmu sampai ke orang dan tempat yang tepat.</p><form class="form" id="checkout-form" novalidate><div class="form-section-title"><span>01</span> INFO PENERIMA</div>
 <label>Nama lengkap<input id="name" autocomplete="name" required placeholder="Nama yang menerima pesanan"></label>
 <div class="form-section-title"><span>02</span> PENGIRIMAN & PEMBAYARAN</div><label>Metode menerima<select id="fulfillment"><option value="delivery">Diantar ke alamat</option><option value="pickup">Ambil sendiri</option></select></label>
 <div class="address-choice-wrap" id="address-group">
@@ -28,10 +28,17 @@
 <label>Catatan tambahan <small style="font-weight:400;color:#9b8490">(opsional)</small><textarea id="notes" placeholder="Request khusus atau patokan tambahan..."></textarea></label>
 <button class="submit" type="submit"><span>BUAT STRUK PESANAN</span><span aria-hidden="true">↗</span></button><p class="fine">Setelah ringkasan dibuat, tekan tombol WhatsApp untuk mengirim pesanan. Pesanan diproses setelah admin mengonfirmasi detail dan total akhirnya.</p>
 </form></section></div>
-<section class="receipt-wrap" id="receipt-wrap" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Struk pesanan"><div class="receipt" id="receipt"><div class="receipt-head"><img src="https://i.imgur.com/jVIjhfF.png" alt=""><h3>CIMOL BODJOTEL</h3><p>SMALL BITES · BIG HAPPINESS</p></div><div class="receipt-body"><div class="receipt-meta"><span id="receipt-id">ORDER #—</span><span id="receipt-date">—</span></div><div class="receipt-customer" id="receipt-customer"></div><div class="receipt-lines" id="receipt-lines"></div><div class="receipt-total" id="receipt-total"></div></div></div><div class="receipt-actions"><button type="button" id="close-receipt">TUTUP STRUK ✕</button><button type="button" id="print">PRINT / SIMPAN PDF</button><button type="button" class="wa" id="send-wa">KIRIM DETAIL KE WHATSAPP ↗</button></div></section>
+<div class="mobile-checkout-bar" id="mobile-checkout-bar" hidden>
+  <div class="mobile-checkout-info">
+    <small id="mobile-bar-count">0 item dipilih</small>
+    <strong id="mobile-bar-total">Rp0</strong>
+  </div>
+  <button type="button" class="mobile-checkout-cta" id="mobile-bar-btn">Buat Struk <span>↗</span></button>
+</div>
+<section class="receipt-wrap" id="receipt-wrap" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Struk pesanan"><div class="receipt" id="receipt"><div class="sheet-handle" aria-hidden="true"><span></span></div><div class="receipt-head"><img src="https://i.imgur.com/jVIjhfF.png" alt=""><h3>CIMOL BODJOTEL</h3><p>SMALL BITES · BIG HAPPINESS</p></div><div class="receipt-body"><div class="receipt-meta"><span id="receipt-id">ORDER #—</span><span id="receipt-date">—</span></div><div class="receipt-customer" id="receipt-customer"></div><div class="receipt-lines" id="receipt-lines"></div><div class="receipt-total" id="receipt-total"></div></div></div><div class="receipt-actions"><button type="button" id="close-receipt">TUTUP STRUK ✕</button><button type="button" id="print">PRINT / SIMPAN PDF</button><button type="button" class="wa" id="send-wa">KIRIM DETAIL KE WHATSAPP ↗</button></div></section>
 </main><footer>© 2026 CIMOL BODJOTEL · GOOD FOOD, GOOD MOOD.</footer><div class="toast" id="toast" hidden></div>
 <script>
-(()=>{'use strict';const KEY='cimolCart',WA='6283853021353',products={original:{name:'Cimol Bodjot Aslian',kind:'ready',image:'https://i.imgur.com/s9suIRw.jpeg',prices:{small:8000,large:10000}},mozza:{name:'Cimol Bodjot Mozarellia',kind:'ready',image:'https://i.imgur.com/Tqbu63W.png',prices:{small:10000,large:15000}},frozen:{name:'Cimol Bodjot Frozen Aslian',kind:'frozen',image:'https://i.imgur.com/aMmnDSY.png',prices:{pack:10000}},'frozen-mozza':{name:'Cimol Bodjot Frozen Mozarellia',kind:'frozen',image:'https://i.imgur.com/aMmnDSY.png',prices:{pack:15000}}};const $=id=>document.getElementById(id),money=n=>'Rp'+Number(n).toLocaleString('id-ID');document.body.appendChild($('receipt-wrap'));function normalizeCart(items, catalog=products) {
+(()=>{'use strict';const KEY='cimolCart',LEGACY_KEY='bodjotel_cart_v2',WA='6283853021353',products={original:{name:'Cimol Bodjot Aslian',kind:'ready',image:'https://i.imgur.com/s9suIRw.jpeg',prices:{small:8000,large:10000}},mozza:{name:'Cimol Bodjot Mozarellia',kind:'ready',image:'https://i.imgur.com/Tqbu63W.png',prices:{small:10000,large:15000}},frozen:{name:'Cimol Bodjot Frozen Aslian',kind:'frozen',image:'https://i.imgur.com/aMmnDSY.png',prices:{pack:10000}},'frozen-mozza':{name:'Cimol Bodjot Frozen Mozarellia',kind:'frozen',image:'https://i.imgur.com/aMmnDSY.png',prices:{pack:15000}}};const $=id=>document.getElementById(id),money=n=>'Rp'+Number(n).toLocaleString('id-ID');document.body.appendChild($('receipt-wrap'));function normalizeCart(items, catalog=products) {
  if(!Array.isArray(items)) return [];
  const normalized=new Map();
  items.forEach(item=>{
@@ -55,7 +62,9 @@ function getBrowserStorage(name){try{return window[name]}catch{return null}}
 function readStoredCart(){
  for(const store of [getBrowserStorage('localStorage'),getBrowserStorage('sessionStorage')]){
   if(!store) continue;
-  try{const raw=store.getItem(KEY);if(raw!==null)return normalizeCart(JSON.parse(raw))}catch{}
+  for(const key of [KEY,LEGACY_KEY]){
+   try{const raw=store.getItem(key);if(raw!==null)return normalizeCart(JSON.parse(raw))}catch{}
+  }
  }
  return [];
 }
@@ -69,8 +78,90 @@ function persistCart(){
 }
 let cart=readStoredCart(),lastMessage='',storageWarningShown=false;
 const safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const total=()=>cart.reduce((s,x)=>s+(products[x.id]?.prices[x.size]||0)*x.qty,0);function toast(t){const el=$('toast');el.textContent=t;el.hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.hidden=true,2500)}
-function render(){cart=normalizeCart(cart);const n=cart.reduce((s,x)=>s+x.qty,0);$('count-label').textContent='('+n+' item)';if(!cart.length)$('items').innerHTML='<div class="empty"><b>Keranjangmu masih kosong ♡</b>Yuk cari CIMOL favoritmu dulu.<br><a href="index.html#menu">BROWSE MENU ↗</a></div>';else $('items').innerHTML=cart.map(x=>{const p=products[x.id],variant=x.size==='small'?'Ukuran kecil':x.size==='large'?'Ukuran besar':'1 pack';return '<article class="item"><div class="thumb"><img src="'+p.image+'" alt="'+safe(p.name)+'" loading="lazy"></div><div><strong>'+safe(p.name)+'</strong><small>'+variant+(p.kind==='ready'?' · Level pedas '+x.spice:'')+'</small><div class="qty"><button type="button" data-step="-1" data-key="'+safe(x.key)+'" aria-label="Kurangi">−</button><b>'+x.qty+'</b><button type="button" data-step="1" data-key="'+safe(x.key)+'" aria-label="Tambah">+</button><button class="remove" type="button" data-remove="'+safe(x.key)+'">Hapus</button></div></div><div class="item-price">'+money(p.prices[x.size]*x.qty)+'</div></article>'}).join('');$('subtotal').textContent=money(total());$('grand').textContent=money(total());if(!persistCart()&&!storageWarningShown){storageWarningShown=true;toast('Penyimpanan browser dibatasi. Jangan tutup atau muat ulang halaman ini sebelum pesanan dikirim.');}}
-$('items').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.step){const it=cart.find(x=>x.key===b.dataset.key);if(it)it.qty+=Number(b.dataset.step);cart=cart.filter(x=>x.qty>0)}if(b.dataset.remove)cart=cart.filter(x=>x.key!==b.dataset.remove);render()});
+function bumpTotals(){
+ [$('subtotal'),$('grand'),$('mobile-bar-total')].forEach(el=>{
+  if(!el)return;
+  el.classList.remove('price-bump');
+  void el.offsetWidth;
+  el.classList.add('price-bump');
+ });
+}
+function render(){
+ cart=normalizeCart(cart);
+ const n=cart.reduce((s,x)=>s+x.qty,0);
+ const sum=total();
+ $('count-label').textContent='('+n+' item)';
+ if($('clear-cart'))$('clear-cart').hidden=n===0;
+ if($('add-more-link'))$('add-more-link').hidden=n===0;
+ if(!cart.length){
+  $('items').innerHTML='<div class="empty"><b>Keranjangmu masih kosong ♡</b>Yuk cari CIMOL favoritmu dulu.<br><a href="index.html#menu">BROWSE MENU ↗</a></div>';
+ }else{
+  $('items').innerHTML=cart.map(x=>{const p=products[x.id],variant=x.size==='small'?'Ukuran kecil':x.size==='large'?'Ukuran besar':'1 pack';return '<article class="item"><div class="thumb"><img src="'+p.image+'" alt="'+safe(p.name)+'" loading="lazy"></div><div><strong>'+safe(p.name)+'</strong><small>'+variant+(p.kind==='ready'?' · Level pedas '+x.spice:'')+'</small><div class="qty"><button type="button" data-step="-1" data-key="'+safe(x.key)+'" aria-label="Kurangi">−</button><b>'+x.qty+'</b><button type="button" data-step="1" data-key="'+safe(x.key)+'" aria-label="Tambah">+</button><button class="remove" type="button" data-remove="'+safe(x.key)+'">Hapus</button></div></div><div class="item-price">'+money(p.prices[x.size]*x.qty)+'</div></article>'}).join('');
+ }
+ $('subtotal').textContent=money(sum);
+ $('grand').textContent=money(sum);
+ const mbar=$('mobile-checkout-bar');
+ if(mbar){
+  if(n>0){
+   mbar.hidden=false;
+   requestAnimationFrame(()=>mbar.classList.add('is-visible'));
+   $('mobile-bar-count').textContent=n+' item dipilih';
+   $('mobile-bar-total').textContent=money(sum);
+  }else{
+   mbar.classList.remove('is-visible');
+   setTimeout(()=>{if(!cart.length)mbar.hidden=true;},240);
+  }
+ }
+ if(!persistCart()&&!storageWarningShown){storageWarningShown=true;toast('Penyimpanan browser dibatasi. Jangan tutup atau muat ulang halaman ini sebelum pesanan dikirim.');}
+}
+$('items').addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.step){
+  const it=cart.find(x=>x.key===b.dataset.key);
+  if(it){
+   const step=Number(b.dataset.step);
+   if(step>0&&it.qty>=99){toast('Maksimal 99 porsi per varian ya ♡');return;}
+   it.qty+=step;
+  }
+  cart=cart.filter(x=>x.qty>0);
+ }
+ if(b.dataset.remove){
+  cart=cart.filter(x=>x.key!==b.dataset.remove);
+  toast('Item dihapus dari keranjang');
+ }
+ render();
+ bumpTotals();
+});
+if($('clear-cart')){
+ $('clear-cart').addEventListener('click',()=>{
+  if(!cart.length)return;
+  cart=[];
+  render();
+  toast('Keranjang berhasil dikosongkan ♡');
+ });
+}
+if($('mobile-bar-btn')){
+ $('mobile-bar-btn').addEventListener('click',()=>{
+  const name=$('name').value.trim();
+  const pickup=$('fulfillment').value==='pickup';
+  const address=$('address').value.trim();
+  if(name.length<2){
+   $('form-card').scrollIntoView({behavior:'smooth',block:'start'});
+   setTimeout(()=>$('name').focus(),350);
+   toast('Lengkapi nama penerima dulu ya ♡');
+   return;
+  }
+  if(!pickup&&addressMode==='manual'&&address.length<8){
+   $('address-group').scrollIntoView({behavior:'smooth',block:'center'});
+   setTimeout(()=>$('address').focus(),350);
+   toast('Lengkapi alamat pengiriman dulu ya ♡');
+   return;
+  }
+  $('checkout-form').requestSubmit();
+ });
+}
+window.addEventListener('pageshow',()=>{cart=readStoredCart();render();});
+window.addEventListener('storage',()=>{cart=readStoredCart();render();});
 let addressMode='manual';
 function setAddressMode(mode){
  addressMode=mode;
@@ -88,12 +179,37 @@ $('fulfillment').addEventListener('change',()=>{
  const pickup=$('fulfillment').value==='pickup';
  $('address-group').classList.toggle('hidden',pickup);
  $('address').required=!pickup&&addressMode==='manual';
+ $('shipping').textContent=pickup?'Ambil sendiri (Rp0)':'Dikonfirmasi admin';
  if(pickup)$('address').value='';
 });
+function closeReceiptModal(){
+ const wrap=$('receipt-wrap');
+ if(!wrap.classList.contains('show'))return;
+ wrap.classList.add('closing');
+ if($('step-confirm'))$('step-confirm').classList.remove('active');
+ if($('step-checkout'))$('step-checkout').classList.add('active');
+ setTimeout(()=>{
+  wrap.classList.remove('show','closing');
+  wrap.setAttribute('aria-hidden','true');
+  document.body.classList.remove('receipt-open');
+  $('name').focus();
+ },200);
+}
 $('checkout-form').addEventListener('submit',e=>{e.preventDefault();if(!cart.length){toast('Keranjang masih kosong. Pilih menu dulu ya!');return}const name=$('name').value.trim(),pickup=$('fulfillment').value==='pickup',address=$('address').value.trim(),payment=$('payment').value,notes=$('notes').value.trim();if(name.length<2){toast('Isi nama lengkapmu dulu ya.');$('name').focus();return}if(!pickup&&addressMode==='manual'&&address.length<8){toast('Alamatnya dilengkapi dulu ya.');$('address').focus();return}
 const orderId='CB-'+Date.now().toString().slice(-8),date=new Date().toLocaleString('id-ID',{dateStyle:'medium',timeStyle:'short'}),rows=cart.map((x,i)=>{const p=products[x.id];return {i:i+1,name:p.name,variant:(x.size==='small'?'Kecil':x.size==='large'?'Besar':'1 pack')+(p.kind==='ready'?' · Pedas '+x.spice:''),qty:x.qty,price:p.prices[x.size]*x.qty}}),sum=total();$('receipt-id').textContent='ORDER '+orderId;$('receipt-date').textContent=date;$('receipt-customer').innerHTML='<b>'+safe(name)+'</b><br>'+(pickup?'Ambil sendiri':addressMode==='share'?'Pin lokasi dikirim via WhatsApp':safe(address))+'<br>'+safe(payment);$('receipt-lines').innerHTML=rows.map(x=>'<div class="receipt-row"><span>'+x.i+'. '+safe(x.name)+'<small>'+safe(x.variant)+' × '+x.qty+'</small></span><b>'+money(x.price)+'</b></div>').join('');$('receipt-total').innerHTML='<div class="receipt-row"><span>Subtotal produk</span><b>'+money(sum)+'</b></div><div class="receipt-row"><span>Ongkir</span><b>'+(pickup?'Ambil sendiri':'Dikonfirmasi admin')+'</b></div><div class="receipt-row grand"><span>SUBTOTAL SEMENTARA</span><b>'+money(sum)+'</b></div>';
-lastMessage=['HALO CIMOL BODJOTEL! Aku mau konfirmasi pesanan:','', 'Nomor: '+orderId,'Tanggal: '+date,'',...rows.map(x=>x.i+'. '+x.name+' / '+x.variant+' / '+x.qty+'x = '+money(x.price)),'','Subtotal produk: '+money(sum),'Ongkir: '+(pickup?'Ambil sendiri':'Mohon konfirmasi admin'),'Subtotal sementara: '+money(sum),'','Nama: '+name,'Metode menerima: '+(pickup?'Ambil sendiri':'Diantar'),'Alamat: '+(pickup?'-':addressMode==='share'?'Pin lokasi akan dikirim terpisah melalui WhatsApp':address),'Pembayaran: '+payment,'Catatan: '+(notes||'-'),'','Mohon konfirmasi pesanan dan total akhirnya. Terima kasih!'].join('\n');$('receipt-wrap').classList.add('show');$('receipt-wrap').setAttribute('aria-hidden','false');document.body.classList.add('receipt-open');$('close-receipt').focus();toast('Struk digital berhasil dibuat ♡')});
-$('close-receipt').addEventListener('click',()=>{$('receipt-wrap').classList.remove('show');$('receipt-wrap').setAttribute('aria-hidden','true');document.body.classList.remove('receipt-open');$('name').focus()});$('receipt-wrap').addEventListener('click',e=>{if(e.target===$('receipt-wrap'))$('close-receipt').click()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('receipt-wrap').classList.contains('show'))$('close-receipt').click()});$('print').addEventListener('click',()=>window.print());$('send-wa').addEventListener('click',()=>{if(!lastMessage){toast('Buat struk terlebih dahulu.');return}window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(lastMessage),'_blank','noopener')});render();
+lastMessage=['HALO CIMOL BODJOTEL! Aku mau konfirmasi pesanan:','', 'Nomor: '+orderId,'Tanggal: '+date,'',...rows.map(x=>x.i+'. '+x.name+' / '+x.variant+' / '+x.qty+'x = '+money(x.price)),'','Subtotal produk: '+money(sum),'Ongkir: '+(pickup?'Ambil sendiri':'Mohon konfirmasi admin'),'Subtotal sementara: '+money(sum),'','Nama: '+name,'Metode menerima: '+(pickup?'Ambil sendiri':'Diantar'),'Alamat: '+(pickup?'-':addressMode==='share'?'Pin lokasi akan dikirim terpisah melalui WhatsApp':address),'Pembayaran: '+payment,'Catatan: '+(notes||'-'),'','Mohon konfirmasi pesanan dan total akhirnya. Terima kasih!'].join('\n');
+if($('step-checkout'))$('step-checkout').classList.remove('active');
+if($('step-confirm'))$('step-confirm').classList.add('active');
+$('receipt-wrap').classList.remove('closing');$('receipt-wrap').classList.add('show');$('receipt-wrap').setAttribute('aria-hidden','false');document.body.classList.add('receipt-open');$('close-receipt').focus();toast('Struk digital berhasil dibuat ♡')});
+$('close-receipt').addEventListener('click',closeReceiptModal);$('receipt-wrap').addEventListener('click',e=>{if(e.target===$('receipt-wrap'))closeReceiptModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('receipt-wrap').classList.contains('show'))closeReceiptModal()});$('print').addEventListener('click',()=>window.print());$('send-wa').addEventListener('click',()=>{if(!lastMessage){toast('Buat struk terlebih dahulu.');return}window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(lastMessage),'_blank','noopener');toast('Membuka WhatsApp admin... ♡')});
+(()=>{
+ const receiptEl=$('receipt');if(!receiptEl)return;
+ let startY=0,currentY=0,dragging=false;
+ receiptEl.addEventListener('touchstart',e=>{if(receiptEl.scrollTop>4)return;startY=e.touches[0].clientY;currentY=startY;dragging=true;receiptEl.style.transition='none'},{passive:true});
+ receiptEl.addEventListener('touchmove',e=>{if(!dragging)return;currentY=e.touches[0].clientY;const d=Math.max(0,currentY-startY);if(d>0)receiptEl.style.transform='translateY('+Math.min(d,240)+'px)'},{passive:true});
+ receiptEl.addEventListener('touchend',()=>{if(!dragging)return;dragging=false;receiptEl.style.transition='';const d=currentY-startY;receiptEl.style.transform='';if(d>75)closeReceiptModal()});
+})();
+render();
 })();
 </script>
 <script>
